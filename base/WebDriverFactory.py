@@ -10,6 +10,7 @@ Example:
 """
 import traceback
 from selenium import webdriver
+from resources.config import ApplicationConfig
 import os
 
 class WebDriverFactory():
@@ -39,7 +40,7 @@ class WebDriverFactory():
         Returns:
             'WebDriver Instance'
         """
-        baseURL = "https://letskodeit.teachable.com/"
+        baseURL = ApplicationConfig.get( 'Application_url' )
         if self.browser == "iexplorer":
             # Set ie driver
             Iedriver = "drivers/IEDriverServer.exe"
@@ -53,7 +54,8 @@ class WebDriverFactory():
             driver = webdriver.Chrome(chromedriver)
             driver.set_window_size(1440, 900)
         else:
-            driver = webdriver.Firefox()
+            # driver = webdriver.Firefox()
+            driver = webdriver.Chrome( executable_path="../drivers/chromedriver.exe" )
         # Setting Driver Implicit Time out for An Element
         driver.implicitly_wait(3)
         # Maximize the window

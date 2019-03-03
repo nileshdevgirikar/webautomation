@@ -16,7 +16,7 @@ class HomePage(BasePage):
     lnkdashboard = "//a[@class='nav-link active ng-star-inserted']//*[text()='{0}']"
     lnkrootCustomer = "//span[contains(text(),'{0}')]"
     lnkreports = "//span[contains(text(),'{0}')]"
-    lnkadmin = "// span[contains( text(), '{0}' )]"
+    lnkadmin = "//span[contains( text(), '{0}' )]"
     btnAccountSearch = "//button[contains(text(),'{0}')]"
     btnCompaniesSearch = "//a[contains(text(),'{0}')]"
     lnkprofile = "//a[@id='userDropdown']"
@@ -25,6 +25,9 @@ class HomePage(BasePage):
     msg = "//div[contains(text(),'{0}')]"
     login_SuccessBar = "//div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']"
     searchTextBox = "//input[@placeholder='{0}']"
+
+    # Locators
+    lnkAccounts = "//span[contains(text(),'{0}')]"
 
     def verifyTextonHomepage(self):
         self.verifyWelcomeMessage()
@@ -46,7 +49,8 @@ class HomePage(BasePage):
 
     def verifyWelcomeMessage(self):
         ExpectedText = self.navigationMap['AdminWelcomeMessage']
-        self.waitForElement(self.msg.format(ExpectedText), locatorType="xpath")
+        # self.waitForElement(self.msg.format(ExpectedText), 10)
+        time.sleep( 5)
         ActualText = self.getText(self.msg.format(ExpectedText),locatorType="xpath")
 
     def verifyDashboardlink(self, linkText):
@@ -108,3 +112,19 @@ class HomePage(BasePage):
             self.log.info("Successfully navigated to "+self.navigationMap['RootCustomers'])
         except:
             self.log.info("Error while navigating to" + self.navigationMap['RootCustomers'])
+
+    def navigateToAccounts(self):
+        try:
+            self.elementClick( self.lnkAccounts.format( self.navigationMap['Accounts'] ),
+                               locatorType="xpath" )
+            self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )
+        except:
+            self.log.info( "Error while navigating to" + self.navigationMap['Accounts'] )
+
+    def navigateToAdmin(self):
+        try:
+            self.elementClick( self.lnkadmin.format( self.navigationMap['Admin'] ),
+                               locatorType="xpath" )
+            self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )
+        except:
+            self.log.info( "Error while navigating to" + self.navigationMap['Accounts'])

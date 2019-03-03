@@ -1,5 +1,4 @@
 from Utilities.util import Util
-from base.BasePage import BasePage
 import Utilities.custom_logger as cl
 import logging
 from pages.customer.RootCustomer import RootCustomer
@@ -7,7 +6,6 @@ import time
 from inputTestData import inputCustomerTest
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-
 
 class Customer( RootCustomer ):
     log = cl.customLogger( logging.DEBUG )
@@ -69,7 +67,7 @@ class Customer( RootCustomer ):
 
     # Button
     btnClose = "//button[@class='close']"
-    btnAddCustomer = "//app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'%s')]"
+    btnAddCustomer = "//app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'{0}')]"
 
     # btnCancel = "//a[@class='btn btn-lg btn-secondary']"
     btnCancel = "//button[@class='btn btn-lg btn-secondary']"
@@ -100,6 +98,14 @@ class Customer( RootCustomer ):
     # other
     rootCustomerIsSelected = "//li[@class='level-0 has-children selected ng-star-inserted']"
 
+    lnkCustomerName = "//span[contains(text(),'{0}')]"
+    addChildCustomer = "//span[text()='{0}']/following-sibling::" \
+                       "div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm']"
+
+    btnSendForActivation = "//button[@class='btn btn-primary']"
+    chkboxChooseBranchForApproval = "//label/div/strong[text()='{0}']"
+    btnSend = "//button[@class='btn btn-lg btn-success']"
+
     def FillRootCustomer(self):
         root = inputCustomerTest.rootCustomer
         for datafields in root:
@@ -107,8 +113,17 @@ class Customer( RootCustomer ):
             if root[datafields] == 'Click':
                 self.elementClick( locator=self.datafields, locatorType="xpath" )
 
-    def fill_customer_information(self):
-        root = inputCustomerTest.rootCustomer
+    def clickOnParentCustomerToAddChild(self, parent):
+        try:
+            self.elementClick( self.lnkCustomerName.format( parent ),
+                               locatorType="xpath" )
+            self.elementClick( self.addChildCustomer.format( parent ),
+                               locatorType="xpath" )
+        except Exception as e:
+            self.log.error( "Error occurred while filling address details. :: " )
+
+    def fill_customer_information(self, root):
+        # root = inputCustomerTest.rootCustomer
         self.select_customer_category( root['Customer category'] )
         self.select_customer_type( root['Customer type'] )
         self.setName( root['Name'] )
@@ -117,24 +132,46 @@ class Customer( RootCustomer ):
         self.select_Market_Segment( root['Market Segment'] )
         if str( root['Customer category'] ) == str( self.navigationMap['lbl_CustCategory_SubEntity'] ):
             self.decide_Whether_Clients_Allowed( root['Clients allowed'] )
-        self.fill_address_details()
-        self.fill_contact_details()
-        self.fill_customer_references()
+        self.fill_address_details( root.get( 'ADDRESS' ) )
+        self.fill_contact_details( root.get( 'contactPerson' ) )
+        self.fill_customer_references( root.get( 'customerReferences' ) )
 
-    def fill_address_details(self):
-        address = inputCustomerTest.ADDRESS
-        try:
-            self.sendKeys( address['Line 1'], self.txtAddressLine1, locatorType="xpath" )
-            self.sendKeys( address['Line 3'], self.txtAddressLine2, locatorType="xpath" )
-            self.sendKeys( address['Line 3'], self.txtAddressLine3, locatorType="xpath" )
-            self.sendKeys( address['Line 4'], self.txtAddressLine4, locatorType="xpath" )
-            self.sendKeys( address['Postal code'], self.txtPostalCode, locatorType="xpath" )
-            self.selectvaluefromDropdown( address['Country'], self.ddlCountry, locatorType="xpath" )
-        except Exception as e:
-            self.log.error( "Error occurred while filling address details. :: " )
+    def createCustomerHierarchy(self, company, keyvalue):
+        if type( company ) is dict:
+            for key, value in company.items():
+                fill = inputCustomerTest.rootCustomer
+                fill['Name'] = str( key )
+                self.fill_customer_information( fill )
+                self.clickOnAddCustomerButton()
+                time.sleep( 5 )
+                keyvalue = key
+                self.clickOnParentCustomerToAddChild( key )
+                self.createCustomerHierarchy( value, keyvalue )
+        elif type( company ) is str:
+            fill = inputCustomerTest.rootCustomer
+            fill['Name'] = str( company )
+            self.fill_customer_information( fill )
+            self.clickOnAddCustomerButton()
+            time.sleep( 5 )
+        elif type( company ) is list:
+            for item in company:
+                print( keyvalue )
+                self.clickOnParentCustomerToAddChild( keyvalue )
+                self.createCustomerHierarchy( item, keyvalue )
 
-    def fill_contact_details(self):
-        contactDetails = inputCustomerTest.contactPerson
+    # def fill_address_details(self):
+    #     address = inputCustomerTest.ADDRESS
+    #     try:
+    #         self.sendKeys( address['Line 1'], self.txtAddressLine1, locatorType="xpath" )
+    #         self.sendKeys( address['Line 3'], self.txtAddressLine2, locatorType="xpath" )
+    #         self.sendKeys( address['Line 3'], self.txtAddressLine3, locatorType="xpath" )
+    #         self.sendKeys( address['Line 4'], self.txtAddressLine4, locatorType="xpath" )
+    #         self.sendKeys( address['Postal code'], self.txtPostalCode, locatorType="xpath" )
+    #         self.selectvaluefromDropdown( address['Country'], self.ddlCountry, locatorType="xpath" )
+    #     except Exception as e:
+    #         self.log.error( "Error occurred while filling address details. :: " )
+
+    def fill_contact_details(self, contactDetails):
         try:
             self.selectvaluefromDropdown( contactDetails['type'], self.ddlContactType, locatorType="xpath" )
             self.sendKeys( contactDetails['Value'], self.txtContactValue, locatorType="xpath" )
@@ -142,8 +179,7 @@ class Customer( RootCustomer ):
         except Exception as e:
             self.log.error( "Error occurred while filling contact details. :: " )
 
-    def fill_customer_references(self):
-        customerReferences = inputCustomerTest.customerReferences
+    def fill_customer_references(self, customerReferences):
         try:
             self.add_Mandatory_References( customerReferences )
             self.add_Optional_References( customerReferences )
@@ -160,7 +196,6 @@ class Customer( RootCustomer ):
     def add_Optional_References(self, customerReferences):
         try:
             References = customerReferences['Reference type']
-
             for key in References:
                 self.elementClick( self.btnAddRef.format( self.navigationMap['btn_AddAnotherReference'] ),
                                    locatorType="xpath" )
@@ -192,8 +227,7 @@ class Customer( RootCustomer ):
 
     def setName(self, Name):
         try:
-            # strName = Util.ran_gen(8, "AEIOSUMA23")
-            random_str = Name + Util.get_unique_number( 8 )
+            random_str = Name  #+ Util.get_unique_number( 8 )
             self.sendKeys( random_str, self.txtName, locatorType="xpath" )
             self.sendKeys( random_str, self.txtPreferredName, locatorType="xpath" )
         except Exception as e:
@@ -228,3 +262,29 @@ class Customer( RootCustomer ):
                 self.log.info( "Making client allowed checkbox disabled :: " )
         except Exception as e:
             self.log.error("Error occurred while setting the Market Segment :: ")
+
+    def fill_address_details(self, address):
+        # address = inputCustomerTest.ADDRESS
+        try:
+            for addCol in address:
+                self.sendKeys( addCol.get( 'value' ), addCol.get( 'id' ), locatorType="xpath" )
+        except Exception as e:
+            self.log.error( "Error occurred while filling address details. :: " )
+
+    def clickOnAddCustomerButton(self, ):
+        try:
+            self.elementClick( self.btnAddCustomer.format( self.navigationMap['btn_Add_Customer'] ),
+                               locatorType="xpath" )
+        except Exception as e:
+            self.log.error( "Error occurred while filling address details. :: " )
+
+    def activateCustomer(self, companyName):
+        try:
+            self.waitForElement( self.btnSendForActivation )
+            self.elementClick( self.btnSendForActivation, locatorType="xpath" )
+            self.waitForElement( self.chkboxChooseBranchForApproval )
+            self.elementClick( self.chkboxChooseBranchForApproval.format( companyName ),
+                               locatorType="xpath" )
+            self.elementClick( self.btnSend, locatorType="xpath" )
+        except Exception as e:
+            self.log.error( "Error occurred while filling address details. :: " )

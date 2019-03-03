@@ -17,9 +17,8 @@ class LoginPage(BasePage):
     txtPassword = "password"
     btnSign_In = "//button[@type='submit']"
 
-
-    def login(self, userId="", password=""):
-        self.clearFields()
+    def loginToApplication(self, userId="", password=""):
+        # self.clearFields()
         self.enterUserId(userId)
         self.enterPassword(password)
         self.clickLogin()

@@ -6,7 +6,8 @@ import time
 
 class RootCustomer(BasePage):
     log = cl.customLogger( logging.DEBUG )
-    navigationMap = TestParams.load_properties( "../resources/captionBundle.properties" )
+
+    # navigationMap = TestParams.load_properties("../resources/captionBundle.properties")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -79,5 +80,6 @@ class RootCustomer(BasePage):
             self.log.info("Error while navigating to :: " + tabHeader.upper())
 
     def clickOnAddRootCustomerButton(self):
+        self.waitForElement( self.btnAddRootCustomer)
         self.elementClick(self.btnAddRootCustomer.format(self.navigationMap['btn_AddRootCustomer']),
                                    locatorType="xpath")

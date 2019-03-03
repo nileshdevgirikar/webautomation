@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from traceback import print_stack
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import *
 import Utilities.custom_logger as cl
@@ -15,6 +17,7 @@ class SeleniumDriver():
 
     def __init__(self, driver):
         self.driver = driver
+        # wait = ExplicitWaitType(driver)
 
     def screenShot(self, resultMessage):
         """
@@ -34,7 +37,7 @@ class SeleniumDriver():
             self.log.info("Screenshot save to directory: " + destinationFile)
         except:
             self.log.error("### Exception Occurred when taking screenshot")
-            print_stack()
+
 
     def getTitle(self):
         return self.driver.title
@@ -95,6 +98,7 @@ class SeleniumDriver():
         """
         try:
             if locator:  # This means if locator is not empty
+                #self.waitForElement(locator)
                 element = self.getElement(locator, locatorType)
             element.click()
             self.log.info("Clicked on element with locator: " + locator +
@@ -135,6 +139,23 @@ class SeleniumDriver():
                   " locatorType: " + locatorType)
             print_stack()
 
+    def sendKeysAndEnter(self, data, locator="", locatorType="id", element=None):
+        """
+        Send keys to an element -> MODIFIED
+        Either provide element or a combination of locator and locatorType
+        """
+        try:
+            if locator:  # This means if locator is not empty
+                element = self.getElement( locator, locatorType )
+            element.send_keys( data )
+            element.send_keys( Keys.ENTER )
+            self.log.info( "Sent data on element with locator: " + locator +
+                           " locatorType: " + locatorType )
+        except:
+            self.log.info( "Cannot send data on the element with locator: " + locator +
+                           " locatorType: " + locatorType )
+            print_stack()
+
     def clearField(self, locator="", locatorType="id"):
         """
         Clear an element field
@@ -162,7 +183,6 @@ class SeleniumDriver():
                 text = text.strip()
         except:
             self.log.error("Failed to get text on element " + info)
-            print_stack()
             text = None
         return text
 
@@ -225,7 +245,7 @@ class SeleniumDriver():
             return False
 
     def waitForElement(self, locator, locatorType="id",
-                               timeout=2, pollFrequency=0.5):
+                       timeout=0.5, pollFrequency=0.1):
         element = None
         try:
             byType = self.getByType(locatorType)
@@ -240,7 +260,6 @@ class SeleniumDriver():
             self.log.info("Element appeared on the web page")
         except:
             self.log.info("Element not appeared on the web page")
-            print_stack()
         return element
 
     def webScroll(self, direction="up"):
@@ -288,3 +307,6 @@ class SeleniumDriver():
         except:
             self.log.info("Element not found")
             return False
+
+    def wait_for_page_load(self, timeout=10):
+        time.sleep( timeout )
