@@ -40,7 +40,7 @@ class WebDriverFactory():
         Returns:
             'WebDriver Instance'
         """
-        baseURL = ApplicationConfig.get( 'Application_url' )
+        baseURL = ApplicationConfig.get( 'APP_URL' )
         if self.browser == "iexplorer":
             # Set ie driver
             Iedriver = "drivers/IEDriverServer.exe"

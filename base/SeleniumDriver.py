@@ -24,7 +24,7 @@ class SeleniumDriver():
         Takes screenshot of the current open web page
         """
         fileName = resultMessage + "." + str(round(time.time() * 1000)) + ".png"
-        screenshotDirectory = "../scustomerCategorycreenshots/"
+        screenshotDirectory = "../screenshots/"
         relativeFileName = screenshotDirectory + fileName
         currentDirectory = os.path.dirname(__file__)
         destinationFile = os.path.join(currentDirectory, relativeFileName)
@@ -121,7 +121,6 @@ class SeleniumDriver():
         except:
             self.log.info("Cannot select value from the element with locator: " + locator +
                           " locatorType: " + locatorType)
-            print_stack()
 
     def sendKeys(self, data, locator="", locatorType="id", element=None):
         """

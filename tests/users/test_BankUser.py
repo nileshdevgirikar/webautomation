@@ -30,11 +30,12 @@ class BankUserTest( unittest.TestCase ):
 
     @pytest.mark.run( order=1 )
     def test_CreateBankUser(self):
-        self.login.loginToApplication( "banksup", "Password@123" )
+        self.login.loginToApplication()
         # self.status.mark()
         self.home.verifyWelcomeMessage()
         self.home.navigateToAdmin()
         self.UsersABO = self.bankUser.createUsers( inputUserTest.updateUsersABO )
         self.bankUser.searchUser( self.UsersABO )
         result = self.bankUser.verifyUserDetails( self.UsersABO )
+        self.login.loginToApplication( self.UsersABO.get( 'UserId' ), self.UsersABO.get( 'Password' ) )
         self.status.markFinal( "test_CreateBankUser", result, "Verification is Successful" )

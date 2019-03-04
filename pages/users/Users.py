@@ -105,8 +105,8 @@ class Users( BasePage ):
 
     def clickOnAddUserButton(self):
         try:
-            # self.waitForElement(self.btnAddUser)
-            self.elementClick( self.btnAddUser.format( self.navigationMap['AddUser'] ),
+            self.waitForElement( self.btnAddUser, 4 )
+            self.elementClick( self.btnAddUser.format( self.navigationMap.get( 'AddUser' ) ),
                                locatorType="xpath" )
         except Exception as e:
             self.log.error( "Error occurred while click on the Add user button::" )
@@ -115,13 +115,13 @@ class Users( BasePage ):
         try:
             # UserID = usersABO.get('User ID') + Util.get_unique_number(5)
             self.wait_for_page_load( 2 )
-            self.sendKeys( usersABO.get( 'UserID' ), self.txtUserId, locatorType="xpath" )
+            self.sendKeys( usersABO.get( 'UserId' ), self.txtUserId, locatorType="xpath" )
             self.sendKeys( usersABO.get( 'firstName' ), self.txtFirstName, locatorType="xpath" )
             self.sendKeys( usersABO.get( 'lastName' ), self.txtLastName, locatorType="xpath" )
             self.sendKeys( usersABO.get( 'email' ), self.txtEmailId, locatorType="xpath" )
             self.sendKeys( usersABO.get( 'phone' ), self.txtPhone, locatorType="xpath" )
             self.selectvaluefromDropdown( usersABO.get( 'profile' ), self.ddlProfile, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'passWord' ), self.txtPassword, locatorType="xpath" )
+            self.sendKeys( usersABO.get( 'Password' ), self.txtPassword, locatorType="xpath" )
             self.sendKeys( usersABO.get( 'repeatPassword' ), self.txtRepeatPassword, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Exception occurred while entering User's Details::" )
@@ -138,7 +138,7 @@ class Users( BasePage ):
     def searchUser(self, usersABO):
         try:
             self.wait_for_page_load( 7 )
-            self.sendKeysAndEnter( usersABO.get( 'UserID' ), self.txtSearchUser, locatorType="xpath" )
+            self.sendKeysAndEnter( usersABO.get( 'UserId' ), self.txtSearchUser, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Exception occurred while doing search users ::" )
 
@@ -155,7 +155,7 @@ class Users( BasePage ):
             self.clickOnViewUser( self )
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'UserID' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'UserID' ) )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'UserId' ) )
             self.status.mark( result, "Title Verified" )
             # assert result == True
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'FirstName' ) ),
