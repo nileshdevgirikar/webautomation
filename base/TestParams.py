@@ -13,7 +13,7 @@ class TestParams():
         Read the file passed as parameter as a properties file.
         """
         props = {}
-        with open(filepath, "rt" ) as f:
+        with open( filepath ) as f:
             for line in f:
                 l = line.strip()
                 if l and not l.startswith(comment_char):

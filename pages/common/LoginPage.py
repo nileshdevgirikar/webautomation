@@ -2,7 +2,6 @@ import Utilities.custom_logger as cl
 from pages.common.HomePage import HomePage
 from base.BasePage import BasePage
 import logging
-from resources.config import ApplicationConfig
 from base.WebDriverFactory import WebDriverFactory
 
 
@@ -21,16 +20,10 @@ class LoginPage(BasePage):
     btnSign_In = "//button[@type='submit']"
 
     def loginToApplication(self, userId="", password=""):
-        if userId == "" and password == "":
-            self.clearFields()
-            self.enterUserId( ApplicationConfig.get( 'UserId' ) )
-            self.enterPassword( ApplicationConfig.get( 'Password' ) )
-            self.clickLogin()
-        else:
-            self.driver = self.WebDriver.getWebDriverInstance()
-            self.enterUserId( userId )
-            self.enterPassword( password )
-            self.clickLogin()
+        self.clearFields()
+        self.enterUserId( userId )
+        self.enterPassword( password )
+        self.clickLogin()
 
     def enterUserId(self, userId):
         self.sendKeys(userId,self.txtUserId)

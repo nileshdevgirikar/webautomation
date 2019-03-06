@@ -1,7 +1,7 @@
 import random
 
 updateUsersABO = {
-    "UserId": "BADMIN" + str( random.randint( 0, 99999 ) ),
+    "UserId": "BN" + str( random.randint( 0, 9999999 ) ),
     "profile": "Bank Admin",
     "firstName": "AdminName",
     "lastName": "AdminLastName",

@@ -85,11 +85,10 @@ class Users( BasePage ):
     txtRolesAllValue = "#select[@formcontrolname='roleId']/option", "Bank Role ID Values"
     btnChangelog = "#button[text()[normalize-space()='%s']]", "Changelog Button"
     btnEdit = "#button[@id='editButton1']", "Edit Button"
+    btnClose = "//button[@type='submit']"
     strParentCustName = "#div/strong[contains(text(), '%s')]/parent::div/following-sibling::small[contains(text(),'%s')]", "Parent Customer Name"
     usersTitle = "#span[contains(.,'users')]", "Users Title"
     lblUserId = "#tbody[contains(@class,'ng-tns-c')]/tr/td[contains(.,'%s')]", "Users id"
-
-    util = Util()
 
     def createUsers(self, usersABO):
         newusersABO = ''
@@ -142,23 +141,34 @@ class Users( BasePage ):
         except Exception as e:
             self.log.error( "Exception occurred while doing search users ::" )
 
-    def clickOnViewUser(self, usersABO):
+    def verifyAdminUserDetails(self, usersABO):
         try:
-            self.waitForElement( self.LnkViewEditDelete )
+            self.clickOnViewUser()
+            self.verifyUserDetails( usersABO )
+            self.closeUserDetailPage()
+        except Exception as e:
+            self.log.error( "Exception occurred while doing search users ::" )
+
+    def clickOnViewUser(self):
+        try:
+            self.wait_for_page_load( 4 )
+            # self.waitForElement(self.LnkViewEditDelete.format( self.navigationMap.get( 'View' )),4,2)
             self.elementClick( self.LnkViewEditDelete.format( self.navigationMap.get( 'View' ) ),
                                locatorType="xpath" )
         except Exception as e:
             self.log.error( "Exception occurred in clickOnViewUser ::" )
 
     def verifyUserDetails(self, usersABO):
+        result = False
         try:
-            self.clickOnViewUser( self )
+            # self.status.mark( result, "Title Verified" )
+            self.wait_for_page_load( 5 )
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'UserID' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'UserId' ) )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'UserId'))
             self.status.mark( result, "Title Verified" )
             # assert result == True
-            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'FirstName' ) ),
+            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'FirstName' )),
                                        locatorType="xpath" )
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'firstName' ) )
             self.status.mark( result, "Title Verified" )
@@ -194,3 +204,11 @@ class Users( BasePage ):
             assert True == False
             self.log.error( "Exception occurred while verifying user details ::" )
         return result
+
+    def closeUserDetailPage(self):
+        try:
+            self.waitForElement( self.btnClose )
+            self.elementClick( self.btnClose.format( self.navigationMap['AddUser'] ),
+                               locatorType="xpath" )
+        except Exception as e:
+            self.log.error( "Exception occurred while doing search users ::" )

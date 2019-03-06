@@ -9,6 +9,7 @@ from pages.customer.Company import Company
 from pages.users.Users import Users
 from Utilities.teststatus import TestStatus
 from inputTestData import inputUserTest
+from resources.config import ApplicationConfig
 import Utilities.custom_logger as cl
 import logging
 
@@ -28,14 +29,17 @@ class BankUserTest( unittest.TestCase ):
         self.bankUser = Users( self.driver )
         self.status = TestStatus( self.driver )
 
-    @pytest.mark.run( order=1 )
-    def test_CreateBankUser(self):
-        self.login.loginToApplication()
+    @pytest.mark.smoke
+    def test_CreateBankUsersAndViewUser(self):
+        self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
         # self.status.mark()
-        self.home.verifyWelcomeMessage()
+        self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToAdmin()
         self.UsersABO = self.bankUser.createUsers( inputUserTest.updateUsersABO )
         self.bankUser.searchUser( self.UsersABO )
-        result = self.bankUser.verifyUserDetails( self.UsersABO )
+        result = self.bankUser.verifyAdminUserDetails( self.UsersABO )
+        self.home.userLogout()
         self.login.loginToApplication( self.UsersABO.get( 'UserId' ), self.UsersABO.get( 'Password' ) )
-        self.status.markFinal( "test_CreateBankUser", result, "Verification is Successful" )
+        self.home.verifyWelcomeMessage( self.UsersABO.get( 'firstName' ) )
+        self.home.userLogout()
+        # self.status.markFinal( "test_CreateBankUsersAndViewUser", result, "Verification is Successful" )

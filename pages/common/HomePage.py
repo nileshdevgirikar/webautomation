@@ -1,12 +1,14 @@
 from base.BasePage import BasePage
 import Utilities.custom_logger as cl
 import logging
+from Utilities.util import Util
 from base.TestParams import TestParams
 import time
 
 class HomePage(BasePage):
     log = cl.customLogger(logging.DEBUG)
-    navigationMap = TestParams.load_properties("../resources/captionBundle.properties")
+
+    # navigationMap = TestParams.load_properties("../resources/captionBundle.properties")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -22,8 +24,8 @@ class HomePage(BasePage):
     lnkprofile = "//a[@id='userDropdown']"
     lnksettings = "//span[contains(text(),'{0}')]"
     lnksign_out = "//span[contains(text(),'{0}')]"
-    msg = "//div[contains(text(),'{0}')]"
-    login_SuccessBar = "//div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']"
+    ctlWelcomeMessage = "//div[contains(text(),'{0}')]"
+    login_SuccessBar = "//div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//*[text()='{0}')]"
     searchTextBox = "//input[@placeholder='{0}']"
 
     # Locators
@@ -38,20 +40,20 @@ class HomePage(BasePage):
         self.verifyAccountsSearchButtontext("GlobalSearchType_Accounts", "WaterMark_Accounts")
         self.verifyCustomerSearchButtontext("GlobalSearchType_Company", "WaterMark_Company")
 
-
-    def clickUserDropdown(self):
-
+    def userLogout(self):
         userSettingsElement = self.waitForElement(locator=self.lnkprofile,
                                       locatorType="xpath", pollFrequency=1)
         self.elementClick(element=userSettingsElement)
         self.verifySettingtext("lbl_Settings")
-        self.verifySignOuttext("lbl_SignOut")
+        self.verifySignOutMessage()
 
-    def verifyWelcomeMessage(self):
-        ExpectedText = self.navigationMap['AdminWelcomeMessage']
-        # self.waitForElement(self.msg.format(ExpectedText), 10)
-        time.sleep( 5)
-        ActualText = self.getText(self.msg.format(ExpectedText),locatorType="xpath")
+    def verifyWelcomeMessage(self, loginUser):
+        # ExpectedText = self.navigationMap['AdminWelcomeMessage']
+        expectedText = self.navigationMap['WelcomeMsg'] + ' ' + loginUser
+        actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ), locatorType="xpath" )
+        self.wait_for_page_load( 10 )
+        # result = self.isElementDisplayed(self.ctlWelcomeMessage.format(expectedText),locatorType="xpath")
+        self.util.verifyTextMatch( actualText, expectedText)
 
     def verifyDashboardlink(self, linkText):
         ExpectedText = self.navigationMap[linkText]
@@ -99,11 +101,24 @@ class HomePage(BasePage):
                                                locatorType="xpath")
 
     def verifySignOuttext(self, linkText):
-        Expectedtext = self.navigationMap[linkText]
-        ActualText = self.getText(self.lnksign_out.format(Expectedtext),
-                                               locatorType="xpath")
-        self.elementClick(locator=self.lnksign_out.format(Expectedtext), locatorType="xpath")
-        value = self.isElementPresent(self.msg.format(self.navigationMap['LogOutMessage']), locatorType="xpath")
+        expectedText = self.navigationMap[linkText]
+        actualText = self.getText( self.lnksign_out.format( expectedText),
+                                   locatorType="xpath" )
+        self.elementClick( locator=self.lnksign_out.format( expectedText ), locatorType="xpath" )
+        result = self.isElementPresent( self.ctlWelcomeMessage.format( self.navigationMap['LogOutMessage'] ),
+                                        locatorType="xpath" )
+        self.util.verifyTextMatch( actualText, expectedText )
+
+    def verifySignOutMessage(self):
+        expectedText = self.navigationMap['LogOutMessage']
+        self.elementClick( locator=self.lnksign_out.format( self.navigationMap['lbl_SignOut'] ),
+                           locatorType="xpath" )
+        self.wait_for_page_load( 7 )
+        result = self.isElementPresent( self.ctlWelcomeMessage.format( self.navigationMap['LogOutMessage'] ),
+                                        locatorType="xpath" )
+        actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ),
+                                   locatorType="xpath" )
+        self.util.verifyTextMatch( actualText, expectedText)
 
     def navigateToRootCustomers(self):
         try:
@@ -123,7 +138,8 @@ class HomePage(BasePage):
 
     def navigateToAdmin(self):
         try:
-            self.elementClick( self.lnkadmin.format( self.navigationMap['Admin'] ),
+            self.waitForElement( self.lnkadmin )
+            self.elementClick( self.lnkadmin.format( self.navigationMap['Admin']),
                                locatorType="xpath" )
             self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )
         except:
