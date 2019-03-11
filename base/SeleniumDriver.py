@@ -17,7 +17,6 @@ class SeleniumDriver():
 
     def __init__(self, driver):
         self.driver = driver
-        # wait = ExplicitWaitType(driver)
 
     def screenShot(self, resultMessage):
         """

@@ -51,7 +51,7 @@ class HomePage(BasePage):
         # ExpectedText = self.navigationMap['AdminWelcomeMessage']
         expectedText = self.navigationMap['WelcomeMsg'] + ' ' + loginUser
         actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ), locatorType="xpath" )
-        self.wait_for_page_load( 10 )
+        self.wait_for_page_load( 10)
         # result = self.isElementDisplayed(self.ctlWelcomeMessage.format(expectedText),locatorType="xpath")
         self.util.verifyTextMatch( actualText, expectedText)
 
@@ -138,7 +138,7 @@ class HomePage(BasePage):
 
     def navigateToAdmin(self):
         try:
-            self.waitForElement( self.lnkadmin )
+            self.waitForElement( self.lnkadmin)
             self.elementClick( self.lnkadmin.format( self.navigationMap['Admin']),
                                locatorType="xpath" )
             self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )

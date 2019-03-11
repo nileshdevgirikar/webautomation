@@ -1,4 +1,5 @@
 import random
+import copy
 
 AccountDetails = {
     'Owner': '',
@@ -6,7 +7,7 @@ AccountDetails = {
     'Account type': 'Root Account',
     'Currency': '',
     'Name of the account': '',
-    'Account number': '',
+    'Account number': 'NO' + str( random.randint( 0, 99999999999999 ) ),
     'Country': 'NORWAY',
     'Reference type': '',
     'Reference number': '',
@@ -19,7 +20,7 @@ RootAccount = {
     'Hierarchy offering': 'Virtual Account Management',
     'Account type': 'Root Account',
     'Currency': 'NOK',
-    'Name of the account': 'RootAccount',
+    'Name of the account': '',
     'Country': 'NORWAY',
     'Reference type': '',
     'Reference number': '',
@@ -29,11 +30,10 @@ RootAccount = {
 
 ShadowAccount = {
     'Owner': '',
-    'Hierarchy offering': 'Virtual Account Management',
     'Account type': 'Shadow Account',
     'Currency': 'NOK',
-    'Name of the account': 'ShadowAccount',
-    'Account number': '',
+    'Name of the account': '',
+    'Account number': 'NO',
     'Country': 'NORWAY',
     'Reference type': '',
     'Reference number': '',
@@ -43,10 +43,9 @@ ShadowAccount = {
 
 SummaryAccount = {
     'Owner': '',
-    'Hierarchy offering': 'Virtual Account Management',
     'Account type': 'Summary Account',
     'Currency': 'NOK',
-    'Name of the account': 'SummaryAccount',
+    'Name of the account': '',
     'Account number': '',
     'Country': 'NORWAY',
     'Reference type': '',
@@ -57,126 +56,80 @@ SummaryAccount = {
 
 TransactionAccount = {
     'Owner': '',
-    'Hierarchy offering': 'Virtual Account Management',
     'Account type': 'Virtual Account',
     'Currency': 'NOK',
-    'Name of the account': 'VirtualAccount',
-    'Account number': '',
+    'Name of the account': '',
+    'Account number': 'NO',
     'Country': 'NORWAY',
     'Reference type': '',
     'Reference number': '',
     'Funds check': 'false',
+    'Settlement mark': '',
     'Hierarchy activation date': ''
 }
 
-AccountList = {
-    'RootAccount': [
-        {
-            'ShadowAccount': [
-                {
-                    'SummaryAccount': [
-                        'Transaction',
-                        'Transaction'
-                    ]
-                },
-                {
-                    'SummaryAccount1': [
-                        'Transaction',
-                        'Transaction'
-                    ]
-                },
-                [
-                    'Transaction',
-                    'Transaction'
-                ]
-            ]}
-    ]
-}
+RootAccount['Name of the account'] = 'TopAcc1'
+TopAcc1 = RootAccount
 
-# ShadowAcct = ShadowAccount
-#
-# SummaryAcct4 = {
-#     'TranAcct1' : TransactionAccount,
-#     'TranAcct2' : TransactionAccount,
-# }
-#
-#
-# SummaryAcct2 = {
-#     'SummaryAccount': {
-#         'TranAcct1': TransactionAccount,
-#         'TranAcct2': TransactionAccount,
-#     }
-# }
-#
-# SummaryAcct3 = {
-#     'SummaryAccount': {
-#         'TranAcct1': TransactionAccount,
-#         'TranAcct2': TransactionAccount,
-#         'TranAcct3': TransactionAccount,
-#         'SummaryAcct3': SummaryAcct4
-#     }
-# }
-#
-# SummaryAcct1 = {
-#     'SummaryAccount': {
-#         'TranAcct1': TransactionAccount,
-#         'TranAcct2': TransactionAccount,
-#         'TranAcct3': TransactionAccount,
-#         'SummaryAcct3': SummaryAcct3
-#     }
-# }
-#
-#
-# ShadowAcct = {
-#         'ShadowAccount':[
-#             SummaryAcct1,
-#             SummaryAcct2
-#         ]
-# }
-#
-# hierrachyRelationship = {
-#     'TopAcct1' : RootAccount,
-#     'ShadowAcct' : ShadowAcct,
-#     'TrancAcc' : TransactionAccount
-# }
-#
-#
-# TopAcct1 = RootAccount
-#
-# hierrachyRelationship1 = {
-#     [TopAcct1]
-# }
-#
-# AggreAcc1,AggreAcc2 =  SummaryAccount
-#
-#
-# ShadowAcc = {
-#     [AggreAcc1,AggreAcc2]
-# }
-#
-# TopAcct1 = [ShadowAcc]
-#
-#
-# print(hierrachyRelationship)
+ShadowAccount['Name of the account'] = 'Shadow'
+Shadow = ShadowAccount
 
-list = {
+AggAcc3 = copy.deepcopy( SummaryAccount )
+AggAcc3['Name of the account'] = 'AggAcc3'
+
+AggAcc4 = copy.deepcopy( SummaryAccount )
+AggAcc4['Name of the account'] = 'AggAcc4'
+
+TranAcc1 = copy.deepcopy( TransactionAccount )
+TranAcc1['Name of the account'] = 'TranAcc1'
+TranAcc2 = copy.deepcopy( TransactionAccount )
+TranAcc2['Name of the account'] = 'TranAcc2'
+TranAcc3 = copy.deepcopy( TransactionAccount )
+TranAcc3['Name of the account'] = 'TranAcc3'
+TranAcc4 = copy.deepcopy( TransactionAccount )
+TranAcc4['Name of the account'] = 'TranAcc4'
+TranAcc5 = copy.deepcopy( TransactionAccount )
+TranAcc5['Name of the account'] = 'TranAcc5'
+TranAcc6 = copy.deepcopy( TransactionAccount )
+TranAcc6['Name of the account'] = 'TranAcc6'
+
+print( AggAcc3 )
+
+Accountlists = {
     "TopAcc1": [
-        "Shadow"
+        Shadow
     ],
     "Shadow": [
-        "AggAcc3",
-        "AggAcc4",
-        "TranAcc1",
-        "TranAcc2"
+        AggAcc3,
+        AggAcc4,
+        TranAcc1,
+        TranAcc2
     ],
     "AggAcc3": [
-        "TranAcc3",
-        "TranAcc4"
+        TranAcc3,
+        TranAcc4
     ],
     "AggAcc4": [
-        "TranAcc5",
-        "TranAcc6"
+        TranAcc5,
+        TranAcc6
     ]
 }
 
-print( list )
+
+def getKey(Accountlists):
+    toReturn = ''
+    for key, value in Accountlists.items():
+        if type( value ) is list:
+            count = len( value )
+            i = 0
+            while count > 0:
+                toReturn = key
+                print( key )
+                print( value[i] )
+                i += 1
+                count -= 1
+    # return toReturn
+
+
+# getKey(item,Accountlists)
+getKey( Accountlists )

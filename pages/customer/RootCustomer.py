@@ -16,7 +16,8 @@ class RootCustomer(BasePage):
     # Locators
 
     #Button
-    btnAddRootCustomer = "//span[(text()='{0}')]/ancestor::button[@class='btn btn-primary ng-star-inserted']"
+    # btnAddRootCustomer = "//span[(text()='{0}')]/ancestor::button[@class='btn btn-primary ng-star-inserted']"
+    btnAddRootCustomer = "// button[@class ='btn btn-primary ng-star-inserted']"
     title = "//h3[contains(.,'{0}')]"
 
     # Links
@@ -80,6 +81,8 @@ class RootCustomer(BasePage):
             self.log.info("Error while navigating to :: " + tabHeader.upper())
 
     def clickOnAddRootCustomerButton(self):
-        self.waitForElement( self.btnAddRootCustomer)
-        self.elementClick(self.btnAddRootCustomer.format(self.navigationMap['btn_AddRootCustomer']),
+        self.waitForElement( self.btnAddRootCustomer.format( self.navigationMap['btn_AddRootCustomer'] ), 4 )
+        self.executeJavaScript( self.btnAddRootCustomer.format( self.navigationMap['btn_AddRootCustomer'] ),
                                    locatorType="xpath")
+        # self.elementClick(self.btnAddRootCustomer.format(self.navigationMap['btn_AddRootCustomer']),
+        #                            locatorType="xpath")

@@ -23,5 +23,4 @@ class LoginTest(unittest.TestCase):
     @pytest.mark.Regression
     def test_login_invalid(self):
         self.login.loginToApplication( 'banksup', 'Tieto@123' )
-        self.home.verifyWelcomeMessage()
-        self.home.userLogout()
+        # self.home.verifyWelcomeMessage('banksup1')

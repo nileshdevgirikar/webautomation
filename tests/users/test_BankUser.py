@@ -13,7 +13,6 @@ from resources.config import ApplicationConfig
 import Utilities.custom_logger as cl
 import logging
 
-
 @pytest.mark.usefixtures( "oneTimeSetUp", "SetUp" )
 class BankUserTest( unittest.TestCase ):
     log = cl.customLogger( logging.INFO )
@@ -30,7 +29,7 @@ class BankUserTest( unittest.TestCase ):
         self.status = TestStatus( self.driver )
 
     @pytest.mark.smoke
-    def test_CreateBankUsersAndViewUser(self):
+    def test_CreateBankAdminUser_And_ViewUser(self):
         self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
         # self.status.mark()
         self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
@@ -42,4 +41,4 @@ class BankUserTest( unittest.TestCase ):
         self.login.loginToApplication( self.UsersABO.get( 'UserId' ), self.UsersABO.get( 'Password' ) )
         self.home.verifyWelcomeMessage( self.UsersABO.get( 'firstName' ) )
         self.home.userLogout()
-        # self.status.markFinal( "test_CreateBankUsersAndViewUser", result, "Verification is Successful" )
+        # self.status.markFinal("test_CreateBankAdminUser_And_ViewUser", result, "Verification is Successful" )

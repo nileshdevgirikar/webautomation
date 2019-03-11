@@ -2,8 +2,10 @@ import configparser
 
 class TestParams():
 
-    def __init__(self):
-        self
+    def __init__(self, filepath, sep, comment_char):
+        self.seprator = sep
+        self.commentChar = comment_char
+        self.filepath = filepath
 
     config = configparser.RawConfigParser()
     config.read('captionBundle.properties')
@@ -13,7 +15,7 @@ class TestParams():
         Read the file passed as parameter as a properties file.
         """
         props = {}
-        with open( filepath ) as f:
+        with open( filepath, "rt" ) as f:
             for line in f:
                 l = line.strip()
                 if l and not l.startswith(comment_char):

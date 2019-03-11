@@ -1,5 +1,5 @@
 ApplicationConfig = {
-    'APP_URL': 'http://10.254.187.37:9181/vam-ui/#/',
-    'UserId': 'nbanksup',
+    'APP_URL': 'http://10.254.187.172:9081/vam-ui/#/',
+    'UserId': 'anujbankupdate',
     'Password': 'Tieto@123'
 }
