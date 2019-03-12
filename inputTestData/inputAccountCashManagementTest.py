@@ -74,6 +74,14 @@ TopAcc1 = RootAccount
 ShadowAccount['Name of the account'] = 'Shadow'
 Shadow = ShadowAccount
 
+Shadow1 = copy.deepcopy(ShadowAccount)
+Shadow1['Name of the account'] = 'Shadow1'
+Shadow1['Currency'] = 'EUR'
+
+AggAcc2 = copy.deepcopy(SummaryAccount)
+AggAcc2['Name of the account'] = 'AggAcc2'
+AggAcc2['Currency'] = 'EUR'
+
 AggAcc3 = copy.deepcopy( SummaryAccount )
 AggAcc3['Name of the account'] = 'AggAcc3'
 
@@ -97,7 +105,8 @@ print( AggAcc3 )
 
 Accountlists = {
     "TopAcc1": [
-        Shadow
+        Shadow,
+        Shadow1
     ],
     "Shadow": [
         AggAcc3,
@@ -112,6 +121,9 @@ Accountlists = {
     "AggAcc4": [
         TranAcc5,
         TranAcc6
+    ],
+    "Shadow1": [
+        AggAcc2
     ]
 }
 

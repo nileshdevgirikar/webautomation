@@ -42,21 +42,21 @@ class CAMT053InputData():
     Bal_Ccy3 = "EUR"
 
     # TxsSummry
-    TxsSummry = ""
+    TxsSummry = "Yes"
     NbOfNtries = "1"
     NbOfNtries_Sum = ""
-    Txs_Credit = ""
-    Txs_Debit = ""
+    Txs_Credit = 1
+    Txs_Debit = 0
 
-    TtlDbtNtries = "0"
-    TtlDbtNtries_Sum = "0"
+    TtlDbtNtries = 0
+    TtlDbtNtries_Sum = 0
 
-    TtlCdtNtries = "1"
-    TtlCdtNtries_Sum = ""
+    TtlCdtNtries = 0
+    TtlCdtNtries_Sum = 0
 
     # Ntry
-    Ntry_Credit = ''
-    Ntry_Debit = ''
+    Ntry_Credit = 2
+    Ntry_Debit = 2
     Ntry_Credit_Amt = ""
     Ntry_Credit_Ccy = ""
     Ntry_Debit_Amt = ""
