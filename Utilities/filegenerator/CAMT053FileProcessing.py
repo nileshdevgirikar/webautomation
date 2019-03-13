@@ -18,11 +18,11 @@ class CAMT053FileProcessing():
     Bal_Ccy = ""
     random = ""
     # ftpUtils = FTPTransferImpl()
-    xpath_prtryCode = "(//Prtry/Cd)[{0}]"
+    xpath_prtryCode = "(//Prtry/Cd)[%s]"
     xpath_RealAcctId = "//Stmt//Acct/Id//Othr/Id"
-    xpath_DbtrAcct = "(//UltmtDbtr//Othr/Id)[{0}]"
-    xpath_CdtrAcct = "(//UltmtCdtr//Othr/Id)[{0}]"
-    xpath_SubFmlyCd = "(//Fmly/SubFmlyCd)[{0}]"
+    xpath_DbtrAcct = "(//UltmtDbtr//Othr/Id)[%s]"
+    xpath_CdtrAcct = "(//UltmtCdtr//Othr/Id)[%s]"
+    xpath_SubFmlyCd = "(//Fmly/SubFmlyCd)[%s]"
 
     iBANFlag = True
     doc = minidom.Document()
@@ -36,19 +36,20 @@ class CAMT053FileProcessing():
         CAMT053InputData.date = datetime.today().isoformat()
         CAMT053InputData.Dt = date.today().isoformat()
 
+
         Root = self.initiateXML()
-        # tree = ElementTree(Root)
+        tree = ElementTree(Root)
         BkToCstmrStmt = Element(CAMT053Tags.BkToCstmrStmtTag)
         Root.append(BkToCstmrStmt)
 
         self.createGrpHdr(BkToCstmrStmt)
         self.createStmt(BkToCstmrStmt)
-
+        tree.write(open('C:\XML\person.xml', 'wb'))
         print(etree.tostring(Root))
 
     def initiateXML(self):
         rootElement = Element("Document")
-        tree = ElementTree(rootElement)
+        # tree = ElementTree(rootElement)
         rootElement.set("xmlns", "urn:iso:std:iso:20022:tech:xsd:camt.053.001.02")
         rootElement.set("xmlns:xsd", "http://www.w3.org/2000/xmlns/")
         rootElement.set("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
@@ -153,7 +154,7 @@ class CAMT053FileProcessing():
         self.createBalanceCredit(Stmt)
         self.createTxsSummry(Stmt)
         self.createNtry(Stmt)
-        # return BkToCstmrStmt
+        #return BkToCstmrStmt
 
     def createAccount(self, Stmt):
         # Acct
@@ -301,7 +302,7 @@ class CAMT053FileProcessing():
 
     def createNtry(self, Stmt):
         temp = CAMT053InputData.Random
-        # var = int(temp[temp - 1])
+        #var = int(temp[temp - 1])
         var = 0
 
         if self.multiple == False:
@@ -319,7 +320,7 @@ class CAMT053FileProcessing():
                     Ntry.append(NtryRef)
 
                     Amt = Element(CAMT053Tags.AmtTag)
-                    Amt.text = CAMT053InputData.Ntry_Credit_Amt
+                    Amt.text = str(CAMT053InputData.Ntry_Credit_Amt)
                     Ntry.append(Amt)
 
                     # set attribute to Amt
@@ -386,19 +387,21 @@ class CAMT053FileProcessing():
                     Prtry.append(Issr)
 
                     self.createCrdtNtryDtls(Ntry)
+                    i += 1
             if CAMT053InputData.Ntry_Debit >= 1:
-                for i in CAMT053InputData.Ntry_Debit:
+                i = 0
+                while i < CAMT053InputData.Ntry_Debit:
                     var = var + 1
                     # Ntry
                     Ntry = Element(CAMT053Tags.NtryTag)
                     Stmt.append(Ntry)
 
                     NtryRef = Element(CAMT053Tags.NtryRefTag)
-                    NtryRef.text = self.random + "-" + var
+                    NtryRef.text = self.random + "-" + str(var)
                     Ntry.append(NtryRef)
 
                     Amt = Element(CAMT053Tags.AmtTag)
-                    Amt.text = CAMT053InputData.Ntry_Debit_Amt
+                    Amt.text = str(CAMT053InputData.Ntry_Debit_Amt)
                     Ntry.append(Amt)
 
                     # set attribute to Amt
@@ -465,6 +468,7 @@ class CAMT053FileProcessing():
                     Prtry.append(Issr)
 
                     self.createDbtrNtryDtls(Ntry)
+                    i += 1
         elif self.multiple != False:
             if CAMT053InputData.Txs_Credit != 0:
                 # Ntry
@@ -476,7 +480,7 @@ class CAMT053FileProcessing():
                 Ntry.append(NtryRef)
 
                 Amt = Element(CAMT053Tags.AmtTag)
-                Amt.text = CAMT053InputData.TtlCdtNtries_Sum
+                Amt.text = str(CAMT053InputData.TtlCdtNtries_Sum)
                 Ntry.append(Amt)
                 # set attribute to Amt
                 Attr = Element(CAMT053Tags.CcyTag)
@@ -540,7 +544,7 @@ class CAMT053FileProcessing():
                 Issr = Element(CAMT053Tags.IssrTag)
                 Issr.text = CAMT053InputData.Issr
                 Prtry.append(Issr)
-                self.createCrdtNtryDtls(Ntry)
+                #self.createCrdtNtryDtls(Ntry)
             elif CAMT053InputData.Txs_Debit != 0:
                 # Ntry
                 Ntry = Element(CAMT053Tags.NtryTag)
@@ -551,7 +555,7 @@ class CAMT053FileProcessing():
                 Ntry.append(NtryRef)
 
                 Amt = Element(CAMT053Tags.AmtTag)
-                Amt.text = CAMT053InputData.TtlCdtNtries_Sum
+                Amt.text = str(CAMT053InputData.TtlCdtNtries_Sum)
                 Ntry.append(Amt)
 
                 # set attribute to Amt
@@ -616,7 +620,8 @@ class CAMT053FileProcessing():
                 Issr = Element(CAMT053Tags.IssrTag)
                 Issr.text = CAMT053InputData.Issr
                 Prtry.append(Issr)
-                self.createDbtrNtryDtls(Ntry)
+                #self.createDbtrNtryDtls(Ntry)
+
 
     def createCrdtNtryDtls(self, Ntry):
         NtryDtls = Element(CAMT053Tags.NtryDtlsTag)

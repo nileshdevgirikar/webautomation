@@ -57,9 +57,9 @@ class CAMT053InputData():
     # Ntry
     Ntry_Credit = 2
     Ntry_Debit = 2
-    Ntry_Credit_Amt = ""
-    Ntry_Credit_Ccy = ""
-    Ntry_Debit_Amt = ""
+    Ntry_Credit_Amt = 1
+    Ntry_Credit_Ccy = "NOK"
+    Ntry_Debit_Amt = 20000.00
     Ntry_Debit_Ccy = ""
     Sts = "BOOK"
     InstrId = ""
