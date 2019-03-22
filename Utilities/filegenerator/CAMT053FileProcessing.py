@@ -7,17 +7,25 @@ from xml.dom import minidom
 from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import Element
 import xml.etree.ElementTree as etree
+from resources.config import ApplicationConfig
+import os
+from Utilities.FTPTransferImpl import FTPTransferImpl
+from xml.dom import minidom
+import vkbeautify as vkb
+import shutil
 
 
 class CAMT053FileProcessing():
-    outputFileFullName = ""
+    outputFileName = ""
     paramFilePath = ""
+    camtFilepath = ""
     custID = ""
     path = ""
     multiple = False
     Bal_Ccy = ""
-    random = ""
-    # ftpUtils = FTPTransferImpl()
+    # global random
+    # random = ""
+    ftpUtils = FTPTransferImpl()
     xpath_prtryCode = "(//Prtry/Cd)[%s]"
     xpath_RealAcctId = "//Stmt//Acct/Id//Othr/Id"
     xpath_DbtrAcct = "(//UltmtDbtr//Othr/Id)[%s]"
@@ -25,35 +33,64 @@ class CAMT053FileProcessing():
     xpath_SubFmlyCd = "(//Fmly/SubFmlyCd)[%s]"
 
     iBANFlag = True
-    doc = minidom.Document()
+    random = "MSG-" + date.today().isoformat()
 
-    def generateCAMT053(self):
+    def generateCAMT053(self, realAccount, transactionAccount):
         iBANFlag = ""
-        outputFileName = "AutoCAMT053" + Util.get_unique_number(5)
-        random = "MSG-" + date.today().isoformat()
+        CAMT053FileProcessing.outputFileName = "AutoCAMT053" + Util.get_unique_number(5)
 
-        CAMT053InputData.Random = random + "-" + Util.get_unique_number(5)
+        CAMT053InputData.Random = CAMT053FileProcessing.random + "-" + Util.get_unique_number(5)
         CAMT053InputData.date = datetime.today().isoformat()
         CAMT053InputData.Dt = date.today().isoformat()
+        CAMT053FileProcessing.path = os.getcwd()  # str(Path.home())
 
+        self.createParam(CAMT053FileProcessing.outputFileName)
+        # self.takeInputsForCAMT053FileProcessing(realAccount, transactionAccount)
 
-        Root = self.initiateXML()
-        tree = ElementTree(Root)
-        BkToCstmrStmt = Element(CAMT053Tags.BkToCstmrStmtTag)
-        Root.append(BkToCstmrStmt)
-
-        self.createGrpHdr(BkToCstmrStmt)
-        self.createStmt(BkToCstmrStmt)
-        tree.write(open('C:\XML\person.xml', 'wb'))
-        print(etree.tostring(Root))
-
-    def initiateXML(self):
+        # Root = self.initiateXML()
         rootElement = Element("Document")
-        # tree = ElementTree(rootElement)
+        tree = etree.ElementTree(rootElement)
         rootElement.set("xmlns", "urn:iso:std:iso:20022:tech:xsd:camt.053.001.02")
         rootElement.set("xmlns:xsd", "http://www.w3.org/2000/xmlns/")
         rootElement.set("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
-        return rootElement
+
+        BkToCstmrStmt = Element(CAMT053Tags.BkToCstmrStmtTag)
+        rootElement.append(BkToCstmrStmt)
+
+        self.createGrpHdr(BkToCstmrStmt)
+        self.createStmt(BkToCstmrStmt)
+
+        CAMT053FileProcessing.camtFilepath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\" + \
+                                             CAMT053FileProcessing.outputFileName + ".att"
+
+        tempFileName = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\TempCAMTFile" + ".att"
+
+        tree.write(open(tempFileName, 'wb'), xml_declaration=True, encoding='utf-8')
+        vkb.xml(tempFileName, CAMT053FileProcessing.camtFilepath)
+
+    # def takeInputsForCAMT053FileProcessing(self,realAccount,transactionAccount,camtinput):
+    def takeInputsForCAMT053FileProcessing(self, realAccount, transactionAccount):
+        CAMT053InputData.Amount = "80000.00"  # camtinput.getDefaultAmount();
+        CAMT053InputData.TtlCdtNtries_Sum = CAMT053InputData.NbOfNtries_Sum = CAMT053InputData.Amount3 = CAMT053InputData.Amount2 = CAMT053InputData.Amount1 = CAMT053InputData.Amount = 0
+        CAMT053InputData.Acct_ID = realAccount  # realAccount.getAccountNumber().toUpperCase()
+        CAMT053InputData.Ccy = 'NOK'  # realAccount.getCurrency()
+        CAMT053InputData.TxsSummry = 0  # camtinput.getTxsSummry();
+        CAMT053InputData.Txs_Credit = 1  # camtinput.getTxs_Credit();
+        CAMT053InputData.Txs_Debit = 1  # camtinput.getTxs_Debit();
+
+        # custID = camtinput.getRootCustomer().getCustId();
+        CAMT053InputData.InstrId = transactionAccount  # transactionAccount.getAccountNumber().toUpperCase()
+        Bal_Ccy = "NOK"  # realAccount.getCurrency()
+
+        # if camtinput.getMultipleTxn().equalsIgnoreCase("Yes"):
+        #     multiple = True
+        #     CAMT053InputData.Ntry_Credit = camtinput.getNtry_Credit()
+        #     CAMT053InputData.Ntry_Debit = camtinput.getNtry_Debit()
+        #     CAMT053InputData.Ntry_Credit_Amt = camtinput.getNtry_Credit_Amt()
+        #     CAMT053InputData.Ntry_Credit_Ccy = transactionAccount.getCurrency()
+        #     CAMT053InputData.Ntry_Debit_Amt = camtinput.getNtry_Debit_Amt()
+        #     CAMT053InputData.Ntry_Debit_Ccy = transactionAccount.getCurrency()
+
 
     def createGrpHdr(self, BkToCstmrStmt):
 
@@ -153,7 +190,7 @@ class CAMT053FileProcessing():
         self.createAccount(Stmt)
         self.createBalanceCredit(Stmt)
         self.createTxsSummry(Stmt)
-        self.createNtry(Stmt)
+        self.createNtry(Stmt , random)
         #return BkToCstmrStmt
 
     def createAccount(self, Stmt):
@@ -300,10 +337,9 @@ class CAMT053FileProcessing():
                 TtlDbtNtriesSum.text = CAMT053InputData.NbOfNtries_Sum
                 TtlDbtNtries.append(TtlDbtNtriesSum)
 
-    def createNtry(self, Stmt):
-        temp = CAMT053InputData.Random
-        #var = int(temp[temp - 1])
-        var = 0
+    def createNtry(self, Stmt, random):
+        temp = CAMT053InputData.Random.split("-")
+        var = int(temp[len(temp) - 1])
 
         if self.multiple == False:
             if CAMT053InputData.Ntry_Credit >= 1:
@@ -316,7 +352,7 @@ class CAMT053FileProcessing():
                     Stmt.append(Ntry)
 
                     NtryRef = Element(CAMT053Tags.NtryRefTag)
-                    NtryRef.text = self.random + "-" + str(var)
+                    NtryRef.text = random + "-" + str(var)
                     Ntry.append(NtryRef)
 
                     Amt = Element(CAMT053Tags.AmtTag)
@@ -397,7 +433,7 @@ class CAMT053FileProcessing():
                     Stmt.append(Ntry)
 
                     NtryRef = Element(CAMT053Tags.NtryRefTag)
-                    NtryRef.text = self.random + "-" + str(var)
+                    NtryRef.text = random + "-" + str(var)
                     Ntry.append(NtryRef)
 
                     Amt = Element(CAMT053Tags.AmtTag)
@@ -733,9 +769,82 @@ class CAMT053FileProcessing():
         Ustrd.text = CAMT053InputData.InstrId
         RmtInf.append(Ustrd)
 
+    def createParam(self, outputFileName):
+        document = Element("Head")
+        # tree = ElementTree(document)
+        tree = etree.ElementTree(document)
+
+        a1 = Element("a1")
+        a1.text = "xxxxxx"  # CAMT053FileProcessing.custID
+        document.append(a1)
+
+        CAMT053InputData.BICOrBEI = ApplicationConfig.get('BICOrBEI')
+        a2 = Element("a2")
+        a2.text = CAMT053InputData.BICOrBEI
+        document.append(a2)
+
+        a4 = Element("a4")
+        a4.text = CAMT053InputData.camtFormat
+        document.append(a4)
+
+        incomingPath = ApplicationConfig.get('INCOMINGFILEPATH') + '/' + outputFileName + ".att"
+        a9 = Element("a9")
+        a9.text = incomingPath
+        document.append(a9)
+
+        a10 = Element("a10")
+        a10.text = outputFileName
+        document.append(a10)
+
+        a20 = Element("a20")
+        a20.text = "VAM"
+        document.append(a20)
+
+        CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\" + \
+                                              CAMT053FileProcessing.outputFileName + ".param"
+
+        tempFileName = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\TempFile" + ".param"
+
+        tree.write(open(tempFileName, 'wb'))
+        line = ""
+        file = open(tempFileName)
+        for line in file:
+            line = line.replace('<Head>', '')
+            line = line.replace('</Head>', '')
+        file.close()
+
+        vkb.xml(line, CAMT053FileProcessing.paramFilePath)
+
+    def ftpCAMT053Files(self):
+        SERVERIPADDR = ApplicationConfig.get('SERVERIPADDR')
+        FTP_USERID = ApplicationConfig.get('FTP_USERID')
+        FTP_PASSWORD = ApplicationConfig.get('FTP_PASSWORD')
+        LOCAL_CAMTPATH = CAMT053FileProcessing.camtFilepath
+        LOCAL_PARAMPATH = CAMT053FileProcessing.paramFilePath
+        INCOMINGFILEPATH = ApplicationConfig.get('INCOMINGFILEPATH')
+        INCOMINGFILEPATH = INCOMINGFILEPATH + '/' + CAMT053FileProcessing.outputFileName
+
+        if ApplicationConfig.get('SERVER_TYPE') == 'FTP':
+            CAMT053FileProcessing.ftpUtils.sendFileToFTPServer(SERVERIPADDR, FTP_USERID, FTP_PASSWORD, LOCAL_CAMTPATH,
+                                                               INCOMINGFILEPATH)
+        else:
+            CAMT053FileProcessing.ftpUtils.sendFileToSFTPServer(SERVERIPADDR, FTP_USERID, FTP_PASSWORD,
+                                                                LOCAL_CAMTPATH, INCOMINGFILEPATH + '.att')
+            CAMT053FileProcessing.ftpUtils.sendFileToSFTPServer(SERVERIPADDR, FTP_USERID, FTP_PASSWORD,
+                                                                LOCAL_PARAMPATH, INCOMINGFILEPATH + '.param')
+
+        self.deleteFiles()
+
+    def deleteFiles(self):
+        CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\"
+        shutil.rmtree(CAMT053FileProcessing.paramFilePath)
+        os.makedirs(CAMT053FileProcessing.paramFilePath)
+
 
 realAccount = 55454854
 transactionAccount = 4545454
+random = "MSG-" + date.today().isoformat()
 
 cp = CAMT053FileProcessing()
-cp.generateCAMT053()
+cp.generateCAMT053(55454854, 4545450)
+cp.ftpCAMT053Files()
