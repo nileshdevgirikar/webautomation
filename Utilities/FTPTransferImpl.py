@@ -17,7 +17,7 @@ class FTPTransferImpl():
             cnopts.hostkeys = None
             with pysftp.Connection(host=serverIp, username=userName,
                                    password=password, cnopts=cnopts, log=True) as sftp:
-                print("Connection succesfully stablished ... ")
+                print("Connection succesfully established ... ")
                 sftp.put(localPath, destinationPath)
             sftp.close()
         except Exception:

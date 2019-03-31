@@ -8,10 +8,7 @@ from pages.accounts.Accounts import Accounts
 from pages.customer.Company import Company
 from inputTestData import inputCustomerTest
 from inputTestData import inputAccountCashManagementTest
-
 from Utilities.filegenerator.CAMT053FileProcessing import CAMT053FileProcessing
-
-import time
 from resources.config import ApplicationConfig
 
 
@@ -55,10 +52,16 @@ class TestAccounts( unittest.TestCase ):
         self.company.activateCustomer( companyList )
         self.home.navigateToAccounts()
         self.account.clickOnAddRootAccountButton()
-        AccountList = inputAccountCashManagementTest.Accountlists
+        AccountList = inputAccountCashManagementTest.Accountlistsforposting
         self.account.createAccount( inputAccountCashManagementTest.TopAcc1 )
         self.account.createAccountHierarchy( AccountList )
         self.account.activateAccount( inputAccountCashManagementTest.TopAcc1 )
-        self.camtFile.generateCAMT053(inputAccountCashManagementTest.Shadow,
-                                      inputAccountCashManagementTest.TranAcc1)
-        self.ftpCAMT053Files()
+        self.camtFile.generateCAMT053(inputAccountCashManagementTest.Shadow.get('Account number'),
+                                      inputAccountCashManagementTest.TranAcc1.get('Account number'),
+                                      inputAccountCashManagementTest.camtinput)
+        self.camtFile.ftpCAMT053Files()
+        self.camtFile.generateCAMT053(inputAccountCashManagementTest.Shadow.get('Account number'),
+                                      inputAccountCashManagementTest.TranAcc1.get('Account number'),
+                                      inputAccountCashManagementTest.camtinput)
+        self.camtFile.ftpCAMT053Files()
+        print("Successfully")

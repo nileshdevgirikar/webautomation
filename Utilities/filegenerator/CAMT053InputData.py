@@ -18,8 +18,8 @@ class CAMT053InputData():
     Stmt_ID = "true"
 
     # Acct
-    Acct_ID = ""
-    Ccy = ""
+    Acct_ID = 0
+    Ccy = "NOK"
     BIC = "BOFAGB22XXX"
 
     # Balance
@@ -45,21 +45,21 @@ class CAMT053InputData():
     TxsSummry = "Yes"
     NbOfNtries = "1"
     NbOfNtries_Sum = ""
-    Txs_Credit = 1
-    Txs_Debit = 0
+    Txs_Credit = ""
+    Txs_Debit = ""
 
     TtlDbtNtries = 0
     TtlDbtNtries_Sum = 0
 
-    TtlCdtNtries = 0
+    TtlCdtNtries = 1
     TtlCdtNtries_Sum = 0
 
     # Ntry
     Ntry_Credit = 2
     Ntry_Debit = 2
-    Ntry_Credit_Amt = 1
+    Ntry_Credit_Amt = ""
     Ntry_Credit_Ccy = "NOK"
-    Ntry_Debit_Amt = 20000.00
+    Ntry_Debit_Amt = ""
     Ntry_Debit_Ccy = ""
     Sts = "BOOK"
     InstrId = ""
