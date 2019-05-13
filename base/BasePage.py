@@ -14,10 +14,11 @@ from base.SeleniumDriver import SeleniumDriver
 from traceback import print_stack
 from Utilities.util import Util
 from base.TestParams import TestParams
-
+import os
 class BasePage(SeleniumDriver):
-
-    navigationMap = TestParams.load_properties( "../resources/captionBundle.properties" )
+    print(os.getcwd())
+    resourcePropertyPath = os.getcwd() + "/resources/captionBundle.properties"
+    navigationMap = TestParams.load_properties(resourcePropertyPath)
     print( navigationMap )
 
     def __init__(self, driver):

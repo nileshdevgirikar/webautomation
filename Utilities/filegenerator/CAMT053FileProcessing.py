@@ -40,8 +40,14 @@ class CAMT053FileProcessing():
         CAMT053InputData.date = datetime.today().isoformat()
         CAMT053InputData.Dt = date.today().isoformat()
         # CAMT053FileProcessing.path = str(Path.home())
+
         # CAMT053FileProcessing.path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
         CAMT053FileProcessing.path = os.getcwd()  # str(Path.home())
+
+        CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\"
+
+        if not os.path.exists('inputCAMT&PAIN'):
+            os.makedirs(CAMT053FileProcessing.paramFilePath)
 
         self.createParam(CAMT053FileProcessing.outputFileName)
         self.takeInputsForCAMT053FileProcessing(realAccount, transactionAccount, camtinput)
@@ -818,6 +824,7 @@ class CAMT053FileProcessing():
         a20.text = "VAM"
         document.append(a20)
 
+
         CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\" + \
                                               CAMT053FileProcessing.outputFileName + ".param"
 
@@ -851,12 +858,12 @@ class CAMT053FileProcessing():
             CAMT053FileProcessing.ftpUtils.sendFileToSFTPServer(SERVERIPADDR, FTP_USERID, FTP_PASSWORD,
                                                                 LOCAL_PARAMPATH, INCOMINGFILEPATH + '.param')
 
-        #self.deleteFiles()
+        self.deleteFiles()
 
     def deleteFiles(self):
         CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\"
         shutil.rmtree(CAMT053FileProcessing.paramFilePath)
-        os.makedirs(CAMT053FileProcessing.paramFilePath)
+        #os.makedirs(CAMT053FileProcessing.paramFilePath)
 
 
 camtinput = {

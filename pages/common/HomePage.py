@@ -45,6 +45,7 @@ class HomePage(BasePage):
                                       locatorType="xpath", pollFrequency=1)
         self.elementClick(element=userSettingsElement)
         self.verifySettingtext("lbl_Settings")
+        self.wait_for_page_load(5)
         self.verifySignOutMessage()
 
     def verifyWelcomeMessage(self, loginUser):
@@ -122,6 +123,7 @@ class HomePage(BasePage):
 
     def navigateToRootCustomers(self):
         try:
+            self.wait_for_page_load(5)
             self.elementClick(self.lnkrootCustomer.format(self.navigationMap['RootCustomers']),
                                                locatorType="xpath")
             self.log.info("Successfully navigated to "+self.navigationMap['RootCustomers'])

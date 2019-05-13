@@ -111,8 +111,6 @@ TranAcc6 = copy.deepcopy( TransactionAccount )
 TranAcc6['Name of the account'] = 'TranAcc6'
 TranAcc6['Account number'] = 'NO' + str(random.randint(0, 99999999999999))
 
-print( AggAcc3 )
-
 Accountlistsforposting = {
     "TopAcc1": [
         Shadow
@@ -129,7 +127,6 @@ Accountlistsforposting = {
         TranAcc5
     ]
 }
-
 
 Accountlists = {
     "TopAcc1": [

@@ -49,13 +49,13 @@ class WebDriverFactory():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            chromedriver = "drivers/chromedriver.exe"
+            chromedriver = "/drivers/chromedriver.exe"
             os.environ["webdriver.chrome.driver"] = chromedriver
             driver = webdriver.Chrome(chromedriver)
             driver.set_window_size(1440, 900)
         else:
             # driver = webdriver.Firefox()
-            driver = webdriver.Chrome( executable_path="../drivers/chromedriver.exe" )
+            driver = webdriver.Chrome(executable_path=os.getcwd() + "/drivers/chromedriver.exe")
         # Setting Driver Implicit Time out for An Element
         driver.implicitly_wait(3)
         # Maximize the window

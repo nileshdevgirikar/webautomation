@@ -21,7 +21,7 @@ def oneTimeSetUp(request, browser):
         request.cls.driver = driver
 
     yield driver
-    driver.quit()
+    driver.close()
     print( "Running one time tearDown" )
 
 
