@@ -1,5 +1,6 @@
 import unittest
 import pytest
+from resources import config
 from pages.common.LoginPage import LoginPage
 from pages.common.HomePage import HomePage
 from pages.customer.Customer import Customer

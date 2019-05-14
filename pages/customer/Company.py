@@ -35,28 +35,41 @@ class Company( Customer ):
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )
 
-    def createCustomerHierarchy(self, company, keyvalue):
-        if type( company ) is dict:
-            for key, value in company.items():
-                fill = inputCustomerTest.rootCustomer
-                fill['Name'] = str( key )
-                self.fill_customer_information( fill )
-                self.clickOnAddCustomerButton()
-                time.sleep( 5 )
-                keyvalue = key
-                self.clickOnParentCustomerToAddChild( key )
-                self.createCustomerHierarchy( value, keyvalue )
-        elif type( company ) is str:
-            fill = inputCustomerTest.rootCustomer
-            fill['Name'] = str( company )
-            self.fill_customer_information( fill )
+    def createCustomerHierarchy(self, company):
+        # if type( company ) is dict:
+        #     for key, value in company.items():
+        #         fill = inputCustomerTest.rootCustomer
+        #         fill['Name'] = str( key )
+        #         self.fill_customer_information( fill )
+        #         self.clickOnAddCustomerButton()
+        #         time.sleep( 5 )
+        #         keyvalue = key
+        #         self.clickOnParentCustomerToAddChild( key )
+        #         self.createCustomerHierarchy( value, keyvalue )
+        # elif type( company ) is str:
+        #     fill = inputCustomerTest.rootCustomer
+        #     fill['Name'] = str( company )
+        #     self.fill_customer_information( fill )
+        #     self.clickOnAddCustomerButton()
+        #     time.sleep( 5 )
+        # elif type( company ) is list:
+        #     for item in company:
+        #         print( keyvalue )
+        #         self.clickOnParentCustomerToAddChild( keyvalue )
+        #         self.createCustomerHierarchy( item, keyvalue )
+        # if type(company) is str:
+        #     fill = inputCustomerTest.rootCustomer
+        #     fill['Name'] = str( company )
+        #     self.fill_customer_information( fill )
+        #     self.clickOnAddCustomerButton()
+        #     time.sleep( 5 )
+        # else:
+        for i in range(len(company)):
+            self.clickOnParentCustomerToAddChild(company.loc[i]['Parent'])
+            fill = company.loc[i]
+            self.fill_customer_information(fill)
             self.clickOnAddCustomerButton()
-            time.sleep( 5 )
-        elif type( company ) is list:
-            for item in company:
-                print( keyvalue )
-                self.clickOnParentCustomerToAddChild( keyvalue )
-                self.createCustomerHierarchy( item, keyvalue )
+            time.sleep(5)
 
     def activateCustomer(self, companyName):
         try:

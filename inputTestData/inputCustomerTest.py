@@ -1,3 +1,20 @@
+import pandas as pd
+import os
+import xlrd
+
+from resources import config
+
+# df_cus = pd.read_csv(os.environ.get('myHome') + 'inputTestData/customerheirarchy.csv')
+parentPath = os.environ.get('myHome')
+df_customer = pd.read_excel(open(parentPath + 'inputTestData/customerheirarchy1.xlsx', 'rb'),
+                            sheet_name='customerheirarchy', encoding='utf-8-sig')
+
+df_Singlecustomer = pd.read_excel(open(parentPath + 'inputTestData/customerheirarchy1.xlsx', 'rb'),
+                                  sheet_name='SingleCustomer', encoding='utf-8-sig')
+
+df_accounts = pd.read_excel(open(parentPath + 'inputTestData/Accounts.xlsx', 'rb'),
+                            sheet_name='AccountHeirarchy', encoding='utf-8-sig')
+
 contactPerson = {
     'type': 'Email',
     'Value': 'abc.def@tieto.com',

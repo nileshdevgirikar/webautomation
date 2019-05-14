@@ -16,8 +16,7 @@ from Utilities.util import Util
 from base.TestParams import TestParams
 import os
 class BasePage(SeleniumDriver):
-    print(os.getcwd())
-    resourcePropertyPath = os.getcwd() + "/resources/captionBundle.properties"
+    resourcePropertyPath = os.environ.get('myHome') + "resources/captionBundle.properties"
     navigationMap = TestParams.load_properties(resourcePropertyPath)
     print( navigationMap )
 

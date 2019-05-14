@@ -26,20 +26,36 @@ class TestAccounts( unittest.TestCase ):
         self.camtFile = CAMT053FileProcessing()
 
     @pytest.mark.Smoke
+    # def test_CreateAccountHierarchy(self):
+    #     self.login.loginToApplication(ApplicationConfig.get('UserId'), ApplicationConfig.get('Password'))
+    #     # self.home.verifyWelcomeMessage(ApplicationConfig.get('firstname'))
+    #     self.home.navigateToRootCustomers()
+    #     self.rootCustomer.clickOnAddRootCustomerButton()
+    #     companyList = inputCustomerTest.rootCustomer1
+    #     self.company.createCustomerHierarchy(companyList, keyvalue='')
+    #     self.company.activateCustomer(companyList)
+    #     self.home.navigateToAccounts()
+    #     self.account.clickOnAddRootAccountButton()
+    #     AccountList = inputAccountCashManagementTest.Accountlists
+    #     self.account.createAccount(inputAccountCashManagementTest.TopAcc1)
+    #     self.account.createAccountHierarchy(AccountList)
+    #     self.account.activateAccount(inputAccountCashManagementTest.TopAcc1)
+    #     self.home.userLogout()
+
     def test_CreateAccountHierarchy(self):
         self.login.loginToApplication(ApplicationConfig.get('UserId'), ApplicationConfig.get('Password'))
         # self.home.verifyWelcomeMessage(ApplicationConfig.get('firstname'))
         self.home.navigateToRootCustomers()
         self.rootCustomer.clickOnAddRootCustomerButton()
-        companyList = inputCustomerTest.rootCustomer1
-        self.company.createCustomerHierarchy(companyList, keyvalue='')
-        self.company.activateCustomer(companyList)
+        companyList = inputCustomerTest.df_Singlecustomer
+        self.company.createCustomerHierarchy(companyList)
+        self.company.activateCustomer(companyList.loc[0]['Subentity'])
         self.home.navigateToAccounts()
         self.account.clickOnAddRootAccountButton()
-        AccountList = inputAccountCashManagementTest.Accountlists
-        self.account.createAccount(inputAccountCashManagementTest.TopAcc1)
-        self.account.createAccountHierarchy(AccountList)
-        self.account.activateAccount(inputAccountCashManagementTest.TopAcc1)
+        accountList = inputCustomerTest.df_accounts
+        # self.account.createAccount(inputAccountCashManagementTest.TopAcc1)
+        self.account.createAccountHierarchy(accountList)
+        # self.account.activateAccount(inputAccountCashManagementTest.TopAcc1)
         self.home.userLogout()
 
 

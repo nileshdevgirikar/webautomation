@@ -37,15 +37,15 @@ class TestCustomer( unittest.TestCase ):
         self.home.navigateToRootCustomers()
         self.rootCustomer.clickOnAddRootCustomerButton()
         companyList = inputCustomerTest.rootCustomer1
-        self.company.createCustomerHierarchy( companyList, keyvalue='' )
+        self.company.createCustomerHierarchy(companyList)
         self.company.activateCustomer( companyList )
 
     @pytest.mark.Smoke
     def test_createCustomerHierarchy(self):
         self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
-        self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToRootCustomers()
         self.rootCustomer.clickOnAddRootCustomerButton()
-        companyList = inputCustomerTest.companyList
-        self.company.createCustomerHierarchy( companyList, keyvalue='' )
-        self.company.activateCustomer( str( companyList.keys() )[12:-3] )
+        companyList = inputCustomerTest.df_customer
+        self.company.createCustomerHierarchy(companyList)
+        self.company.activateCustomer(companyList.loc[0]['Subentity'])
