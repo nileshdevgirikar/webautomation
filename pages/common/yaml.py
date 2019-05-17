@@ -1,17 +1,7 @@
-name = "M234onica"
-print( name.isalnum() )
+from datetime import date
 
-name = "00001555"
-print( name.isalnum() )
+today = date.today()
 
-name = "ABCsccc"
-print( name.isalnum() )
-
-name = "12A@CCaa"
-print( name.isalnum() )
-
-name = "TorkveenPål"
-print( name.isalnum() )
-
-name = "M3onicaGell22er "
-print( name.isalnum() )
+print(today)
+my = '-NOK4356676'
+print(my[3:])

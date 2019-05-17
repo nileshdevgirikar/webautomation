@@ -15,6 +15,18 @@ df_Singlecustomer = pd.read_excel(open(parentPath + 'inputTestData/customerheira
 df_accounts = pd.read_excel(open(parentPath + 'inputTestData/Accounts.xlsx', 'rb'),
                             sheet_name='AccountHeirarchy', encoding='utf-8-sig')
 
+df_users = pd.read_excel(open(parentPath + 'inputTestData/Accounts.xlsx', 'rb'),
+                            sheet_name='Users', encoding='utf-8-sig')
+
+df_users.fillna('',inplace=True)
+
+df_Singlecustomer.fillna('',inplace=True)
+
+df_accounts.fillna('',inplace=True)
+
+df_customer.fillna('',inplace=True)
+
+
 contactPerson = {
     'type': 'Email',
     'Value': 'abc.def@tieto.com',

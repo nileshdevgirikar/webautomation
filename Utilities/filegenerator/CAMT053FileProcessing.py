@@ -42,9 +42,9 @@ class CAMT053FileProcessing():
         # CAMT053FileProcessing.path = str(Path.home())
 
         # CAMT053FileProcessing.path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-        CAMT053FileProcessing.path = os.getcwd()  # str(Path.home())
+        CAMT053FileProcessing.path = os.environ.get('myHome')  # str(Path.home())
 
-        CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "\\inputCAMT&PAIN\\"
+        CAMT053FileProcessing.paramFilePath = CAMT053FileProcessing.path + "inputCAMT&PAIN\\"
 
         if not os.path.exists('inputCAMT&PAIN'):
             os.makedirs(CAMT053FileProcessing.paramFilePath)

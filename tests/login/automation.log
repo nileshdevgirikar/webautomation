@@ -1,0 +1,54 @@
+05/15/2019 12:52:12 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+05/15/2019 12:52:12 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+05/15/2019 12:52:13 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+05/15/2019 12:52:13 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+05/15/2019 12:52:13 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+05/15/2019 12:52:13 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+05/15/2019 12:52:13 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+05/15/2019 12:52:14 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+05/15/2019 12:52:14 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+05/15/2019 12:52:15 PM - HomePage - INFO: Element appeared on the web page
+05/15/2019 12:52:16 PM - HomePage - INFO: Clicked on element with locator:  locatorType: id
+05/15/2019 12:52:16 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Settings')] and  locatorType: xpath
+05/15/2019 12:52:16 PM - HomePage - INFO: Getting text on element :: 
+05/15/2019 12:52:16 PM - HomePage - INFO: The text is :: 'Settings'
+05/15/2019 12:52:21 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Sign out')] and  locatorType: xpath
+05/15/2019 12:52:21 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Sign out')] locatorType: xpath
+05/15/2019 12:52:26 PM - HomePage - INFO: Element found with locator: //div[contains(text(),'You have been successfully logged out.')] and  locatorType: xpath
+05/15/2019 12:52:26 PM - HomePage - INFO: Element present with locator: //div[contains(text(),'You have been successfully logged out.')] locatorType: xpath
+05/15/2019 12:52:26 PM - HomePage - INFO: Element found with locator: //div[contains(text(),'You have been successfully logged out.')] and  locatorType: xpath
+05/15/2019 12:52:26 PM - HomePage - INFO: Getting text on element :: 
+05/15/2019 12:52:26 PM - HomePage - INFO: The text is :: 'You have been successfully logged out.'
+05/15/2019 02:26:26 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+05/15/2019 02:26:26 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+05/15/2019 02:26:26 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+05/15/2019 02:26:26 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+05/15/2019 02:26:26 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+05/15/2019 02:26:27 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+05/15/2019 02:26:27 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+05/15/2019 02:26:27 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+05/15/2019 02:26:27 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+05/15/2019 02:26:29 PM - HomePage - INFO: Element appeared on the web page
+05/15/2019 02:26:29 PM - HomePage - INFO: Clicked on element with locator:  locatorType: id
+05/15/2019 02:26:29 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Settings')] and  locatorType: xpath
+05/15/2019 02:26:30 PM - HomePage - INFO: Getting text on element :: 
+05/15/2019 02:26:30 PM - HomePage - INFO: The text is :: 'Settings'
+05/15/2019 02:26:35 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Sign out')] and  locatorType: xpath
+05/15/2019 02:26:35 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Sign out')] locatorType: xpath
+05/15/2019 02:26:40 PM - HomePage - INFO: Element found with locator: //div[contains(text(),'You have been successfully logged out.')] and  locatorType: xpath
+05/15/2019 02:26:40 PM - HomePage - INFO: Element present with locator: //div[contains(text(),'You have been successfully logged out.')] locatorType: xpath
+05/15/2019 02:26:40 PM - HomePage - INFO: Element found with locator: //div[contains(text(),'You have been successfully logged out.')] and  locatorType: xpath
+05/15/2019 02:26:40 PM - HomePage - INFO: Getting text on element :: 
+05/15/2019 02:26:40 PM - HomePage - INFO: The text is :: 'You have been successfully logged out.'
+05/15/2019 02:26:40 PM - Util - INFO: Actual Text From Application Web UI --> :: You have been successfully logged out.
+05/15/2019 02:26:40 PM - Util - INFO: Expected Text From Application Web UI --> :: You have been successfully logged out.
+05/15/2019 02:57:08 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+05/15/2019 02:57:09 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+05/15/2019 02:57:09 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+05/15/2019 02:57:09 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+05/15/2019 02:57:09 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+05/15/2019 02:57:09 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+05/15/2019 02:57:09 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+05/15/2019 02:57:09 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+05/15/2019 02:57:12 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back NBANKUPADTE')] and  locatorType: xpath
+05/15/2019 02:57:12 PM - HomePage - ERROR: Failed to get text on element 

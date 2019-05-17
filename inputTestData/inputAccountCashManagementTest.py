@@ -3,8 +3,8 @@ import copy
 
 AccountDetails = {
     'Owner': '',
-    'Hierarchy offering': 'Virtual Account Management',
-    'Account type': 'Root Account',
+    'Hierarchy offering': 'Virtual Account Cash Management Hierarchy',
+    'Account type': 'External Account',
     'Currency': '',
     'Name of the account': '',
     'Account number': 'NO' + str( random.randint( 0, 99999999999999 ) ),
@@ -17,8 +17,8 @@ AccountDetails = {
 
 RootAccount = {
     'Owner': '',
-    'Hierarchy offering': 'Virtual Account Management',
-    'Account type': 'Root Account',
+    'Hierarchy offering': 'Virtual Account Cash Management Hierarchy',
+    'Account type': 'External Account',
     'Currency': 'NOK',
     'Name of the account': '',
     'Country': 'NORWAY',
@@ -30,7 +30,7 @@ RootAccount = {
 
 ShadowAccount = {
     'Owner': '',
-    'Account type': 'Shadow Account',
+    'Account type': 'External Shadow',
     'Currency': 'NOK',
     'Name of the account': '',
     'Account number': 'NO' + str(random.randint(0, 99999999999999)),
@@ -43,7 +43,7 @@ ShadowAccount = {
 
 SummaryAccount = {
     'Owner': '',
-    'Account type': 'Summary Account',
+    'Account type': 'Internal Aggregation Account',
     'Currency': 'NOK',
     'Name of the account': '',
     'Account number': '',
@@ -56,7 +56,7 @@ SummaryAccount = {
 
 TransactionAccount = {
     'Owner': '',
-    'Account type': 'Virtual Account',
+    'Account type': 'Virtual Transaction Account',
     'Currency': 'NOK',
     'Name of the account': '',
     'Account number': '',
@@ -201,3 +201,5 @@ camtinput = {
     'ntry_Credit_Amt': 1.00,
     'ntry_Debit_Amt': 20000.00
 }
+
+

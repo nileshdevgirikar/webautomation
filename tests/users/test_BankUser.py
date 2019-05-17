@@ -9,7 +9,7 @@ from pages.accounts.Accounts import Accounts
 from pages.customer.Company import Company
 from pages.users.Users import Users
 from Utilities.teststatus import TestStatus
-from inputTestData import inputUserTest
+from inputTestData import inputCustomerTest
 from resources.config import ApplicationConfig
 import Utilities.custom_logger as cl
 import logging
@@ -31,15 +31,20 @@ class BankUserTest( unittest.TestCase ):
 
     @pytest.mark.smoke
     def test_CreateBankAdminUser_And_ViewUser(self):
-        self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
-        # self.status.mark()
-        self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        self.login.loginToApplication( ApplicationConfig.get('BANKADMIN_USERID' ),
+                                       ApplicationConfig.get( 'BANKADMIN_PASSWORD' ) )
+        #self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToAdmin()
-        self.UsersABO = self.bankUser.createUsers( inputUserTest.updateUsersABO )
+        userList = inputCustomerTest.df_users
+        self.UsersABO = self.bankUser.createUsers(userList.loc[0])
+        print(self.UsersABO)
         self.bankUser.searchUser( self.UsersABO )
         result = self.bankUser.verifyAdminUserDetails( self.UsersABO )
+        self.status.mark( result, "Incorrect Match" )
         self.home.userLogout()
-        self.login.loginToApplication( self.UsersABO.get( 'UserId' ), self.UsersABO.get( 'Password' ) )
-        self.home.verifyWelcomeMessage( self.UsersABO.get( 'firstName' ) )
+        self.login.loginToApplication( self.UsersABO.get( 'User ID' ), self.UsersABO.get( 'Password' ) )
+        result = self.home.verifyWelcomeMessage( self.UsersABO.get( 'First name' ) )
+        self.status.mark(result, "Incorrect Match")
         self.home.userLogout()
-        # self.status.markFinal("test_CreateBankAdminUser_And_ViewUser", result, "Verification is Successful" )
+        self.status.markFinal("test_CreateBankAdminUser_And_ViewUser", result, "Verification is Successful" )
+        print('TTTTTTTT')

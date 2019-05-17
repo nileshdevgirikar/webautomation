@@ -17,7 +17,7 @@ class LoginTest(unittest.TestCase):
     @pytest.mark.Smoke
     def test_login_valid(self):
         self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
-        # pyself.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.userLogout()
 
     @pytest.mark.Regression

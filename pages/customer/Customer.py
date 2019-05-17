@@ -192,7 +192,7 @@ class Customer( RootCustomer ):
         try:
             References = customerReferences['Reference type']
             self.selectvaluefromDropdown(References, self.ddlOptionalRefType, locatorType="xpath")
-            ReferencesNumber = customerReferences['Reference number'] + Util.get_unique_number(8)
+            ReferencesNumber = customerReferences['Reference number'] + Util.get_unique_number(5)
             self.sendKeys(ReferencesNumber, self.txtcustomerReference, locatorType="xpath")
         except Exception as e:
             self.log.error( "Problem occurred while adding Mandatory references. :: " )

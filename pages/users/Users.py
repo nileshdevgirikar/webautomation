@@ -105,23 +105,27 @@ class Users( BasePage ):
     def clickOnAddUserButton(self):
         try:
             self.waitForElement( self.btnAddUser, 4 )
-            self.elementClick( self.btnAddUser.format( self.navigationMap.get( 'AddUser' ) ),
+            # self.elementClick( self.btnAddUser.format( self.navigationMap.get( 'AddUser' ) ),
+            #                    locatorType="xpath" )
+            self.executeJavaScript(self.btnAddUser.format( self.navigationMap.get( 'AddUser' ) ),
                                locatorType="xpath" )
         except Exception as e:
             self.log.error( "Error occurred while click on the Add user button::" )
 
     def fillUsersDetails(self, usersABO):
         try:
-            # UserID = usersABO.get('User ID') + Util.get_unique_number(5)
-            self.wait_for_page_load( 2 )
-            self.sendKeys( usersABO.get( 'UserId' ), self.txtUserId, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'firstName' ), self.txtFirstName, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'lastName' ), self.txtLastName, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'email' ), self.txtEmailId, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'phone' ), self.txtPhone, locatorType="xpath" )
-            self.selectvaluefromDropdown( usersABO.get( 'profile' ), self.ddlProfile, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'Password' ), self.txtPassword, locatorType="xpath" )
-            self.sendKeys( usersABO.get( 'repeatPassword' ), self.txtRepeatPassword, locatorType="xpath" )
+            usersABO['User ID'] = usersABO['User ID'] + Util.get_unique_number(7)
+            #UserID = usersABO['User ID'] + Util.get_unique_number(7)
+            self.wait_for_page_load(2)
+            self.sendKeys( usersABO['User ID'], self.txtUserId, locatorType="xpath" )
+            self.sendKeys( usersABO['First name'], self.txtFirstName, locatorType="xpath" )
+            self.sendKeys( usersABO['Last name' ], self.txtLastName, locatorType="xpath" )
+            self.sendKeys( usersABO['Email'], self.txtEmailId, locatorType="xpath" )
+            self.sendKeys( int(usersABO.get('Phone')) , self.txtPhone, locatorType="xpath" )
+            #profile = usersABO.get('PROFILE')
+            self.selectvaluefromDropdown( usersABO.get('PROFILE'), self.ddlProfile, locatorType="xpath" )
+            self.sendKeys( usersABO['Password'], self.txtPassword, locatorType="xpath" )
+            self.sendKeys( usersABO['Repeat password' ], self.txtRepeatPassword, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Exception occurred while entering User's Details::" )
         return usersABO
@@ -137,17 +141,20 @@ class Users( BasePage ):
     def searchUser(self, usersABO):
         try:
             self.wait_for_page_load( 7 )
-            self.sendKeysAndEnter( usersABO.get( 'UserId' ), self.txtSearchUser, locatorType="xpath" )
+            self.sendKeysAndEnter( usersABO.get( 'User ID' ), self.txtSearchUser, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Exception occurred while doing search users ::" )
 
     def verifyAdminUserDetails(self, usersABO):
+        result = False
         try:
             self.clickOnViewUser()
-            self.verifyUserDetails( usersABO )
+            result = self.verifyUserDetails( usersABO )
             self.closeUserDetailPage()
         except Exception as e:
+            result = False
             self.log.error( "Exception occurred while doing search users ::" )
+        return result
 
     def clickOnViewUser(self):
         try:
@@ -161,47 +168,50 @@ class Users( BasePage ):
     def verifyUserDetails(self, usersABO):
         result = False
         try:
-            # self.status.mark( result, "Title Verified" )
             self.wait_for_page_load( 5 )
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'UserID' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'UserId'))
-            self.status.mark( result, "Title Verified" )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'User ID'))
+            self.status.mark( result, "Incorrect match" )
             # assert result == True
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'FirstName' )),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'firstName' ) )
-            self.status.mark( result, "Title Verified" )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'First name' ) )
+            self.status.mark( result, "Incorrect match" )
             # assert result == True
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'LastName' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'lastName' ) )
-            self.status.mark( result, "Title Verified" )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'Last name' ) )
+            self.status.mark( result, "Incorrect match" )
             # assert result == True
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'Email' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'email' ) )
-            self.status.mark( result, "Title Verified" )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'Email' ) )
+            self.status.mark( result, "Incorrect match" )
             # assert result == True
             actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'Phone' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'phone' ) )
+            result = self.util.verifyTextMatch( actualText, str(usersABO.get( 'Phone' )))
+            self.status.mark(result, "Incorrect match")
             # assert result == True
             actualText = self.getText( self.lblStatus.format( self.navigationMap.get( 'UserStatus' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'userStatus' ) )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'User status' ) )
+            self.status.mark(result, "Incorrect match")
             # assert result == True
             actualText = self.getText( self.lblAccessRights.format( self.navigationMap.get( 'BankId' ) ),
                                        locatorType="xpath" )
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'BANKID' ) )
+            self.status.mark(result, "Incorrect match")
             # assert result == True
             actualText = self.getText( self.lblAccessRights.format( self.navigationMap.get( 'Profile' ) ),
                                        locatorType="xpath" )
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'profile' ) )
+            result = self.util.verifyTextMatch( actualText, usersABO.get( 'PROFILE' ) )
+            self.status.mark(result, "Incorrect match")
             # assert result == False
             self.status.markFinal( "verifyUserDetails", result, "Verification is Successful" )
         except Exception as e:
-            assert True == False
+            result = False
             self.log.error( "Exception occurred while verifying user details ::" )
         return result
 

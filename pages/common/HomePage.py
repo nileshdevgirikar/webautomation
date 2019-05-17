@@ -49,12 +49,17 @@ class HomePage(BasePage):
         self.verifySignOutMessage()
 
     def verifyWelcomeMessage(self, loginUser):
-        # ExpectedText = self.navigationMap['AdminWelcomeMessage']
-        expectedText = self.navigationMap['WelcomeMsg'] + ' ' + loginUser
-        actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ), locatorType="xpath" )
-        self.wait_for_page_load( 10)
-        # result = self.isElementDisplayed(self.ctlWelcomeMessage.format(expectedText),locatorType="xpath")
-        self.util.verifyTextMatch( actualText, expectedText)
+        result = False
+        try:
+            # ExpectedText = self.navigationMap['AdminWelcomeMessage']
+            expectedText = self.navigationMap['WelcomeMsg'] + ' ' + loginUser
+            actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ), locatorType="xpath" )
+            self.wait_for_page_load(5)
+            # result = self.isElementDisplayed(self.ctlWelcomeMessage.format(expectedText),locatorType="xpath")
+            result = self.util.verifyTextMatch( actualText, expectedText)
+        except Exception as e:
+            self.log.error( "Exception occurred while verifying Welcome message ::" )
+        return result
 
     def verifyDashboardlink(self, linkText):
         ExpectedText = self.navigationMap[linkText]
@@ -114,7 +119,7 @@ class HomePage(BasePage):
         expectedText = self.navigationMap['LogOutMessage']
         self.elementClick( locator=self.lnksign_out.format( self.navigationMap['lbl_SignOut'] ),
                            locatorType="xpath" )
-        self.wait_for_page_load( 7 )
+        self.wait_for_page_load(5)
         result = self.isElementPresent( self.ctlWelcomeMessage.format( self.navigationMap['LogOutMessage'] ),
                                         locatorType="xpath" )
         actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ),
@@ -146,3 +151,5 @@ class HomePage(BasePage):
             self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )
         except:
             self.log.info( "Error while navigating to" + self.navigationMap['Accounts'])
+
+
