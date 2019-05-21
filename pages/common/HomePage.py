@@ -152,4 +152,11 @@ class HomePage(BasePage):
         except:
             self.log.info( "Error while navigating to" + self.navigationMap['Accounts'])
 
-
+    def navigateToReports(self):
+        try:
+            self.waitForElement(self.lnkreports)
+            self.elementClick(self.lnkreports.format(self.navigationMap['Reports']),
+                              locatorType="xpath")
+            self.log.info("Successfully navigated to " + self.navigationMap['Reports'])
+        except:
+            self.log.info("Error while navigating to" + self.navigationMap['Reports'])

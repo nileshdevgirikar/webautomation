@@ -19,7 +19,8 @@ class Accounts(BasePage):
     btnAddSuccessAccount = "//button[@class='btn btn-lg btn-success']"
 
     # Select boxes
-    ddlAccountType = "//span[@class='ng-arrow']"
+    # ddlAccountType = "//span[@class='ng-arrow-wrapper']"
+    ddlAccountType = "//div[@class='ng-input ng-star-inserted']//input"
     ddlAccountSubType = "//div[@class='ng-option ng-star-inserted marked']" \
                         "//span[@class='ng-option-label ng-star-inserted'][contains(text(),'{0}')]"
     # "//div[span[h6[contains(text(),'{0}')]]]/following-sibling::div[@class='ng-option ng-star-inserted']/span[text()='{0}']"
@@ -45,22 +46,24 @@ class Accounts(BasePage):
     addChildCustomer = "//span[text()[normalize-space() = '{0}']]/ancestor::li//app-icon[@iconclass='icon-sm']"
 
     arrow = "//*[@class='icon icon-chevron-left icon-lg']"
+
     folder = "//*[@class='icon icon-folder']"
+    #folder = "//*[@class='icon icon-column-browsing']"
 
     btnSendForActivation = "//button[@class='btn btn-primary']"
     btnSend = "//button[@class='btn btn-lg btn-success']"
 
     def clickOnAddRootAccountButton(self):
         try:
-            self.waitForElement(self.btnAddRootAccount,4)
+            self.wait_for_page_load(2)
             self.executeJavaScript(self.btnAddRootAccount, locatorType="xpath")
-            #self.elementClick( self.btnAddRootAccount, locatorType="xpath" )
+            self.wait_for_page_load(4)
         except Exception as e:
             self.log.error( "Unable to click add root account button :: " )
 
     def selectAccountType(self,Account):
         try:
-            self.waitForElement( self.ddlAccountType )
+            #self.waitForElement( self.ddlAccountType )
             self.elementClick( self.ddlAccountType, locatorType="xpath" )
             self.waitForElement(self.ddlRootAccountType)
             self.elementClick( self.ddlRootAccountType.format(Account), locatorType="xpath" )
@@ -131,7 +134,7 @@ class Accounts(BasePage):
 
     def clickOnParentAccountToAddChild(self, parent):
         try:
-            self.wait_for_page_load(5)
+            self.wait_for_page_load(3)
             self.elementClick(self.folder, locatorType="xpath" )
             self.elementClick(self.lnkCustomerName.format(parent),
                                locatorType="xpath" )
@@ -156,7 +159,7 @@ class Accounts(BasePage):
             #             count -= 1
             # self.wait_for_page_load(4)
 
-            #Below code is for Excel sheet
+            #Below code is for real data from Excel sheet
             for i in range(len(Accountlists)):
                 if Accountlists.loc[i]['Parent'] != '':
                     self.clickOnParentAccountToAddChild(Accountlists.loc[i]['Parent'])

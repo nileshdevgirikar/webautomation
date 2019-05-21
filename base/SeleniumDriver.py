@@ -289,19 +289,20 @@ class SeleniumDriver():
                           " locatorType: " + locatorType)
             print_stack()
 
-    def iselementSelected(self, locator, byType):
+    def iselementSelected(self, locator, locatorType=""):
         """
         Check if element is present
         """
         try:
-            elementList = self.driver.find_element(byType, locator)
-            if len(elementList) > 0:
-                self.log.info("Element present with locator: " + locator +
-                              " locatorType: " + str(byType))
+            element = self.driver.find_element_by_xpath(locator)
+            flag = element.is_selected()
+            if flag == True:
+                self.log.info("Element is selected with locator: " + locator +
+                              " locatorType: ")
                 return True
             else:
-                self.log.info("Element not present with locator: " + locator +
-                              " locatorType: " + str(byType))
+                self.log.info("Element not selected with locator: " + locator +
+                              " locatorType: ")
                 return False
         except:
             self.log.info("Element not found")
