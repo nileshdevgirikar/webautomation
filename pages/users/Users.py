@@ -105,10 +105,10 @@ class Users( BasePage ):
     def clickOnAddUserButton(self):
         try:
             self.waitForElement( self.btnAddUser, 4 )
-            # self.elementClick( self.btnAddUser.format( self.navigationMap.get( 'AddUser' ) ),
+            # self.elementClick( self.btnAddUser.format( self.labelsOnUI.get( 'AddUser' ) ),
             #                    locatorType="xpath" )
-            self.executeJavaScript(self.btnAddUser.format( self.navigationMap.get( 'AddUser' ) ),
-                               locatorType="xpath" )
+            self.executeJavaScript(self.btnAddUser.format(self.labelsOnUI.get('AddUser')),
+                                   locatorType="xpath")
         except Exception as e:
             self.log.error( "Error occurred while click on the Add user button::" )
 
@@ -133,8 +133,8 @@ class Users( BasePage ):
     def clickOnAddOrSaveButton(self):
         try:
             # self.waitForElement(self.ddlAccountType )
-            self.elementClick( self.btnAddSaveUser.format( self.navigationMap['AddUser'] ),
-                               locatorType="xpath" )
+            self.elementClick(self.btnAddSaveUser.format(self.labelsOnUI['AddUser']),
+                              locatorType="xpath")
         except Exception as e:
             self.log.error( "Error occurred while click on the Add user button of Add user screen::" )
 
@@ -159,8 +159,8 @@ class Users( BasePage ):
     def clickOnViewUser(self):
         try:
             self.wait_for_page_load( 4 )
-            # self.waitForElement(self.LnkViewEditDelete.format( self.navigationMap.get( 'View' )),4,2)
-            self.elementClick( self.LnkViewEditDelete.format( self.navigationMap.get( 'View' ) ),
+            # self.waitForElement(self.LnkViewEditDelete.format( self.labelsOnUI.get( 'View' )),4,2)
+            self.elementClick(self.LnkViewEditDelete.format(self.labelsOnUI.get('View')),
                                locatorType="xpath" )
         except Exception as e:
             self.log.error( "Exception occurred in clickOnViewUser ::" )
@@ -169,43 +169,43 @@ class Users( BasePage ):
         result = False
         try:
             self.wait_for_page_load( 5 )
-            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'UserID' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('UserID')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'User ID'))
             self.status.mark( result, "Incorrect match" )
             # assert result == True
-            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'FirstName' )),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('FirstName')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'First name' ) )
             self.status.mark( result, "Incorrect match" )
             # assert result == True
-            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'LastName' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('LastName')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'Last name' ) )
             self.status.mark( result, "Incorrect match" )
             # assert result == True
-            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'Email' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('Email')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'Email' ) )
             self.status.mark( result, "Incorrect match" )
             # assert result == True
-            actualText = self.getText( self.lblUserDetails.format( self.navigationMap.get( 'Phone' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('Phone')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, str(usersABO.get( 'Phone' )))
             self.status.mark(result, "Incorrect match")
             # assert result == True
-            actualText = self.getText( self.lblStatus.format( self.navigationMap.get( 'UserStatus' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblStatus.format(self.labelsOnUI.get('UserStatus')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'User status' ) )
             self.status.mark(result, "Incorrect match")
             # assert result == True
-            actualText = self.getText( self.lblAccessRights.format( self.navigationMap.get( 'BankId' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblAccessRights.format(self.labelsOnUI.get('BankId')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'BANKID' ) )
             self.status.mark(result, "Incorrect match")
             # assert result == True
-            actualText = self.getText( self.lblAccessRights.format( self.navigationMap.get( 'Profile' ) ),
-                                       locatorType="xpath" )
+            actualText = self.getText(self.lblAccessRights.format(self.labelsOnUI.get('Profile')),
+                                      locatorType="xpath")
             result = self.util.verifyTextMatch( actualText, usersABO.get( 'PROFILE' ) )
             self.status.mark(result, "Incorrect match")
             # assert result == False
@@ -218,7 +218,7 @@ class Users( BasePage ):
     def closeUserDetailPage(self):
         try:
             self.waitForElement( self.btnClose )
-            self.elementClick( self.btnClose.format( self.navigationMap['AddUser'] ),
-                               locatorType="xpath" )
+            self.elementClick(self.btnClose.format(self.labelsOnUI['AddUser']),
+                              locatorType="xpath")
         except Exception as e:
             self.log.error( "Exception occurred while doing search users ::" )

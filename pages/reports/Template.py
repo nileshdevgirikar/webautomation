@@ -5,6 +5,7 @@ from base.TestParams import TestParams
 from inputTestData import inputAccountCashManagementTest
 from Utilities.util import Util
 from datetime import date
+from Utilities.teststatus import TestStatus
 
 
 class Template(BasePage):
@@ -13,6 +14,7 @@ class Template(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
+        self.status = TestStatus(self.driver)
 
     lnktemplate = "//span[contains(text(),'{0}')]"
     templateName = "//div[@class='form-group col-6 pl-0']//input[@formcontrolname='name']"
@@ -35,21 +37,21 @@ class Template(BasePage):
     ddlView = "//select[@formcontrolname='reportView']"
 
     # link
-    lnkButtons = "//tr//td[text()[normalize-space() = '%s']]/following-sibling::td//span//a[text()[normalize-space() = '%s']]"
-    lnkMsg = "//div[contains(text(),'%s')]"
+    lnkButtons = "//tr//td[text()[normalize-space() = '{0}']]/following-sibling::td//span//a[text()[normalize-space() = '{0}']]"
+    lnkMsg = "//div[contains(text(),'{0}')]"
 
     # button
     btnButton = "//button[@class='btn btn-danger ng-star-inserted']"
-    lbltemplateViewDetailsPage = "//div[@class='modal-body']//label[text()[normalize-space() = '%s']]/following-sibling::p"
+    lbltemplateViewDetailsPage = "//div[@class='modal-body']//label[text()[normalize-space() = '{0}']]/following-sibling::p"
     btnClose = "//button[@class='btn btn-lg btn-secondary']"
     iconCross = "//button[@class='close']", "Cross Icon"
     templateNameInTableList = "//div[@class='scrollable-content']/table//tbody//tr//td[1]"
-    transactionTypeAll = "//select[@formcontrolname='transactionType']//option[@value='%s']"
-    deletePopUpTitle = "//div[@class='modal-header align-items-start']//h3['%s'] | //div[@class='modal-header align-items-start']//p['%s']"
-    msgOnDeletePopUp = "//div[@class='modal-body pb-3']//div[text()[normalize-space()='%s']]"
+    transactionTypeAll = "//select[@formcontrolname='transactionType']//option[@value='{0}']"
+    deletePopUpTitle = "//div[@class='modal-header align-items-start']//h3['{0}] | //div[@class='modal-header align-items-start']//p['{0}']"
+    msgOnDeletePopUp = "//div[@class='modal-body pb-3']//div[text()[normalize-space()='{0}']]"
     titleOfEditPopUp = "//div[@class='modal-header']//h3[@class='modal-title'][text()[normalize-space()='Edit Report Template']] | //div[@class='modal-header']//p[text()[normalize-space()='%s']]"
     closeIconOnSelectedCurrency = "//a[@class='close'] | //span[@class='ng-clear-wrapper ng-star-inserted']"
-    btnCancelOnDeleteTemplatePopup = "//button[text()[normalize-space()='%s']]"
+    btnCancelOnDeleteTemplatePopup = "//button[text()[normalize-space()='{0}']]"
 
     # Check box
     chkBoxIncludeCurrencyAccounts = "//input[@id='includeCurrency']/following-sibling::label"
@@ -60,49 +62,57 @@ class Template(BasePage):
     def navigateToTemplate(self):
         try:
             self.waitForElement(self.lnktemplate)
-            self.elementClick(self.lnktemplate.format(self.navigationMap['Template']),
+            self.elementClick(self.lnktemplate.format(self.labelsOnUI['Template']),
                               locatorType="xpath")
-            self.log.info("Successfully navigated to " + self.navigationMap['Template'])
+            self.log.info("Successfully navigated to " + self.labelsOnUI['Template'])
         except:
-            self.log.info("Error while navigating to" + self.navigationMap['Template'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['Template'])
 
-    def createReportTemplate(self, templateinfo):
+    def clickOnCloseButton(self):
         try:
-            for i in range(len(templateinfo)):
-                self.fill_template_details(templateinfo, i)
-                self.selectOptionalFields(templateinfo, i)
-                self.clickOnSaveButton()
+            self.executeJavaScript(self.btnClose, locatorType="xpath")
+        except Exception as e:
+            self.log.error("Unable to click on button :: ")
+
+    def createReportTemplate(self, templateinfo, i):
+        try:
+            self.fill_template_details(templateinfo, i)
+            self.selectOptionalFields(templateinfo, i)
+            self.clickOnSaveButton()
             self.log.info("Successfully create report template::")
         except:
             self.log.info("Error while creating report template::")
 
     def fill_template_details(self, templateinfo, i):
         try:
-            ReportType = templateinfo.loc[i].get('Report Type')
+            ReportType = templateinfo.loc[i].get(self.labelsOnUI.get('lbl_templateReportType'))
 
             flag = self.iselementSelected(self.templateType.format(ReportType), locatorType="xpath")
             if flag == False:
                 self.elementClick(self.templateType.format(ReportType), locatorType="xpath")
 
-            templateinfo['Template Name'][i] = templateinfo['Template Name'][i] + Util.get_unique_number(14)
-            self.sendKeys(templateinfo['Template Name'][i], self.templateName, locatorType="xpath")
+            templateinfo[self.labelsOnUI['lbl_templateName']][i] = templateinfo[self.labelsOnUI['lbl_templateName']][i] \
+                                                                   + Util.get_unique_number(14)
+            self.sendKeys(templateinfo[self.labelsOnUI.get('lbl_templateName')][i],
+                          self.templateName, locatorType="xpath")
 
-            access = templateinfo.loc[i].get('Access')
+            access = templateinfo.loc[i].get(self.labelsOnUI.get('lbl_templateAccess'))
             self.elementClick(self.templateAccess.format(access), locatorType="xpath")
 
             self.selectCurrency(templateinfo, i)
 
             if ReportType == 'Balance':
-                self.selectvaluefromDropdown(templateinfo['View'][i], self.ddlView, locatorType="xpath")
+                self.selectvaluefromDropdown(templateinfo[self.labelsOnUI['lbl_templateView']][i],
+                                             self.ddlView, locatorType="xpath")
                 self.elementClick(self.chkBoxIncludeCurrencyAccounts, locatorType="xpath")
             else:
                 self.setFromAndToAmount(templateinfo, i)
-                self.selectvaluefromDropdown(templateinfo['Account type'][i], self.templateAccountType,
-                                             locatorType="xpath")
-                self.selectvaluefromDropdown(templateinfo['Transaction Type'][i],
+                self.selectvaluefromDropdown(templateinfo[self.labelsOnUI['lbl_templateAccountType']][i],
+                                             self.templateAccountType, locatorType="xpath")
+                self.selectvaluefromDropdown(templateinfo[self.labelsOnUI['lbl_templateTransactionType']][i],
                                              self.templateTranscationType, locatorType="xpath")
 
-            self.elementClick(self.templatePeriod.format(templateinfo['Period'][i]),
+            self.elementClick(self.templatePeriod.format(templateinfo[self.labelsOnUI['lbl_templatePeriod']][i]),
                               locatorType="xpath")
             self.log.info("Successfully filled template details::")
         except:
@@ -111,8 +121,8 @@ class Template(BasePage):
     def selectCurrency(self, templateinfo, i):
         try:
             self.elementClick(self.ddlTemplateCurrencyBox, locatorType="xpath")
-            # self.selectvaluefromDropdown(currency, self.ddlTemplateCurrency, locatorType="xpath")
-            self.sendKeys(templateinfo['Currencies'][i], self.ddlTemplateCurrencyBox, locatorType="xpath")
+            self.sendKeys(templateinfo[self.labelsOnUI['lbl_templateCurrency']][i],
+                          self.ddlTemplateCurrencyBox, locatorType="xpath")
             self.elementClick(self.ddlTemplateCurrency, locatorType="xpath")
             self.log.info("Successfully select currency details::")
         except:
@@ -120,7 +130,7 @@ class Template(BasePage):
 
     def setFromAndToAmount(self, templateinfo, i):
         try:
-            amount = templateinfo['Amount Range'][i].split("|")
+            amount = templateinfo[self.labelsOnUI['lbl_templateAmountRange']][i].split(" - ")
             self.sendKeys(amount[0], self.templateFromAmountRange, locatorType="xpath")
             self.sendKeys(amount[1], self.templateToAmountRange, locatorType="xpath")
             self.log.info("Successfully filled amount details::")
@@ -129,9 +139,9 @@ class Template(BasePage):
 
     def selectOptionalFields(self, templateinfo, i):
         try:
-            Optionalfields = templateinfo['Optional fields'][i].split("|")
-            for count in range(len(Optionalfields)):
-                self.elementClick(self.templateOptionalFields.format(Optionalfields[count]),
+            optionalfields = templateinfo[self.labelsOnUI['lbl_optionalFields']][i].split("|")
+            for count in range(len(optionalfields)):
+                self.elementClick(self.templateOptionalFields.format(optionalfields[count]),
                                   locatorType="xpath")
             self.log.info("Successfully filled Optional fields details::")
         except:
@@ -144,3 +154,79 @@ class Template(BasePage):
             self.log.info("Successfully clicked on Save button::")
         except:
             self.log.info("Error while clicking on Save button::")
+
+    def verify(self, lbltemplateViewDetailsPage, expectedResult):
+        result = False
+        try:
+            actualText = self.getText(lbltemplateViewDetailsPage, locatorType="xpath")
+            result = self.util.verifyTextMatch(actualText, expectedResult)
+            self.log.info("Successfully verify detail of::" + expectedResult)
+        except:
+            self.log.info("Error in verifying detail of::" + expectedResult)
+        return result
+
+    def verifyReportDetails(self, templateinfo, i):
+        result = False
+        try:
+            self.wait_for_page_load(3)
+            Optionalfields = templateinfo[self.labelsOnUI['lbl_optionalFields']][i].split("|")
+
+            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateName']),
+                                 templateinfo[self.labelsOnUI['lbl_templateName']][i])
+            self.status.mark(result, "Incorrect match")
+
+            if templateinfo[self.labelsOnUI.get('lbl_templateCurrency')][i] == 'Select All':
+                result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateCurrency']),
+                                     'XXX')
+            else:
+                result = self.verify(
+                    self.lbltemplateViewDetailsPage.format(self.labelsOnUI.get('lbl_templateCurrency')),
+                    templateinfo[self.labelsOnUI['lbl_templateCurrency']][i])
+            self.status.mark(result, "Incorrect match")
+
+            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI.get('lbl_templateReportType')),
+                                 templateinfo[self.labelsOnUI['lbl_templateReportType']][i])
+            self.status.mark(result, "Incorrect match")
+
+            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templatePrivacy']),
+                                 templateinfo[self.labelsOnUI['lbl_templateAccess']][i])
+            self.status.mark(result, "Incorrect match")
+
+            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateTransactionType']),
+                                 templateinfo[self.labelsOnUI['lbl_templateTransactionType']][i])
+            self.status.mark(result, "Incorrect match")
+
+            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templatePeriod']),
+                                 templateinfo[self.labelsOnUI['lbl_templatePeriod']][i])
+            self.status.mark(result, "Incorrect match")
+
+            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateAmountRange']),
+                                 templateinfo[self.labelsOnUI['lbl_templateAmountRange']][i])
+            self.status.mark(result, "Incorrect match")
+
+            result = self.verifyOptionFields(templateinfo, i)
+            self.status.mark(result, "Incorrect match")
+
+            self.log.info("Successfully filled Optional fields details::")
+        except:
+            self.log.info("Error while filling Optional fields details::")
+
+    def verifyOptionFields(self, templateinfo, i):
+        result = False
+        try:
+            optionalFieldValues = self.getText(self.lbltemplateViewDetailsPage.
+                                               format(self.labelsOnUI['lbl_optionalFields1']),
+                                               locatorType="xpath")
+            actualListOfOptionalFieldsOnUI = optionalFieldValues.split(",")
+            actualListOfOptionalFieldsOnUI = [items.strip() for items in actualListOfOptionalFieldsOnUI]
+            expectedListOfOptionalfields = templateinfo[self.labelsOnUI['lbl_optionalFields']][i].split("|")
+            actualListOfOptionalFieldsOnUI.sort()
+            expectedListOfOptionalfields.sort()
+            if actualListOfOptionalFieldsOnUI == expectedListOfOptionalfields:
+                result = True
+            else:
+                result = False
+            self.log.info("Successfully verify Optional fields details ::")
+        except:
+            self.log.info("Error in verifying Optional fields details::")
+        return result

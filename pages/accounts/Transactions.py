@@ -54,11 +54,11 @@ class Transactions(BasePage):
     def navigateToTransactions(self):
         try:
             self.waitForElement( self.lnkTransactions)
-            self.elementClick( self.lnkTransactions.format( self.navigationMap['lnkTransactions']),
-                               locatorType="xpath" )
-            self.log.info( "Successfully navigated to " + self.navigationMap['lnkTransactions'] )
+            self.elementClick(self.lnkTransactions.format(self.labelsOnUI['lnkTransactions']),
+                              locatorType="xpath")
+            self.log.info("Successfully navigated to " + self.labelsOnUI['lnkTransactions'])
         except:
-            self.log.info( "Error while navigating to" + self.navigationMap['lnkTransactions'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['lnkTransactions'])
 
     def verifyTransationsOnUI(self, input, transactionAccount):
         result = False
@@ -81,4 +81,4 @@ class Transactions(BasePage):
                     if today == value:
                         amount = amount + float(self.getText(self.cell_TrnAmt.format(i)[3:]))
         except:
-            self.log.info( "Error while navigating to" + self.navigationMap['lnkTransactions'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['lnkTransactions'])

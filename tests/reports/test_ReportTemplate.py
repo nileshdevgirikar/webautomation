@@ -38,9 +38,6 @@ class ReportsTest(unittest.TestCase):
         # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToReports()
         self.template.navigateToTemplate()
-        # self.reports.clickOnButton()
-        templateinfo = inputCustomerTest.df_Template
-        # self.template.createReportTemplate(templateinfo)
-        self.reports.setAccessFilter(templateinfo)
+        self.reports.create_search_verifyReport(inputCustomerTest.df_Template)
         self.home.userLogout()
         print('TTTTTTTT')

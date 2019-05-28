@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35fb63c5-57f1-495e-8540-54a84c766def" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/reports/Reports.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/reports/Template.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/reports/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/reports/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/reports/test_ReportTemplate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/BasePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/BasePage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/SeleniumDriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/SeleniumDriver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inputTestData/Accounts.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/inputTestData/Accounts.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputTestData/inputCustomerTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/inputTestData/inputCustomerTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/accounts/Accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/accounts/Accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/accounts/Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/accounts/Transactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/common/HomePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/common/HomePage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/common/yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/common/yaml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/accounts/automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/tests/accounts/automation.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/customer/Customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/customer/Customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/customer/RootCustomer.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/customer/RootCustomer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/reports/Reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reports/Reports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/reports/Template.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reports/Template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/users/Users.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/users/Users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/captionBundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/captionBundle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/reports/test_ReportTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/reports/test_ReportTemplate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,76 +28,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/users/test_BankUser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/accounts/test_Accounts.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/accounts/Accounts.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/reports/Template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="155">
+              <caret line="208" selection-start-line="208" selection-end-line="208" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/reports/test_ReportTemplate.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/reports/Reports.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -106,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/SeleniumDriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="106">
+              <caret line="110" column="8" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -116,10 +52,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/common/HomePage.py">
+        <entry file="file://$PROJECT_DIR$/base/BasePage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2618">
-              <caret line="159" selection-start-line="159" selection-end-line="159" />
+            <state relative-caret-position="178">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/captionBundle.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="527" column="34" selection-start-line="527" selection-start-column="23" selection-end-line="527" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/users/test_BankUser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/users/Users.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="172" column="39" selection-start-line="172" selection-start-column="39" selection-end-line="172" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/reports/Reports.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,6 +107,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/reports/test_ReportTemplate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,26 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>btn_Add_Customer</find>
-      <find>btnAddCustomer</find>
-      <find>Accounts</find>
-      <find>ddlSectorClassification</find>
-      <find>addChildToParentCustomer</find>
-      <find>loginpage</find>
-      <find>arrow</find>
-      <find>LnkViewEditDelete</find>
-      <find>UserStatus</find>
-      <find>BankId</find>
-      <find>Close</find>
-      <find>close</find>
-      <find>WelcomeMsg</find>
-      <find>Sign</find>
-      <find>UserID</find>
-      <find>View</find>
-      <find>waitForElementVisible</find>
-      <find>EndToEndId</find>
-      <find>outputFileFullName</find>
-      <find>random</find>
       <find>lnkrootCustomer</find>
       <find>linkText</find>
       <find>AddUser</find>
@@ -174,7 +144,34 @@
       <find>New Te</find>
       <find>Account name</find>
       <find>Account Owner customer ID</find>
+      <find>webS</find>
+      <find>lbl_templateName</find>
+      <find>lbl_templateReportType</find>
+      <find>lbl_templateAccountType</find>
+      <find>navigationMap</find>
+      <find>Template Name</find>
+      <find>Optional fields</find>
+      <find>Amount Range</find>
+      <find>Currencies</find>
+      <find>View</find>
+      <find>Acess</find>
+      <find>access</find>
+      <find>Currency</find>
+      <find>Account type</find>
+      <find>Account</find>
+      <find>Template</find>
+      <find>lbl_templateAccess</find>
+      <find>lbl_optionalFields</find>
+      <find>btnClose</find>
+      <find>Report Type</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>labelsOnUI</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\workspace\webautomation</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -213,7 +210,6 @@
         <option value="$PROJECT_DIR$/tests/conftest.py" />
         <option value="$PROJECT_DIR$/base/TestParams.py" />
         <option value="$PROJECT_DIR$/pages/common/LoginPage.py" />
-        <option value="$PROJECT_DIR$/resources/captionBundle.properties" />
         <option value="$PROJECT_DIR$/base/WebDriverFactory.py" />
         <option value="$PROJECT_DIR$/base/BasePage.py" />
         <option value="$PROJECT_DIR$/inputTestData/tp.py" />
@@ -236,8 +232,9 @@
         <option value="$PROJECT_DIR$/pages/accounts/Accounts.py" />
         <option value="$PROJECT_DIR$/resources/config.py" />
         <option value="$PROJECT_DIR$/base/SeleniumDriver.py" />
-        <option value="$PROJECT_DIR$/pages/reports/Template.py" />
+        <option value="$PROJECT_DIR$/resources/captionBundle.properties" />
         <option value="$PROJECT_DIR$/tests/reports/test_ReportTemplate.py" />
+        <option value="$PROJECT_DIR$/pages/reports/Template.py" />
         <option value="$PROJECT_DIR$/pages/reports/Reports.py" />
       </list>
     </option>
@@ -255,6 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,57 +263,12 @@
             <path>
               <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
               <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="inputTestData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
               <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webautomation" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
+              <item name="screenshots" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webautomation" type="b2602c69:ProjectViewProjectNode" />
@@ -325,7 +278,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -562,38 +514,45 @@
       <option name="project" value="LOCAL" />
       <updated>1557839107611</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="DF Framework - Reports">
+      <created>1558442427575</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558442427576</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 15h 10m 33s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 12h 26m 41s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 15h 27m 44s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 12h 44m 11s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 15h 30m 05s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 15h 55m 38s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 15h 53m 26s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 15h 59m 20s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 15h 54m 51s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 16h 27m 59s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 16h 50m 11s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 16h 56m 42s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 16h 53m 00s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 17h 01m 11s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 16h 56m 10s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 17h 22m 49s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 17h 34m 00s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 17h 38m 54s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.21 at 17h 41m 42s.xml">
+    <history-entry file="pytest_for_test_ReportTemplate_ReportsTest_test_CreateReportTemplate - 2019.05.28 at 17h 55m 03s.xml">
       <configuration name="pytest for test_ReportTemplate.ReportsTest.test_CreateReportTemplate" configurationId="tests" />
     </history-entry>
   </component>
@@ -608,14 +567,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.29411766" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.2281399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5014006" side_tool="true" weight="0.26709062" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24511546" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49920508" visible="true" weight="0.44049734" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41740674" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49920508" visible="true" weight="0.35523978" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
@@ -702,7 +662,8 @@
     <MESSAGE value="XML Document creation - 31/03/2019" />
     <MESSAGE value="SharewithJitender" />
     <MESSAGE value="DF Framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="DF Framework" />
+    <MESSAGE value="DF Framework - Reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="DF Framework - Reports" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -739,11 +700,6 @@
           <option name="timeStamp" value="270" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pages/reports/Template.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="300" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/accounts/test_Accounts.py</url>
           <line>95</line>
           <option name="timeStamp" value="302" />
@@ -754,9 +710,9 @@
           <option name="timeStamp" value="303" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/reports/test_ReportTemplate.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="315" />
+          <url>file://$PROJECT_DIR$/pages/reports/Template.py</url>
+          <line>215</line>
+          <option name="timeStamp" value="342" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -776,13 +732,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Utilities/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1558006393287.png" />
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1558006780646.png" />
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1558007075793.png" />
@@ -823,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="614" selection-start-line="614" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/users/automation.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16037">
@@ -844,16 +786,6 @@
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1558010441413.png" />
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect Match.1558010245045.png" />
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1558010226845.png" />
-    <entry file="file://$PROJECT_DIR$/pages/users/Users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="153" column="30" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python37/Lib/xml/etree/ElementTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -871,25 +803,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/accounts/Transactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/reports/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base/BasePage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/customer/Company.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -908,30 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="2900" selection-start-line="2900" selection-end-line="2900" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="881" selection-start-line="881" selection-end-line="881" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utilities/teststatus.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="e#180#216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/common/yaml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -943,13 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23460">
           <caret line="1382" selection-start-line="1382" selection-end-line="1382" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/captionBundle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8891">
-          <caret line="523" selection-start-line="522" selection-start-column="19" selection-end-line="523" />
         </state>
       </provider>
     </entry>
@@ -1001,20 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/generic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="3048" selection-start-line="3048" selection-end-line="3048" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/users/test_BankUser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/accounts/test_Accounts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
@@ -1035,20 +905,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/reports/Template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1059,6 +919,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Utilities/teststatus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="e#180#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python37/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="633" selection-start-line="633" selection-end-line="633" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/accounts/Transactions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14178">
+          <caret line="881" selection-start-line="881" selection-end-line="881" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50983">
+          <caret line="3048" selection-start-line="3048" selection-end-line="3048" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/users/test_BankUser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/common/LoginPage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1066,30 +974,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/base/BasePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/base/SeleniumDriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="106">
+          <caret line="110" column="8" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="8" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="2926" selection-start-line="2926" selection-end-line="2926" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/users/Users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="172" column="39" selection-start-line="172" selection-start-column="39" selection-end-line="172" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/reports/Template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="208" selection-start-line="208" selection-end-line="208" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/reports/test_ReportTemplate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="159">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1559041008839.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/captionBundle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="527" column="34" selection-start-line="527" selection-start-column="23" selection-end-line="527" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/reports/Reports.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="578">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

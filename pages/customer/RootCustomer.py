@@ -7,7 +7,7 @@ import time
 class RootCustomer(BasePage):
     log = cl.customLogger( logging.DEBUG )
 
-    # navigationMap = TestParams.load_properties("../resources/captionBundle.properties")
+    # labelsOnUI = TestParams.load_properties("../resources/captionBundle.properties")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -38,19 +38,19 @@ class RootCustomer(BasePage):
 
 
     def verifyRootCustomersTitle(self):
-        ExpectedText = self.navigationMap['RootCustomers']
+        ExpectedText = self.labelsOnUI['RootCustomers']
         ActualText = self.getText( self.title.format(ExpectedText), locatorType="xpath")
 
     def verifyAddRootCustomerButtonIsPresent(self):
         try:
-            self.isElementPresent( self.btnAddRootCustomer.format(self.navigationMap['btn_AddRootCustomer']),
-                                   locatorType="xpath")
-            self.log.info( "Element is present :: " + self.navigationMap['btn_AddRootCustomer'] )
+            self.isElementPresent(self.btnAddRootCustomer.format(self.labelsOnUI['btn_AddRootCustomer']),
+                                  locatorType="xpath")
+            self.log.info("Element is present :: " + self.labelsOnUI['btn_AddRootCustomer'])
         except:
-            self.log.info("Error while finding element :: " + self.navigationMap['btn_AddRootCustomer'])
+            self.log.info("Error while finding element :: " + self.labelsOnUI['btn_AddRootCustomer'])
 
     def verifyRootCustomersStatusLinks(self):
-        statusElements = self.navigationMap['lnk_Diff_status']
+        statusElements = self.labelsOnUI['lnk_Diff_status']
         self.list = []
         self.list = statusElements.split('|')
         for elementText in self.list:
@@ -59,18 +59,18 @@ class RootCustomer(BasePage):
             self.navigateToOthersCustomerTab(elementText.title())
 
     def verifyColumnText(self):
-        self.isElementPresent( self.columnheader.format(self.navigationMap['lbl_tblcolumn_Name'].title() ),
-                               locatorType="xpath" )
-        self.isElementPresent( self.columnheader.format(self.navigationMap['lbl_tblcolumn_CustomerId'].title() ),
-                               locatorType="xpath" )
-        self.isElementPresent( self.columnheader.format(self.navigationMap['lbl_tblcolumn_BankId'].title() ),
-                               locatorType="xpath" )
-        self.isElementPresent( self.columnheader.format(self.navigationMap['lbl_tblcolumn_Status'].title() ),
-                               locatorType="xpath" )
-        self.isElementPresent( self.columnheader.format(self.navigationMap['lbl_tblcolumn_Sector'].title() ),
-                               locatorType="xpath" )
-        self.isElementPresent( self.columnheader.format(self.navigationMap['lbl_tblcolumn_MarketSegment'].title() ),
-                               locatorType="xpath" )
+        self.isElementPresent(self.columnheader.format(self.labelsOnUI['lbl_tblcolumn_Name'].title()),
+                              locatorType="xpath")
+        self.isElementPresent(self.columnheader.format(self.labelsOnUI['lbl_tblcolumn_CustomerId'].title()),
+                              locatorType="xpath")
+        self.isElementPresent(self.columnheader.format(self.labelsOnUI['lbl_tblcolumn_BankId'].title()),
+                              locatorType="xpath")
+        self.isElementPresent(self.columnheader.format(self.labelsOnUI['lbl_tblcolumn_Status'].title()),
+                              locatorType="xpath")
+        self.isElementPresent(self.columnheader.format(self.labelsOnUI['lbl_tblcolumn_Sector'].title()),
+                              locatorType="xpath")
+        self.isElementPresent(self.columnheader.format(self.labelsOnUI['lbl_tblcolumn_MarketSegment'].title()),
+                              locatorType="xpath")
 
     def navigateToOthersCustomerTab(self, tabHeader):
         try:
@@ -81,8 +81,8 @@ class RootCustomer(BasePage):
             self.log.info("Error while navigating to :: " + tabHeader.upper())
 
     def clickOnAddRootCustomerButton(self):
-        self.waitForElement( self.btnAddRootCustomer.format( self.navigationMap['btn_AddRootCustomer'] ), 4 )
-        self.executeJavaScript( self.btnAddRootCustomer.format( self.navigationMap['btn_AddRootCustomer'] ),
+        self.waitForElement(self.btnAddRootCustomer.format(self.labelsOnUI['btn_AddRootCustomer']), 4)
+        self.executeJavaScript(self.btnAddRootCustomer.format(self.labelsOnUI['btn_AddRootCustomer']),
                                    locatorType="xpath")
-        # self.elementClick(self.btnAddRootCustomer.format(self.navigationMap['btn_AddRootCustomer']),
+        # self.elementClick(self.btnAddRootCustomer.format(self.labelsOnUI['btn_AddRootCustomer']),
         #                            locatorType="xpath")

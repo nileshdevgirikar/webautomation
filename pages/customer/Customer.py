@@ -131,7 +131,7 @@ class Customer( RootCustomer ):
             self.set_customer_id(root['Customer Id'])
             self.select_sector_classification(root['Sector classification'])
             self.select_Market_Segment(root['Market Segment'])
-            # if str( root['Customer category'] ) == str( self.navigationMap['lbl_CustCategory_SubEntity'] ):
+            # if str( root['Customer category'] ) == str( self.labelsOnUI['lbl_CustCategory_SubEntity'] ):
             #     self.decide_Whether_Clients_Allowed( root['Clients allowed'] )
             self.fill_address_details(root)
             self.fill_contact_details(root)
@@ -201,12 +201,12 @@ class Customer( RootCustomer ):
         try:
             References = customerReferences['Reference type']
             # for key in References:
-            #     self.elementClick( self.btnAddRef.format( self.navigationMap['btn_AddAnotherReference'] ),
+            #     self.elementClick( self.btnAddRef.format( self.labelsOnUI['btn_AddAnotherReference'] ),
             #                        locatorType="xpath" )
             #     self.selectvaluefromDropdown( key, self.ddlOptionalRefType, locatorType="xpath" )
             #     references_number = References.get( key ) + Util.get_unique_number( 8 )
             #     self.sendKeys( references_number, self.txtOptionalReferenceNumber, locatorType="xpath" )
-            self.elementClick(self.btnAddRef.format(self.navigationMap['btn_AddAnotherReference']),
+            self.elementClick(self.btnAddRef.format(self.labelsOnUI['btn_AddAnotherReference']),
                               locatorType="xpath")
             self.selectvaluefromDropdown(References, self.ddlOptionalRefType, locatorType="xpath")
             # references_number = customerReferences['Reference number'] + Util.get_unique_number( 8 )
@@ -216,8 +216,8 @@ class Customer( RootCustomer ):
 
     def select_customer_category(self, customerCategory):
         try:
-            new = self.navigationMap['lbl_CustCategory_SubEntity']
-            if str( customerCategory ) == str( self.navigationMap['lbl_CustCategory_SubEntity'] ):
+            new = self.labelsOnUI['lbl_CustCategory_SubEntity']
+            if str(customerCategory) == str(self.labelsOnUI['lbl_CustCategory_SubEntity']):
                 self.elementClick( self.rdoSubEntity, locatorType="xpath" )
             else:
                 self.elementClick( self.rdoClient, locatorType="xpath" )
@@ -227,7 +227,7 @@ class Customer( RootCustomer ):
 
     def select_customer_type(self, custType):
         try:
-            if custType == self.navigationMap['lbl_CustCategory_SubEntity']:
+            if custType == self.labelsOnUI['lbl_CustCategory_SubEntity']:
                 self.elementClick( self.rdoCorporate, locatorType="xpath" )
             else:
                 self.elementClick( self.rdoIndividual, locatorType="xpath" )
@@ -273,8 +273,8 @@ class Customer( RootCustomer ):
 
     def clickOnAddCustomerButton(self, ):
         try:
-            self.elementClick( self.btnAddCustomer.format( self.navigationMap['btn_Add_Customer'] ),
-                               locatorType="xpath" )
+            self.elementClick(self.btnAddCustomer.format(self.labelsOnUI['btn_Add_Customer']),
+                              locatorType="xpath")
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )
 

@@ -17,8 +17,8 @@ from base.TestParams import TestParams
 import os
 class BasePage(SeleniumDriver):
     resourcePropertyPath = os.environ.get('myHome') + "resources/captionBundle.properties"
-    navigationMap = TestParams.load_properties(resourcePropertyPath)
-    print( navigationMap )
+    labelsOnUI = TestParams.load_properties(resourcePropertyPath)
+    print(labelsOnUI)
 
     def __init__(self, driver):
         """

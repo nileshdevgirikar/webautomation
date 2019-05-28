@@ -8,7 +8,7 @@ import time
 class HomePage(BasePage):
     log = cl.customLogger(logging.DEBUG)
 
-    # navigationMap = TestParams.load_properties("../resources/captionBundle.properties")
+    # labelsOnUI = TestParams.load_properties("../resources/captionBundle.properties")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -51,8 +51,8 @@ class HomePage(BasePage):
     def verifyWelcomeMessage(self, loginUser):
         result = False
         try:
-            # ExpectedText = self.navigationMap['AdminWelcomeMessage']
-            expectedText = self.navigationMap['WelcomeMsg'] + ' ' + loginUser
+            # ExpectedText = self.labelsOnUI['AdminWelcomeMessage']
+            expectedText = self.labelsOnUI['WelcomeMsg'] + ' ' + loginUser
             actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ), locatorType="xpath" )
             self.wait_for_page_load(5)
             # result = self.isElementDisplayed(self.ctlWelcomeMessage.format(expectedText),locatorType="xpath")
@@ -62,66 +62,66 @@ class HomePage(BasePage):
         return result
 
     def verifyDashboardlink(self, linkText):
-        ExpectedText = self.navigationMap[linkText]
+        ExpectedText = self.labelsOnUI[linkText]
         #self.waitForElement(self.lnkdashboard.format(ExpectedDashboardtext), locatorType="xpath")
         ActualText = self.getText(self.lnkdashboard.format(ExpectedText),locatorType="xpath")
 
     def verifyRootCustomerslink(self, linkText):
-        ExpectedText = self.navigationMap[linkText]
+        ExpectedText = self.labelsOnUI[linkText]
         ActualText = self.getText(self.lnkrootCustomer.format(ExpectedText),
                                                locatorType="xpath")
 
     def verifyReportslink(self, linkText):
-        ExpectedText = self.navigationMap[linkText]
+        ExpectedText = self.labelsOnUI[linkText]
         ActualText = self.getText(self.lnkreports.format(ExpectedText),
                                                locatorType="xpath")
 
     def verifyAdminlink(self, linkText):
-        ExpectedText = self.navigationMap[linkText]
+        ExpectedText = self.labelsOnUI[linkText]
         ActualText = self.getText(self.lnkadmin.format(ExpectedText),
                                                locatorType="xpath")
 
     def verifyTextInSearchBox(self, linkText):
-        Expectedtext = self.navigationMap[linkText]
+        Expectedtext = self.labelsOnUI[linkText]
         Actualtext = self.getText(self.searchTextBox.format(Expectedtext),locatorType="xpath")
 
 
     def verifyAccountsSearchButtontext(self, linkText, Placeholder):
-        Expectedtext = self.navigationMap[linkText]
+        Expectedtext = self.labelsOnUI[linkText]
         ActualText = self.getText(self.btnAccountSearch.format(Expectedtext),
                                                locatorType="xpath")
         self.verifyTextInSearchBox(Placeholder)
 
     def verifyCustomerSearchButtontext(self, linkText, Placeholder):
-        Expectedtext = self.navigationMap['GlobalSearchType_Accounts']
+        Expectedtext = self.labelsOnUI['GlobalSearchType_Accounts']
         self.elementClick(locator=self.btnAccountSearch.format(Expectedtext), locatorType="xpath")
-        Expectedtext = self.navigationMap[linkText]
+        Expectedtext = self.labelsOnUI[linkText]
         #self.waitForElement(self.btnCompaniesSearch.format(Expectedtext), locatorType="xpath" )
         #self.elementClick(locator=self.btnCompaniesSearch.format(Expectedtext), locatorType="xpath")
         self.executeJavaScript(self.btnCompaniesSearch.format(Expectedtext),locatorType="xpath")
         self.verifyTextInSearchBox(Placeholder)
 
     def verifySettingtext(self, linkText):
-        Expectedtext = self.navigationMap[linkText]
+        Expectedtext = self.labelsOnUI[linkText]
         ActualText = self.getText(self.lnksettings.format(Expectedtext),
                                                locatorType="xpath")
 
     def verifySignOuttext(self, linkText):
-        expectedText = self.navigationMap[linkText]
+        expectedText = self.labelsOnUI[linkText]
         actualText = self.getText( self.lnksign_out.format( expectedText),
                                    locatorType="xpath" )
         self.elementClick( locator=self.lnksign_out.format( expectedText ), locatorType="xpath" )
-        result = self.isElementPresent( self.ctlWelcomeMessage.format( self.navigationMap['LogOutMessage'] ),
-                                        locatorType="xpath" )
+        result = self.isElementPresent(self.ctlWelcomeMessage.format(self.labelsOnUI['LogOutMessage']),
+                                       locatorType="xpath")
         self.util.verifyTextMatch( actualText, expectedText )
 
     def verifySignOutMessage(self):
-        expectedText = self.navigationMap['LogOutMessage']
-        self.elementClick( locator=self.lnksign_out.format( self.navigationMap['lbl_SignOut'] ),
+        expectedText = self.labelsOnUI['LogOutMessage']
+        self.elementClick(locator=self.lnksign_out.format(self.labelsOnUI['lbl_SignOut']),
                            locatorType="xpath" )
         self.wait_for_page_load(5)
-        result = self.isElementPresent( self.ctlWelcomeMessage.format( self.navigationMap['LogOutMessage'] ),
-                                        locatorType="xpath" )
+        result = self.isElementPresent(self.ctlWelcomeMessage.format(self.labelsOnUI['LogOutMessage']),
+                                       locatorType="xpath")
         actualText = self.getText( self.ctlWelcomeMessage.format( expectedText ),
                                    locatorType="xpath" )
         self.util.verifyTextMatch( actualText, expectedText)
@@ -129,34 +129,34 @@ class HomePage(BasePage):
     def navigateToRootCustomers(self):
         try:
             self.wait_for_page_load(5)
-            self.elementClick(self.lnkrootCustomer.format(self.navigationMap['RootCustomers']),
-                                               locatorType="xpath")
-            self.log.info("Successfully navigated to "+self.navigationMap['RootCustomers'])
+            self.elementClick(self.lnkrootCustomer.format(self.labelsOnUI['RootCustomers']),
+                              locatorType="xpath")
+            self.log.info("Successfully navigated to " + self.labelsOnUI['RootCustomers'])
         except:
-            self.log.info("Error while navigating to" + self.navigationMap['RootCustomers'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['RootCustomers'])
 
     def navigateToAccounts(self):
         try:
-            self.elementClick( self.lnkAccounts.format( self.navigationMap['Accounts'] ),
-                               locatorType="xpath" )
-            self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )
+            self.elementClick(self.lnkAccounts.format(self.labelsOnUI['Accounts']),
+                              locatorType="xpath")
+            self.log.info("Successfully navigated to " + self.labelsOnUI['Accounts'])
         except:
-            self.log.info( "Error while navigating to" + self.navigationMap['Accounts'] )
+            self.log.info("Error while navigating to" + self.labelsOnUI['Accounts'])
 
     def navigateToAdmin(self):
         try:
             self.waitForElement( self.lnkadmin)
-            self.elementClick( self.lnkadmin.format( self.navigationMap['Admin']),
-                               locatorType="xpath" )
-            self.log.info( "Successfully navigated to " + self.navigationMap['Accounts'] )
+            self.elementClick(self.lnkadmin.format(self.labelsOnUI['Admin']),
+                              locatorType="xpath")
+            self.log.info("Successfully navigated to " + self.labelsOnUI['Accounts'])
         except:
-            self.log.info( "Error while navigating to" + self.navigationMap['Accounts'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['Accounts'])
 
     def navigateToReports(self):
         try:
             self.waitForElement(self.lnkreports)
-            self.elementClick(self.lnkreports.format(self.navigationMap['Reports']),
+            self.elementClick(self.lnkreports.format(self.labelsOnUI['Reports']),
                               locatorType="xpath")
-            self.log.info("Successfully navigated to " + self.navigationMap['Reports'])
+            self.log.info("Successfully navigated to " + self.labelsOnUI['Reports'])
         except:
-            self.log.info("Error while navigating to" + self.navigationMap['Reports'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['Reports'])

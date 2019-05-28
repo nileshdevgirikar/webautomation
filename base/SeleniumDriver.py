@@ -271,7 +271,7 @@ class SeleniumDriver():
 
         if direction == "down":
             # Scroll Down
-            self.driver.execute_script("window.scrollBy(0, 1000);")
+            self.driver.execute_script("window.scrollBy(0, 200);")
 
     def executeJavaScript(self, locator, locatorType="id", element=None):
         """
