@@ -34,10 +34,16 @@ class ReportsTest(unittest.TestCase):
 
     @pytest.mark.smoke
     def test_CreateReportTemplate(self):
+        result = False
         self.login.loginToApplication(ApplicationConfig.get('UserId'), ApplicationConfig.get('Password'))
         # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # self.status.mark(result, "Incorrect match")
         self.home.navigateToReports()
         self.template.navigateToTemplate()
-        self.reports.create_search_verifyReport(inputCustomerTest.df_Template)
+        result = self.reports.create_search_verifyTemplate(inputCustomerTest.df_Template)
+        self.status.mark(result, "Incorrect match")
+        self.template.navigateToSchedule()
+        result = self.reports.create_search_verifySchedule(inputCustomerTest.df_Template)
+        self.status.markFinal("test_CreateReportTemplate", result, "Verification is Successful")
         self.home.userLogout()
         print('TTTTTTTT')

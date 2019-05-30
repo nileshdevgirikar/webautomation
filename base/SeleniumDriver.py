@@ -273,6 +273,22 @@ class SeleniumDriver():
             # Scroll Down
             self.driver.execute_script("window.scrollBy(0, 200);")
 
+    def elementScroll(self, tablescroll, elementlocator):
+        """
+        NEW METHOD
+        """
+        dragger = ActionChains(self.driver)
+        self.draggablePartOfScrollbar = self.driver.find_element_by_xpath(tablescroll)
+        numberOfPixelsToDragTheScrollbarDown = 25
+        findFlag = False
+        while not findFlag:
+            dragger.move_to_element(self.draggablePartOfScrollbar). \
+                click_and_hold().move_by_offset(0, numberOfPixelsToDragTheScrollbarDown).release().perform()
+            findFlag = self.isElementDisplayed(elementlocator, locatorType="xpath")
+            if findFlag:
+                break
+        return findFlag
+
     def executeJavaScript(self, locator, locatorType="id", element=None):
         """
         Click on an element -> MODIFIED

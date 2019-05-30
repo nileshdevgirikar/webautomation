@@ -68,6 +68,17 @@ class Template(BasePage):
         except:
             self.log.info("Error while navigating to" + self.labelsOnUI['Template'])
 
+    def navigateToSchedule(self):
+        try:
+            self.waitForElement(self.lnktemplate)
+            # self.elementClick(self.lnktemplate.format(self.labelsOnUI['schedulesReportMenu']),
+            #                   locatorType="xpath")
+            self.executeJavaScript(self.lnktemplate.format(self.labelsOnUI['schedulesReportMenu']),
+                                   locatorType="xpath")
+            self.log.info("Successfully navigated to " + self.labelsOnUI['schedulesReportMenu'])
+        except:
+            self.log.info("Error while navigating to" + self.labelsOnUI['schedulesReportMenu'])
+
     def clickOnCloseButton(self):
         try:
             self.executeJavaScript(self.btnClose, locatorType="xpath")
@@ -206,10 +217,10 @@ class Template(BasePage):
 
             result = self.verifyOptionFields(templateinfo, i)
             self.status.mark(result, "Incorrect match")
-
             self.log.info("Successfully filled Optional fields details::")
         except:
             self.log.info("Error while filling Optional fields details::")
+        return result
 
     def verifyOptionFields(self, templateinfo, i):
         result = False
