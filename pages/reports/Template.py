@@ -161,7 +161,7 @@ class Template(BasePage):
     def clickOnSaveButton(self):
         try:
             self.elementClick(self.templateSave, locatorType="xpath")
-            # isElementDisplayed(lnkMsg.format(VAMConstants.getCaption("MessageTemplateUpdatedSuccessfully")));
+            self.isElementDisplayed(self.lnkMsg.format(self.labelsOnUI['MessageTemplateAddedSuccessfully']))
             self.log.info("Successfully clicked on Save button::")
         except:
             self.log.info("Error while clicking on Save button::")
@@ -180,8 +180,6 @@ class Template(BasePage):
         result = False
         try:
             self.wait_for_page_load(3)
-            Optionalfields = templateinfo[self.labelsOnUI['lbl_optionalFields']][i].split("|")
-
             result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateName']),
                                  templateinfo[self.labelsOnUI['lbl_templateName']][i])
             self.status.mark(result, "Incorrect match")
@@ -203,17 +201,34 @@ class Template(BasePage):
                                  templateinfo[self.labelsOnUI['lbl_templateAccess']][i])
             self.status.mark(result, "Incorrect match")
 
-            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateTransactionType']),
-                                 templateinfo[self.labelsOnUI['lbl_templateTransactionType']][i])
-            self.status.mark(result, "Incorrect match")
+            if (templateinfo[self.labelsOnUI.get('lbl_templateReportType')][i] ==
+                    self.labelsOnUI['lbl_TransactionReport']):
 
-            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templatePeriod']),
-                                 templateinfo[self.labelsOnUI['lbl_templatePeriod']][i])
-            self.status.mark(result, "Incorrect match")
+                result = self.verify(
+                    self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateTransactionType']),
+                    templateinfo[self.labelsOnUI['lbl_templateTransactionType']][i])
+                self.status.mark(result, "Incorrect match")
 
-            result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateAmountRange']),
-                                 templateinfo[self.labelsOnUI['lbl_templateAmountRange']][i])
-            self.status.mark(result, "Incorrect match")
+                result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateAccountType']),
+                                     templateinfo[self.labelsOnUI['lbl_templateAccountType']][i])
+                self.status.mark(result, "Incorrect match")
+
+                result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateAmountRange']),
+                                     templateinfo[self.labelsOnUI['lbl_templateAmountRange']][i])
+                self.status.mark(result, "Incorrect match")
+
+                result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templatePeriod']),
+                                     templateinfo[self.labelsOnUI['lbl_templatePeriod']][i])
+                self.status.mark(result, "Incorrect match")
+            else:
+                result = self.verify(self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_templateView']),
+                                     templateinfo[self.labelsOnUI['lbl_templateView']][i])
+                self.status.mark(result, "Incorrect match")
+
+                result = self.verify(
+                    self.lbltemplateViewDetailsPage.format(self.labelsOnUI['lbl_IncludeCurrencyAccounts']),
+                    templateinfo[self.labelsOnUI['lbl_IncludeCurrencyAccounts']][i])
+                self.status.mark(result, "Incorrect match")
 
             result = self.verifyOptionFields(templateinfo, i)
             self.status.mark(result, "Incorrect match")

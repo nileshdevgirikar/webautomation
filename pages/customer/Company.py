@@ -36,48 +36,22 @@ class Company( Customer ):
             self.log.error( "Error occurred while filling address details. :: " )
 
     def createCustomerHierarchy(self, company):
-        # if type( company ) is dict:
-        #     for key, value in company.items():
-        #         fill = inputCustomerTest.rootCustomer
-        #         fill['Name'] = str( key )
-        #         self.fill_customer_information( fill )
-        #         self.clickOnAddCustomerButton()
-        #         time.sleep( 5 )
-        #         keyvalue = key
-        #         self.clickOnParentCustomerToAddChild( key )
-        #         self.createCustomerHierarchy( value, keyvalue )
-        # elif type( company ) is str:
-        #     fill = inputCustomerTest.rootCustomer
-        #     fill['Name'] = str( company )
-        #     self.fill_customer_information( fill )
-        #     self.clickOnAddCustomerButton()
-        #     time.sleep( 5 )
-        # elif type( company ) is list:
-        #     for item in company:
-        #         print( keyvalue )
-        #         self.clickOnParentCustomerToAddChild( keyvalue )
-        #         self.createCustomerHierarchy( item, keyvalue )
-        # if type(company) is str:
-        #     fill = inputCustomerTest.rootCustomer
-        #     fill['Name'] = str( company )
-        #     self.fill_customer_information( fill )
-        #     self.clickOnAddCustomerButton()
-        #     time.sleep( 5 )
-        # else:
         for i in range(len(company)):
             self.clickOnParentCustomerToAddChild(company.loc[i]['Parent'])
             fill = company.loc[i]
             self.fill_customer_information(fill)
             self.clickOnAddCustomerButton()
-            time.sleep(5)
+            # time.sleep(5)
+            self.verifyMessageOnProgressBar(self.labelsOnUI['msg_CustomerCreationSuccessfull'])
 
     def activateCustomer(self, companyName):
         try:
-            self.waitForElement( self.btnSendForActivation )
+            self.waitForElement(self.btnSendForActivation, locatorType="xpath", timeout=4)
             self.elementClick( self.btnSendForActivation, locatorType="xpath" )
             self.waitForElement( self.chkboxChooseBranchForApproval )
             self.elementClick( self.chkboxChooseBranchForApproval.format( companyName ),
                                locatorType="xpath" )
             self.elementClick( self.btnSend, locatorType="xpath" )
+            self.verifyMessageOnProgressBar(self.labelsOnUI['msg_CustomerActivateMessage'])
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )

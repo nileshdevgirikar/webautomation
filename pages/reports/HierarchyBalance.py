@@ -8,12 +8,13 @@ from pages.reports.Template import Template
 from Utilities.teststatus import TestStatus
 
 
-class Reports(BasePage):
+class HierarchyBalance(BasePage):
     log = cl.customLogger(logging.DEBUG)
 
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
+        self.status = TestStatus(self.driver)
 
     Overview_AvailableAmount = ""
     Overview_BookedBalance = ""
@@ -53,4 +54,36 @@ class Reports(BasePage):
     labelHierarchyBalance = "//li[@class='d-inline-block nav-item ng-star-inserted']"
 
     def verifyDefaultHierarchyBalances(self):
-        print("xxxxxxx")
+        try:
+            # To check the Headings
+            self.status.mark(self.isElementDisplayed(self.label.format(self.labelsOnUI['HB_TotalBalances']),
+                                                     locatorType="xpath"), "Incorrect match")
+            self.status.mark(self.isElementDisplayed(self.blockHeading.format(self.labelsOnUI['HB_AvailableBalances']),
+                                                     locatorType="xpath"), "Incorrect match")
+            self.status.mark(self.isElementDisplayed(self.blockHeading.format(self.labelsOnUI['HB_ValueDatedBalances']),
+                                                     locatorType="xpath"), "Incorrect match")
+            self.status.mark(self.isElementDisplayed(self.blockHeading.format(self.labelsOnUI['HB_BookedBalances']),
+                                                     locatorType="xpath"), "Incorrect match")
+            self.status.mark(self.isElementDisplayed(self.blockHeading.format(self.labelsOnUI['HB_TotalODLimit']),
+                                                     locatorType="xpath"), "Incorrect match")
+            self.status.mark(self.isElementDisplayed(self.blockHeading.format(self.labelsOnUI['HB_TotalBlockedAmount']),
+                                                     locatorType="xpath"), "Incorrect match")
+            self.status.markFinal("verifyDefaultHierarchyBalances",
+                                  self.isElementDisplayed(self.blockHeading.format(self.labelsOnUI['HB_IntraDayLimit']),
+                                                          locatorType="xpath"), "Verification is Successful")
+            self.log.info("Successfully capture the values on Hierarchy Balance :: ")
+        except Exception as e:
+            self.log.error("Unable to capture the values on Hierarchy Balance:: ")
+
+    def captureOviewPageBalanceValues(self):
+        try:
+            self.Overview_AvailableAmount = self.getText(
+                self.overViewBalances.format(self.labelsOnUI['OV_AvailableAmount']),
+                locatorType="xpath")
+            self.Overview_BookedBalance = self.getText(self.overViewBalances.format(self.labelsOnUI['OV_BookedAmount']),
+                                                       locatorType="xpath")
+            self.Overview_ValueDated = self.getText(self.overViewBalances.format(self.labelsOnUI['OV_ValueDated']),
+                                                    locatorType="xpath")
+            self.log.error("Successfully capture the values on Hierarchy Balance :: ")
+        except Exception as e:
+            self.log.error("Unable to capture the values on Hierarchy Balance:: ")

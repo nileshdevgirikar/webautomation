@@ -24,9 +24,9 @@ class Reports(BasePage):
     reportsTable = "//div[@class='scrollable-content']/table"
     selectCreatedTemplateInList = "//div[@class='scrollable-content']/table//tbody//tr//td[text()[normalize-space() = '{0}']]"
     searchTemplateName = "//*[text()[normalize-space() = '{0}']]"
-
-    selectCreatedTemplateInList = "//div[@class='scrollable-content']/table//tbody//tr//td[text()[normalize-space()='{0}']]"
-    # selectReadioBtnOfTemplate = "//div[@class='scrollable-content']/table//tbody//tr//td[text()[normalize-space() = '{0}']]//following-sibling::td//span[text()[normalize-space() = 'Select']]"
+    selectViewlinkInTemplateList = "//*[text()[normalize-space() = '{0}']]//following-sibling::td//a[text()[normalize-space() = 'View']]"
+    selectEditlinkInTemplateList = "//*[text()[normalize-space() = '{0}']]//following-sibling::td//a[text()[normalize-space() = 'Edit']]"
+    selectViewDeleteInTemplateList = "//*[text()[normalize-space() = '{0}']]//following-sibling::td//a[text()[normalize-space() = 'Delete']]"
     selectReadioBtnOfTemplate = "//*[text()[normalize-space() = '{0}']]//following-sibling::td//span[text()[normalize-space() = 'Select']]"
     selectScheduleOnReportSetting = "//label[@class='custom-control-label'][text()[normalize-space() = '{0}']]"
     searchAccountBox = "//div[@class='d-inline-block w-100 dropdown']//input"
@@ -44,7 +44,6 @@ class Reports(BasePage):
 
     def setAccessFilter(self, templateinfo, count):
         try:
-            self.wait_for_page_load(3)
             self.elementClick(self.templateAccessFilter, locatorType="xpath")
             self.elementClick(self.templateAccessFilterValue.format(templateinfo.loc[count]['Access']),
                               locatorType="xpath")
@@ -56,7 +55,7 @@ class Reports(BasePage):
 
     def clickonViewToVerifyDetails(self, text):
         try:
-            self.elementClick(self.searchTemplateName.format(text), locatorType="xpath")
+            self.elementClick(self.selectViewlinkInTemplateList.format(text), locatorType="xpath")
             self.log.info("Successfully click on View button " + self.labelsOnUI['lbl_templateName'])
         except Exception as e:
             self.log.info("Error while navigating to" + self.labelsOnUI['lbl_templateName'])
@@ -96,23 +95,17 @@ class Reports(BasePage):
             self.log.info("Error while selecting::" + "clickonSelectRadioButton")
 
     def searchTemplateInList(self, text, locator=None):
+        findFlag = False
         try:
             self.wait_for_page_load(3)
-            findFlag = False
             if locator == None:
                 while not findFlag:
                     findFlag = self.isElementDisplayed(self.searchTemplateName.format(text),
                                                        locatorType="xpath")
-                    # findFlag = self.isElementPresent(self.searchTemplateName.format('03APRPKTRAN'),
-                    #                                  locatorType="xpath")
                     if findFlag:
                         break
-                        # self.elementClick(self.searchTemplateName.format('03APRPKTRAN'), locatorType="xpath")
-                        # self.elementClick(self.searchTemplateName.format(templateinfo.loc[count]['Template Name']),
-                        #                   locatorType="xpath")
                     else:
                         self.webScroll('down')
-                        # self.elementScroll(self.tableScroll,'down')
             else:
                 findFlag = self.elementScroll(self.tableScroll, self.searchTemplateName.format(text))
             return findFlag
@@ -135,9 +128,9 @@ class Reports(BasePage):
                     self.log.info("Template is created successfully ::")
                 else:
                     self.log.info("Template is not found in search list ::")
+            return result
         except Exception as e:
             self.log.error("Unable to create Template ::")
-        return result
 
     def create_search_verifySchedule(self, templateinfo):
         count = len(templateinfo)
@@ -152,21 +145,28 @@ class Reports(BasePage):
                     self.webScroll('down')
                     self.clickOnButton(self.labelsOnUI['nextButton'])
                     self.setAccountName("112312312321")
+                    # self.setAccountName("112312312321")
                     self.selectSchedule(templateinfo[self.labelsOnUI['lbl_selectSchedule']][i])
                     self.clickOnButton(self.labelsOnUI['nextButton'])
-                    self.selectFrequency(templateinfo[self.labelsOnUI['lbl_frequency']][i])
-                    self.clickOnButton(self.labelsOnUI['finishButton'])
-                    result = self.is_text_present(self.labelsOnUI['confirmationMessageForSchedulesReport'])
-                    self.status.mark(result, "Incorrect match")
+                    if templateinfo[self.labelsOnUI['lbl_selectSchedule']][i] != \
+                            self.labelsOnUI['selectScheduleAsRunNow']:
+                        self.selectFrequency(templateinfo[self.labelsOnUI['lbl_frequency']][i])
+                        self.clickOnButton(self.labelsOnUI['finishButton'])
+                        result = self.is_text_present(self.labelsOnUI['confirmationMessageForSchedulesReport'])
+                        self.status.mark(result, "Incorrect match")
+                    else:
+                        self.clickOnButton(self.labelsOnUI['finishButton'])
+                        result = self.is_text_present(self.labelsOnUI['confirmationMsgForDownloadReport'])
+                        self.status.mark(result, "Incorrect match")
                     self.clickOnButton(self.labelsOnUI['btnGoToSchedulesReports'])
                     result = self.searchTemplateInList(templateinfo[self.labelsOnUI['lbl_templateName']][i])
                     self.status.markFinal("create_search_verifySchedule", result, "Verification is Successful")
                     self.log.info("Schedule is created successfully :: ")
                 else:
                     self.log.info("Schedule is not found:: ")
+            return result
         except Exception as e:
             self.log.error("Unable to create Schedule :: ")
-        return result
 
     def is_text_present(self, text):
         return str(text) in self.driver.page_source

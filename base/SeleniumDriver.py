@@ -261,6 +261,24 @@ class SeleniumDriver():
             self.log.info("Element not appeared on the web page")
         return element
 
+    def waitForElementInVisible(self, locator, locatorType="id",
+                                timeout=5, pollFrequency=0.5):
+        element = None
+        try:
+            byType = self.getByType(locatorType)
+            self.log.info("Waiting for maximum :: " + str(timeout) +
+                          " :: seconds for element to be clickable")
+            wait = WebDriverWait(self.driver, timeout=timeout,
+                                 poll_frequency=pollFrequency,
+                                 ignored_exceptions=[NoSuchElementException,
+                                                     ElementNotVisibleException,
+                                                     ElementNotSelectableException])
+            element = wait.until(EC.invisibility_of_element((byType, locator)))
+            self.log.info("Element is visible appeared on the web page")
+        except:
+            self.log.info("Element not appeared on the web page")
+        return element
+
     def webScroll(self, direction="up"):
         """
         NEW METHOD
@@ -326,3 +344,7 @@ class SeleniumDriver():
 
     def wait_for_page_load(self, timeout=10):
         time.sleep( timeout )
+
+    def wait_and_refresh(self, timeout=10):
+        time.sleep(timeout)
+        self.driver.refresh()

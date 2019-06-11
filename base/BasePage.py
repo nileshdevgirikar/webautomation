@@ -18,7 +18,8 @@ import os
 class BasePage(SeleniumDriver):
     resourcePropertyPath = os.environ.get('myHome') + "resources/captionBundle.properties"
     labelsOnUI = TestParams.load_properties(resourcePropertyPath)
-    print(labelsOnUI)
+
+    progressBarlocator = "//div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'{0}')]"
 
     def __init__(self, driver):
         """
@@ -45,3 +46,27 @@ class BasePage(SeleniumDriver):
             self.log.error("Failed to get page title")
             print_stack()
             return False
+
+    def verifyMessageOnProgressBar(self, expectedMessageToVerify):
+        """
+        Verify the message on progress bar
+
+        Parameters:
+            titleToVerify: Title on the page that needs to be verified
+        """
+        try:
+            actualTitle = self.getText(self.progressBarlocator.format(expectedMessageToVerify),
+                                       locatorType="xpath")
+            # self.wait_for_page_load(5)
+            self.waitForElementInVisible(self.progressBarlocator.format(expectedMessageToVerify),
+                                         locatorType="xpath")
+            # self.elementClick(self.progressBarlocator.format(expectedMessageToVerify),
+            #                            locatorType="xpath")
+            return self.util.verifyTextMatch(actualTitle, expectedMessageToVerify)
+        except:
+            self.log.error("Failed to verify message on progress bar")
+            print_stack()
+            return False
+
+    def is_text_present(self, text):
+        return str(text) in self.driver.page_source

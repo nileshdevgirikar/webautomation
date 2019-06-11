@@ -30,6 +30,7 @@ class HomePage(BasePage):
 
     # Locators
     lnkAccounts = "//span[contains(text(),'{0}')]"
+    lblRootCustomerName = "//div[@class='collapse navbar-collapse']//a[contains(.,'{0}')]"
 
     def verifyTextonHomepage(self):
         self.verifyWelcomeMessage()
@@ -128,7 +129,9 @@ class HomePage(BasePage):
 
     def navigateToRootCustomers(self):
         try:
-            self.wait_for_page_load(5)
+            # self.wait_for_page_load(5)
+            self.waitForElement(self.lnkrootCustomer.format(self.labelsOnUI['RootCustomers']),
+                                locatorType="xpath")
             self.elementClick(self.lnkrootCustomer.format(self.labelsOnUI['RootCustomers']),
                               locatorType="xpath")
             self.log.info("Successfully navigated to " + self.labelsOnUI['RootCustomers'])
@@ -137,6 +140,8 @@ class HomePage(BasePage):
 
     def navigateToAccounts(self):
         try:
+            self.waitForElement(self.lnkAccounts.format(self.labelsOnUI['Accounts']),
+                                locatorType="xpath", timeout=3)
             self.elementClick(self.lnkAccounts.format(self.labelsOnUI['Accounts']),
                               locatorType="xpath")
             self.log.info("Successfully navigated to " + self.labelsOnUI['Accounts'])
@@ -155,8 +160,15 @@ class HomePage(BasePage):
     def navigateToReports(self):
         try:
             self.waitForElement(self.lnkreports)
-            self.elementClick(self.lnkreports.format(self.labelsOnUI['Reports']),
+            self.elementClick(self.lnkreports.format(self.labelsOnUI['lbl_Reports']),
                               locatorType="xpath")
-            self.log.info("Successfully navigated to " + self.labelsOnUI['Reports'])
+            self.log.info("Successfully navigated to " + self.labelsOnUI['lbl_Reports'])
         except:
-            self.log.info("Error while navigating to" + self.labelsOnUI['Reports'])
+            self.log.info("Error while navigating to" + self.labelsOnUI['lbl_Reports'])
+
+    def verifyRootCustomerLabelOnCompanyPage(self, customerName):
+        try:
+            self.elementClick(self.lblRootCustomerName.format(customerName), locatorType="xpath")
+            self.log.info("Successfully verify customer name::")
+        except:
+            self.log.info("Error while verifying customer name")

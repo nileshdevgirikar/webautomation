@@ -53,6 +53,8 @@ class Accounts(BasePage):
     btnSendForActivation = "//button[@class='btn btn-primary']"
     btnSend = "//button[@class='btn btn-lg btn-success']"
 
+    lblAccountStatus = "//small[contains(text(),'{0}')]//parent::div//span//span"
+
     def clickOnAddRootAccountButton(self):
         try:
             self.wait_for_page_load(2)
@@ -70,9 +72,11 @@ class Accounts(BasePage):
         except Exception as e:
             self.log.error( "Error occurred while click on AccountType. :: " )
 
-    def selectHierarchyoffering(self, Hierarchyoffering):
+    def selectHierarchyoffering(self, Hierarchyoffering=None):
         try:
-            self.selectvaluefromDropdown(Hierarchyoffering, self.ddlHierarchysubtype, locatorType="xpath" )
+            if Hierarchyoffering != None or Hierarchyoffering != '':
+                self.selectvaluefromDropdown(Hierarchyoffering, self.ddlHierarchysubtype, locatorType="xpath")
+                self.log.error("Successfully selected Hierarchyoffering from dropdown. :: ")
         except Exception as e:
             self.log.error( "Error occurred while selecting Hierarchyoffering. :: " )
 
@@ -100,7 +104,6 @@ class Accounts(BasePage):
 
     def enterAccountName(self,accountName):
         try:
-            accountName = accountName  #+ Util.get_unique_number( 5 )
             self.sendKeys(accountName, self.txtNameOfTheaccount, locatorType="xpath")
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )
@@ -120,16 +123,13 @@ class Accounts(BasePage):
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )
 
-    def fill_Account_Details(self, accountDetail,i):
-        self.selectHierarchyoffering(accountDetail.loc[i]['Hierarchy offering'])
-        self.selectAccountType(accountDetail.loc[i].get('Account type'))
-        self.selectCurrency(accountDetail.loc[i].get('Currency'))
-        accountDetail['Name of the account'][i] = self.enterAccountName(accountDetail.loc[i].get('Name of the account'))
-        # accountDetail.loc[i]['Name of the account'] = Accountname
-        accountDetail['Account number'][i] = self.enterAccountNumber(accountDetail.loc[i].get('Account number'))
-        # accountDetail.loc[i]['Account number'] = Accountnumber
-        self.selectCountry(accountDetail.loc[i].get('Country'))
-        # inputCustomerTest.df_accounts = accountDetail
+    def fill_Account_Details(self, accountDetail, i):
+        self.selectHierarchyoffering(accountDetail['Hierarchy offering'][i])
+        self.selectAccountType(accountDetail['Account type'][i])
+        self.selectCurrency(accountDetail['Currency'][i])
+        accountDetail['Name of the account'][i] = self.enterAccountName(accountDetail['Name of the account'][i])
+        accountDetail['Account number'][i] = self.enterAccountNumber(accountDetail['Account number'][i])
+        self.selectCountry(accountDetail['Country'][i])
         return accountDetail
 
     def clickOnParentAccountToAddChild(self, parent):
@@ -146,24 +146,11 @@ class Accounts(BasePage):
 
     def createAccountHierarchy(self, Accountlists):
         try:
-            # toReturn = ''
-            # for key, value in Accountlists.items():
-            #     if type( value ) is list:
-            #         count = len( value )
-            #         i = 0
-            #         while count > 0:
-            #             toReturn = key
-            #             self.clickOnParentAccountToAddChild(key)
-            #             self.createAccount(value[i])
-            #             i += 1
-            #             count -= 1
-            # self.wait_for_page_load(4)
-
             #Below code is for real data from Excel sheet
             for i in range(len(Accountlists)):
                 if Accountlists.loc[i]['Parent'] != '':
                     self.clickOnParentAccountToAddChild(Accountlists.loc[i]['Parent'])
-                data = self.createAccount(Accountlists,i)
+                data = self.createAccount(Accountlists, i)
         except Exception as e:
             self.log.error("Error occurred while creating AccountHierarchy. :: ")
         return data
@@ -178,10 +165,25 @@ class Accounts(BasePage):
 
     def activateAccount(self, accountDetails):
         try:
-            self.elementClick( self.btnSendForActivation, locatorType="xpath" )
-            self.waitForElement( self.chkboxChooseBranchForApproval,format(accountDetails))
+            self.wait_for_page_load(4)
+            self.executeJavaScript(self.btnSendForActivation, locatorType="xpath")
+            self.waitForElement(self.chkboxChooseBranchForApproval.format(accountDetails), locatorType="xpath")
             self.elementClick( self.chkboxChooseBranchForApproval.format(accountDetails),
                                locatorType="xpath" )
             self.elementClick( self.btnSend, locatorType="xpath" )
+            self.verifyMessageOnProgressBar(self.labelsOnUI['msgAccountActivatedSuccessfully'])
         except Exception as e:
             self.log.error("Unable to activate account :: ")
+
+    def verifyAccountStatus(self, custStatus_Blocked):
+        try:
+            self.expectedcustStatus_BlockedList = custStatus_Blocked.split("|")
+            actualStatusonUI = self.getText(self.lblAccountStatus.format(self.labelsOnUI['AccountStatus']),
+                                            locatorType="xpath")
+            if actualStatusonUI in self.expectedcustStatus_BlockedList:
+                return True
+            else:
+                return False
+        except Exception as e:
+            self.log.error("Unable to activate account ::")
+            return False
