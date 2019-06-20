@@ -63,9 +63,10 @@ class Accounts(BasePage):
         except Exception as e:
             self.log.error( "Unable to click add root account button :: " )
 
-    def selectAccountType(self,Account):
+    def selectAccountType(self, Account):
         try:
             #self.waitForElement( self.ddlAccountType )
+            self.wait_for_angular(5)
             self.elementClick( self.ddlAccountType, locatorType="xpath" )
             self.waitForElement(self.ddlRootAccountType)
             self.elementClick( self.ddlRootAccountType.format(Account), locatorType="xpath" )
@@ -95,7 +96,7 @@ class Accounts(BasePage):
         except Exception as e:
             self.log.error("Error occurred while click on AccountType. :: ")
 
-    def selectCurrency(self,currency):
+    def selectCurrency(self, currency):
         try:
             self.waitForElement(self.ddlCurrency)
             self.selectvaluefromDropdown(currency, self.ddlCurrency, locatorType="xpath" )
@@ -124,13 +125,13 @@ class Accounts(BasePage):
             self.log.error( "Error occurred while filling address details. :: " )
 
     def fill_Account_Details(self, accountDetail, i):
-        self.selectHierarchyoffering(accountDetail['Hierarchy offering'][i])
+        if 'Hierarchy offering' in list(accountDetail):
+            self.selectHierarchyoffering(accountDetail['Hierarchy offering'][i])
         self.selectAccountType(accountDetail['Account type'][i])
         self.selectCurrency(accountDetail['Currency'][i])
-        accountDetail['Name of the account'][i] = self.enterAccountName(accountDetail['Name of the account'][i])
-        accountDetail['Account number'][i] = self.enterAccountNumber(accountDetail['Account number'][i])
+        self.enterAccountName(accountDetail['Name of the account'][i])
+        self.enterAccountNumber(accountDetail['Account number'][i])
         self.selectCountry(accountDetail['Country'][i])
-        return accountDetail
 
     def clickOnParentAccountToAddChild(self, parent):
         try:

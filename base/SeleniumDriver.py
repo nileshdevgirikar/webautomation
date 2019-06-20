@@ -10,6 +10,10 @@ import Utilities.custom_logger as cl
 import logging
 import time
 import os
+from datetime import datetime, timedelta
+from time import sleep
+
+
 from selenium.webdriver.support.ui import Select
 
 class SeleniumDriver():
@@ -18,6 +22,21 @@ class SeleniumDriver():
 
     def __init__(self, driver):
         self.driver = driver
+
+    def wait_until_angular(self, TIMEOUT) -> None:
+        java_script_to_load_angular = "var injector = window.angular.element('body').injector(); " \
+                                      "var $http = injector.get('$http');" \
+                                      "return ($http.pendingRequests.length === 0);"
+        end_time = datetime.utcnow() + timedelta(seconds=TIMEOUT)
+        print("wait for Angular Elements....")
+        while datetime.utcnow() < end_time:
+            try:
+                if self.driver.execute_script(java_script_to_load_angular):
+                    return
+            except WebDriverException:
+                continue
+            sleep(1)
+        raise TimeoutError("waiting for angular elements for too long")
 
     def screenShot(self, resultMessage):
         """
@@ -279,6 +298,62 @@ class SeleniumDriver():
             self.log.info("Element not appeared on the web page")
         return element
 
+    NG_WRAPPER = '%(prefix)s' \
+                 'angular.element(document.querySelector(\'[data-ng-app]\')|(document).' \
+                 'injector().get(\'$browser\').notifyWhenNoOutStandingRequests(%(handler)s)' \
+                 '%(suffix)s'
+
+    # def wait_until_angular_ready(self, timeout=None, error=None):
+    #     """Waits until [https://goo.gl/Kzz8Y3|AngularJS] is ready to process the next request or
+    #     ``timeout`` expires.
+    #
+    #     Arguments:
+    #     - ``timeout``: The maximum value to wait for [https://goo.gl/Kzz8Y3|AngularJS]
+    #                    to be ready to process the next request.
+    #                    See `introduction` for more information about ``timeout`` and
+    #                    its default value.
+    #     - ``error``: The value that would be use to override the default error message.
+    #
+    #     Examples:
+    #     | Wait Until Angular Ready | 15s |
+    #     """
+    #     # pylint: disable=no-member
+    #     timeout = self._get_timeout_value(timeout, self._implicit_wait_in_secs)
+    #     if not error:
+    #         error = 'AngularJS is not ready in %s' % self._format_timeout(timeout)
+    #     # we add more validation here to support transition
+    #     # between AngularJs to non AngularJS page.
+    #     # pylint: disable=no-member
+    #     script = self.NG_WRAPPER % {'prefix': 'var cb=arguments[arguments.length-1];'
+    #                                           'if(window.angular){',
+    #                                 'handler': 'function(){cb(true)}',
+    #                                 'suffix': '}else{cb(true)}'}
+    #     # pylint: disable=no-member
+    #     browser = self._current_browser()
+    #     browser.set_script_timeout(timeout)
+    #     # pylint: disable=bare-except
+    #     try:
+    #         WebDriverWait(browser, timeout, self._inputs['poll_frequency']). \
+    #             until(lambda driver: driver.execute_async_script(script), error)
+    #     except TimeoutException:
+    #         # prevent double wait
+    #         pass
+    #     except:
+    #         self._debug(exc_info()[0])
+    #         # still inflight, second chance. let the browser take a deep breath...
+    #         time.sleep(self._inputs['browser_breath_delay'])
+    #         try:
+    #             WebDriverWait(browser, timeout, self._inputs['poll_frequency']). \
+    #                 until(lambda driver: driver.execute_async_script(script), error)
+    #         except:
+    #             # instead of halting the process because AngularJS is not ready
+    #             # in <TIMEOUT>, we try our luck...
+    #             self._debug(exc_info()[0])
+    #         finally:
+    #             browser.set_script_timeout(self._timeout_in_secs)
+    #     finally:
+    #         browser.set_script_timeout(self._timeout_in_secs)
+
     def webScroll(self, direction="up"):
         """
         NEW METHOD
@@ -348,3 +423,26 @@ class SeleniumDriver():
     def wait_and_refresh(self, timeout=10):
         time.sleep(timeout)
         self.driver.refresh()
+
+    WAIT_FOR_SCRIPT = """
+            callback = arguments[arguments.length - 1];
+            try {
+                var testabilities = window.getAllAngularTestabilities();
+                var count = testabilities.length;
+                var decrement = function() {
+                count--;
+                if (count === 0) {
+                  callback('completed');
+                    }
+                };
+                testabilities.forEach(function(testability) {
+                    testability.whenStable(decrement);
+                });
+             } catch (err) {
+                callback(err.message);
+             }
+            """
+
+    def wait_for_angular(self, timeout):
+        self.driver.set_script_timeout(timeout)
+        self.driver.execute_async_script(self.WAIT_FOR_SCRIPT)

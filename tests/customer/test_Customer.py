@@ -8,6 +8,7 @@ from pages.accounts.Accounts import Accounts
 from pages.customer.Company import Company
 from inputTestData import inputCustomerTest
 from inputTestData import inputAccountCashManagementTest
+from pages.globalSearch.GlobalSearch import GlobalSearch
 import time
 from resources.config import ApplicationConfig
 
@@ -22,6 +23,7 @@ class TestCustomer( unittest.TestCase ):
         self.ct = Customer( self.driver )
         self.account = Accounts( self.driver )
         self.company = Company( self.driver )
+        self.globalSearch = GlobalSearch(self.driver)
 
     @pytest.mark.Smoke
     def test_navigation(self):
@@ -36,7 +38,7 @@ class TestCustomer( unittest.TestCase ):
         self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToRootCustomers()
         self.rootCustomer.clickOnAddRootCustomerButton()
-        companyList = inputCustomerTest.rootCustomer1
+        companyList = inputCustomerTest.df_Singlecustomer
         self.company.createCustomerHierarchy(companyList)
         self.company.activateCustomer( companyList )
 
