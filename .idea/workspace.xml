@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="35fb63c5-57f1-495e-8540-54a84c766def" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/SeleniumDriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/SeleniumDriver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputTestData/Accounts.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/inputTestData/Accounts.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputTestData/customerheirarchy1.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inputTestData/inputCustomerTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/inputTestData/inputCustomerTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputTestData/tp.py" beforeDir="false" afterPath="$PROJECT_DIR$/inputTestData/tp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/accounts/Accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/accounts/Accounts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/accounts/automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/tests/accounts/automation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/customer/test_Customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/customer/test_Customer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/SeleniumDriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+            <state relative-caret-position="1037">
+              <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -38,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inputTestData/inputCustomerTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="108">
+              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -47,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/accounts/test_Accounts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="169" column="114" selection-start-line="169" selection-start-column="114" selection-end-line="169" selection-end-column="114" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -59,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/accounts/Accounts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="130" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="172">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -72,9 +66,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python37/Lib/site-packages/pandas/core/series.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="881" selection-start-line="881" selection-end-line="881" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python37/Lib/site-packages/pandas/core/frame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="2900" selection-start-line="2900" selection-end-line="2900" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/customer/Company.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="476">
               <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
             </state>
           </provider>
@@ -188,12 +200,12 @@
         <option value="$PROJECT_DIR$/pages/globalSearch/GlobalSearch.py" />
         <option value="$PROJECT_DIR$/pages/accounts/AccountOverview.py" />
         <option value="$PROJECT_DIR$/pages/customer/Company.py" />
-        <option value="$PROJECT_DIR$/tests/accounts/test_Accounts.py" />
         <option value="$PROJECT_DIR$/inputTestData/tp.py" />
         <option value="$PROJECT_DIR$/tests/customer/test_Customer.py" />
         <option value="$PROJECT_DIR$/base/SeleniumDriver.py" />
-        <option value="$PROJECT_DIR$/inputTestData/inputCustomerTest.py" />
         <option value="$PROJECT_DIR$/pages/accounts/Accounts.py" />
+        <option value="$PROJECT_DIR$/inputTestData/inputCustomerTest.py" />
+        <option value="$PROJECT_DIR$/tests/accounts/test_Accounts.py" />
       </list>
     </option>
   </component>
@@ -210,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,6 +260,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,12 +393,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.inputCustomerTest" />
       <item itemvalue="Python tests.pytest for test_BankUser.BankUserTest.test_CreateBankAdminUser_And_ViewUser" />
       <item itemvalue="Python tests.pytest for test_Accounts.TestAccounts.test_closed_account_in_hierarchy" />
       <item itemvalue="Python tests.pytest for test_Accounts.TestAccounts.test_delete_account_in_hierarchy" />
       <item itemvalue="Python tests.pytest for test_Accounts.TestAccounts.test_trialclosed_account_in_hierarchy" />
       <item itemvalue="Python tests.pytest for test_Accounts.TestAccounts.test_create_account_hierarchy" />
-      <item itemvalue="Python.inputCustomerTest" />
     </list>
     <recent_temporary>
       <list>
@@ -507,13 +519,17 @@
       <option name="project" value="LOCAL" />
       <updated>1560250697490</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Delete/Block/Closed - Account scripts - Duplicate">
+      <created>1561035764909</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1561035764910</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_Accounts_TestAccounts_test_create_account_hierarchy - 2019.06.13 at 16h 13m 57s.xml">
-      <configuration name="pytest for test_Accounts.TestAccounts.test_create_account_hierarchy" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_Accounts_TestAccounts_test_create_account_hierarchy - 2019.06.13 at 16h 22m 39s.xml">
       <configuration name="pytest for test_Accounts.TestAccounts.test_create_account_hierarchy" configurationId="tests" />
     </history-entry>
@@ -539,6 +555,9 @@
       <configuration name="pytest for test_Accounts.TestAccounts.test_delete_account_in_hierarchy" configurationId="tests" />
     </history-entry>
     <history-entry file="pytest_for_test_Accounts_TestAccounts_test_delete_account_in_hierarchy - 2019.06.20 at 18h 30m 25s.xml">
+      <configuration name="pytest for test_Accounts.TestAccounts.test_delete_account_in_hierarchy" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_Accounts_TestAccounts_test_delete_account_in_hierarchy - 2019.06.20 at 18h 46m 29s.xml">
       <configuration name="pytest for test_Accounts.TestAccounts.test_delete_account_in_hierarchy" configurationId="tests" />
     </history-entry>
   </component>
@@ -652,7 +671,8 @@
     <MESSAGE value="Reports changes to eliminate data dependancy" />
     <MESSAGE value="Reports - Final version" />
     <MESSAGE value="Delete/Block/Closed - Account scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete/Block/Closed - Account scripts" />
+    <MESSAGE value="Delete/Block/Closed - Account scripts - Duplicate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete/Block/Closed - Account scripts - Duplicate" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -958,13 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="2900" selection-start-line="2900" selection-end-line="2900" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inputTestData/desktop.ini" />
     <entry file="file://$PROJECT_DIR$/resources/captionBundle.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -1052,10 +1065,17 @@
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1560147144964.png" />
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1560067591362.png" />
     <entry file="file://$PROJECT_DIR$/screenshots/Incorrect match.1559977637212.png" />
+    <entry file="file://C:/Python37/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/base/SeleniumDriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        <state relative-caret-position="1037">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1064,25 +1084,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/customer/Company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
+        <state relative-caret-position="476">
           <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python37/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="614" selection-start-line="614" selection-end-line="614" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inputTestData/inputCustomerTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="108">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python37/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="2900" selection-start-line="2900" selection-end-line="2900" />
         </state>
       </provider>
     </entry>
@@ -1093,22 +1113,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/accounts/test_Accounts.py">
+    <entry file="file://$PROJECT_DIR$/pages/accounts/Accounts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+        <state relative-caret-position="172">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/accounts/Accounts.py">
+    <entry file="file://$PROJECT_DIR$/tests/accounts/test_Accounts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="240">
+          <caret line="169" column="114" selection-start-line="169" selection-start-column="114" selection-end-line="169" selection-end-column="114" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -47,7 +47,7 @@ def createDuplicate(row):
     df = df.reset_index()
     del df['index']
     df.loc[0]['Name of the account'] = 'VTA' + Util.get_unique_number(10)
-    return df.loc[0]
+    return df
 
 
 nameofAccounts = list(df_accounts[df_accounts['Account type'] == 'Internal Aggregation Account']['Name of the account'])
