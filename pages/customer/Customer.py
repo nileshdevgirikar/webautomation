@@ -107,13 +107,6 @@ class Customer( RootCustomer ):
     chkboxChooseBranchForApproval = "//label/div/strong[text()='{0}']"
     btnSend = "//button[@class='btn btn-lg btn-success']"
 
-    def FillRootCustomer(self):
-        root = inputCustomerTest.rootCustomer
-        for datafields in root:
-
-            if root[datafields] == 'Click':
-                self.elementClick( locator=self.datafields, locatorType="xpath" )
-
     def clickOnParentCustomerToAddChild(self, parent):
         try:
             self.elementClick( self.lnkCustomerName.format( parent ),
@@ -123,7 +116,7 @@ class Customer( RootCustomer ):
         except Exception as e:
             self.log.error("Error occurred while click on AddChild button. :: ")
 
-    def fill_customer_information(self, root):
+    def enter_customer_information(self, root):
         try:
             self.select_customer_category(root['Customer catergory'])
             self.select_customer_type(root['Customer type'])
@@ -137,30 +130,7 @@ class Customer( RootCustomer ):
             self.fill_contact_details(root)
             self.fill_customer_references(root)
         except Exception as e:
-            self.log.error("Error occurred while filling customer information. :: ")
-
-    def createCustomerHierarchy(self, company, keyvalue):
-        if type( company ) is dict:
-            for key, value in company.items():
-                fill = inputCustomerTest.rootCustomer
-                fill['Name'] = str( key )
-                self.fill_customer_information( fill )
-                self.clickOnAddCustomerButton()
-                time.sleep( 5 )
-                keyvalue = key
-                self.clickOnParentCustomerToAddChild( key )
-                self.createCustomerHierarchy( value, keyvalue )
-        elif type( company ) is str:
-            fill = inputCustomerTest.rootCustomer
-            fill['Name'] = str( company )
-            self.fill_customer_information( fill )
-            self.clickOnAddCustomerButton()
-            time.sleep( 5 )
-        elif type( company ) is list:
-            for item in company:
-                print( keyvalue )
-                self.clickOnParentCustomerToAddChild( keyvalue )
-                self.createCustomerHierarchy( item, keyvalue )
+            self.log.error("Error occurred while filling customer information. ::")
 
     def fill_address_details(self, address):
         try:
@@ -222,7 +192,6 @@ class Customer( RootCustomer ):
             else:
                 self.elementClick( self.rdoClient, locatorType="xpath" )
         except Exception as e:
-            x = str( e.with_traceback() )
             self.log.error( "Error occurred while selecting the customer category :: " + customerCategory )
 
     def select_customer_type(self, custType):
@@ -243,7 +212,7 @@ class Customer( RootCustomer ):
 
     def set_customer_id(self, customerId):
         try:
-            self.strCustomerId = customerId + Util.get_unique_number( 10 )
+            self.strCustomerId = customerId  # + Util.get_unique_number( 10 )
             self.sendKeys( self.strCustomerId, self.txtCustomerId, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Error occurred while seting the CustomerId :: " + self.strCustomerId )

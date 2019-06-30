@@ -2,7 +2,6 @@ from base.BasePage import BasePage
 import Utilities.custom_logger as cl
 import logging
 from base.TestParams import TestParams
-from inputTestData import inputAccountCashManagementTest
 from Utilities.util import Util
 from pages.reports.Template import Template
 from Utilities.teststatus import TestStatus
@@ -85,11 +84,11 @@ class Reports(BasePage):
         except Exception as e:
             self.log.info("Error while selecting::" + "clickonSelectRadioButton")
 
-    def setAccountName(self, text):
+    def setAccountName(self, accountName):
         try:
-            self.sendKeys(text, self.searchAccountBox, locatorType="xpath")
-            self.elementClick(self.selectReadioBtnOfTemplate.format(text), locatorType="xpath")
-            self.elementClick(self.searchAccountInList.format(text), locatorType="xpath")
+            self.sendKeys(accountName, self.searchAccountBox, locatorType="xpath")
+            self.elementClick(self.selectReadioBtnOfTemplate.format(accountName), locatorType="xpath")
+            self.elementClick(self.searchAccountInList.format(accountName), locatorType="xpath")
             self.log.info("Successfully click on Select Radio button::")
         except Exception as e:
             self.log.info("Error while selecting::" + "clickonSelectRadioButton")

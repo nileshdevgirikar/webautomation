@@ -14,7 +14,8 @@ from resources.config import ApplicationConfig
 import Utilities.custom_logger as cl
 import logging
 
-@pytest.mark.usefixtures( "oneTimeSetUp", "SetUp" )
+
+@pytest.mark.usefixtures("oneTimeSetUp")
 class BankUserTest( unittest.TestCase ):
     log = cl.customLogger( logging.INFO )
 
@@ -31,13 +32,13 @@ class BankUserTest( unittest.TestCase ):
 
     @pytest.mark.smoke
     def test_CreateBankAdminUser_And_ViewUser(self):
-        self.login.loginToApplication( ApplicationConfig.get('BANKADMIN_USERID' ),
-                                       ApplicationConfig.get( 'BANKADMIN_PASSWORD' ) )
+        self.login.loginToApplication(ApplicationConfig.get('BANKADMIN_USERID'),
+                                      ApplicationConfig.get('BANKADMIN_PASSWORD'))
         #self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToAdmin()
         userList = inputCustomerTest.df_users
         self.UsersABO = self.bankUser.createUsers(userList.loc[0])
-        print(self.UsersABO)
+        # print(self.UsersABO)
         self.bankUser.searchUser( self.UsersABO )
         result = self.bankUser.verifyAdminUserDetails( self.UsersABO )
         self.status.mark( result, "Incorrect Match" )
@@ -47,4 +48,3 @@ class BankUserTest( unittest.TestCase ):
         self.status.mark(result, "Incorrect Match")
         self.home.userLogout()
         self.status.markFinal("test_CreateBankAdminUser_And_ViewUser", result, "Verification is Successful" )
-        print('TTTTTTTT')

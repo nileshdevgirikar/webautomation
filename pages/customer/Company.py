@@ -4,10 +4,8 @@ from base.BasePage import BasePage
 import Utilities.custom_logger as cl
 import logging
 from pages.customer.Customer import Customer
-import time
 
 from inputTestData import inputCustomerTest
-from inputTestData import inputAccountCashManagementTest
 
 
 class Company( Customer ):
@@ -36,13 +34,15 @@ class Company( Customer ):
             self.log.error( "Error occurred while filling address details. :: " )
 
     def createCustomerHierarchy(self, company):
-        for i in range(len(company)):
-            self.clickOnParentCustomerToAddChild(company.loc[i]['Parent'])
-            fill = company.loc[i]
-            self.fill_customer_information(fill)
-            self.clickOnAddCustomerButton()
-            # time.sleep(5)
-            self.verifyMessageOnProgressBar(self.labelsOnUI['msg_CustomerCreationSuccessfull'])
+        try:
+            for i in range(len(company)):
+                self.clickOnParentCustomerToAddChild(company.loc[i]['Parent'])
+                tempCompany = company.loc[i]
+                self.enter_customer_information(tempCompany)
+                self.clickOnAddCustomerButton()
+                self.verifyMessageOnProgressBar(self.labelsOnUI['msg_CustomerCreationSuccessfull'])
+        except Exception as e:
+            self.log.error("Error occurred while filling address details. :: ")
 
     def activateCustomer(self, companyName):
         try:

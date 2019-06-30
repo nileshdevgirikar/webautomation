@@ -7,15 +7,19 @@ from pages.customer.RootCustomer import RootCustomer
 from pages.accounts.Accounts import Accounts
 from pages.customer.Company import Company
 from inputTestData import inputCustomerTest
-from inputTestData import inputAccountCashManagementTest
 from pages.globalSearch.GlobalSearch import GlobalSearch
-import time
 from resources.config import ApplicationConfig
+import time
+import xlrd
+from resources import config
+import os
+import pandas as pd
 
-@pytest.mark.usefixtures( "oneTimeSetUp", "SetUp" )
-class TestCustomer( unittest.TestCase ):
 
-    @pytest.fixture( autouse=True )
+@pytest.mark.usefixtures("oneTimeSetUp")
+class TestCustomer(unittest.TestCase):
+
+    @pytest.fixture(autouse=True)
     def classSetup(self, oneTimeSetUp):
         self.login = LoginPage( self.driver )
         self.rootCustomer = RootCustomer( self.driver )
@@ -26,25 +30,33 @@ class TestCustomer( unittest.TestCase ):
         self.globalSearch = GlobalSearch(self.driver)
 
     @pytest.mark.Smoke
+    @pytest.mark.run(order=1)
     def test_navigation(self):
-        self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
-        self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # if inputCustomerTest.checkRunMode('test_navigation') == True:
+        # TestCustomer.classSetup()
+        self.login.loginToApplication(ApplicationConfig['UserId'], ApplicationConfig['Password'])
+        self.home.verifyWelcomeMessage(ApplicationConfig['UserId'])
         self.home.navigateToRootCustomers()
         self.rootCustomer.verifyTextonRootCustomer()
 
-    @pytest.mark.Smoke
+    @pytest.mark.run(order=2)
     def test_CreateSingleRootCustomer(self):
-        self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
-        self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # if inputCustomerTest.checkRunMode('test_CreateSingleRootCustomer') == True:
+        # TestCustomer.classSetup()
+        self.login.loginToApplication(ApplicationConfig['UserId'], ApplicationConfig['Password'])
+        self.home.verifyWelcomeMessage(ApplicationConfig['UserId'])
         self.home.navigateToRootCustomers()
         self.rootCustomer.clickOnAddRootCustomerButton()
         companyList = inputCustomerTest.df_Singlecustomer
         self.company.createCustomerHierarchy(companyList)
-        self.company.activateCustomer( companyList )
+        self.company.activateCustomer(inputCustomerTest.nameofCustomer )
 
     @pytest.mark.Smoke
+    @pytest.mark.run(order=3)
     def test_createCustomerHierarchy(self):
-        self.login.loginToApplication( ApplicationConfig.get( 'UserId' ), ApplicationConfig.get( 'Password' ) )
+        # if inputCustomerTest.checkRunMode('test_createCustomerHierarchy') == True:
+        # self.classSetup()
+        self.login.loginToApplication(ApplicationConfig['UserId'], ApplicationConfig['Password'])
         # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         self.home.navigateToRootCustomers()
         self.rootCustomer.clickOnAddRootCustomerButton()

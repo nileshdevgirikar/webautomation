@@ -1,7 +1,8 @@
+import os
 ApplicationConfig = {
     'APP_URL': 'http://10.254.187.37:9181/vam-ui/#/',
-    'BANKADMIN_USERID': 'nbank',
-    'BANKADMIN_PASSWORD' : 'Tieto@123',
+    'BANKADMIN_USERID': 'banksup',
+    'BANKADMIN_PASSWORD': 'Password@123',
     'UserId': 'banksup',
     'Password': 'Password@123',
     'BICOrBEI': 'TIEEGB22XXX',
@@ -11,7 +12,6 @@ ApplicationConfig = {
     'INCOMINGFILEPATH': '/VAM2.0_2/incoming',
     'SERVER_TYPE': 'SFTP'
 }
-import os
 
 os.environ['myHome'] = 'C:/workspace/webautomation/'
 print(os.environ.get('myHome'))

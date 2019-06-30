@@ -4059,3 +4059,986 @@
 05/13/2019 05:28:59 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
 05/13/2019 05:29:02 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back NADBANKUPDATE')] and  locatorType: xpath
 05/13/2019 05:29:02 PM - HomePage - ERROR: Failed to get text on element 
+06/27/2019 02:31:42 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/27/2019 02:31:42 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/27/2019 02:31:42 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/27/2019 02:31:42 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/27/2019 02:31:42 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/27/2019 02:31:42 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/27/2019 02:31:42 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/27/2019 02:31:46 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/27/2019 02:31:49 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back banksup')] and  locatorType: xpath
+06/27/2019 02:31:49 PM - HomePage - ERROR: Failed to get text on element 
+06/27/2019 02:31:54 PM - HomePage - ERROR: Exception occurred while verifying Welcome message ::
+06/27/2019 02:31:54 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/27/2019 02:31:54 PM - HomePage - INFO: Element appeared on the web page
+06/27/2019 02:31:54 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/27/2019 02:31:54 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/27/2019 02:31:54 PM - HomePage - INFO: Successfully navigated to Root customers
+06/27/2019 02:31:54 PM - RootCustomer - INFO: Element not appeared on the web page
+06/27/2019 02:31:54 PM - RootCustomer - INFO: Clicked on element with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/27/2019 02:31:54 PM - Company - INFO: Element found with locator: //span[contains(text(),'')] and  locatorType: xpath
+06/27/2019 02:31:55 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'')] locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Element not found with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Cannot click on the element with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/27/2019 02:31:58 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //select[@id='country'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='country'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='contactType'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot select value from the element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Element not found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/27/2019 02:31:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerReference'] locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Element not found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Cannot click on the element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/27/2019 02:32:00 PM - Company - ERROR: Failed to get text on element 
+06/27/2019 02:32:00 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/27/2019 02:32:00 PM - Company - INFO: Element not appeared on the web page
+06/27/2019 02:32:00 PM - Company - ERROR: Failed to verify message on progress bar
+06/27/2019 02:32:00 PM - Company - INFO: Waiting for maximum :: 4 :: seconds for element to be clickable
+06/27/2019 02:32:00 PM - Company - INFO: Element not appeared on the web page
+06/27/2019 02:32:00 PM - Company - INFO: Element not found with locator: //button[@class='btn btn-primary'] and  locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Cannot click on the element with locator: //button[@class='btn btn-primary'] locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/27/2019 02:32:00 PM - Company - INFO: Element not appeared on the web page
+06/27/2019 02:32:00 PM - Company - INFO: Element not found with locator: //label/div/strong[text()='        Subentity Parent  ...                      Message Clients allowed
+0  TestAutomation         ...  Customer successfully added           False
+
+[1 rows x 23 columns]'] and  locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Cannot click on the element with locator: //label/div/strong[text()='        Subentity Parent  ...                      Message Clients allowed
+0  TestAutomation         ...  Customer successfully added           False
+
+[1 rows x 23 columns]'] locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Element not found with locator: //button[@class='btn btn-lg btn-success'] and  locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Cannot click on the element with locator: //button[@class='btn btn-lg btn-success'] locatorType: xpath
+06/27/2019 02:32:00 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customers Activated successfully')] and  locatorType: xpath
+06/27/2019 02:32:00 PM - Company - ERROR: Failed to get text on element 
+06/27/2019 02:32:00 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/27/2019 02:32:00 PM - Company - INFO: Element not appeared on the web page
+06/27/2019 02:32:00 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:15:56 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:15:56 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:15:56 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:15:56 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/30/2019 03:15:56 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:15:56 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/30/2019 03:15:56 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/30/2019 03:15:57 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/30/2019 03:16:00 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back banksup')] and  locatorType: xpath
+06/30/2019 03:16:00 PM - HomePage - ERROR: Failed to get text on element 
+06/30/2019 03:16:05 PM - HomePage - ERROR: Exception occurred while verifying Welcome message ::
+06/30/2019 03:16:05 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:16:05 PM - HomePage - INFO: Element appeared on the web page
+06/30/2019 03:16:05 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/30/2019 03:16:05 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/30/2019 03:16:05 PM - HomePage - INFO: Successfully navigated to Root customers
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element found with locator: //h3[contains(.,'Root customers')] and  locatorType: xpath
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Getting text on element :: 
+06/30/2019 03:16:05 PM - RootCustomer - INFO: The text is :: 'Root customers'
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element found with locator: // button[@class ='btn btn-primary ng-star-inserted'] and  locatorType: xpath
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element present with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element is present :: Add root customer
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] and  locatorType: xpath
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] locatorType: xpath
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:16:05 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Successfully navigated to :: ALL CUSTOMERS
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:16:08 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:16:11 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] and  locatorType: xpath
+06/30/2019 03:16:12 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] locatorType: xpath
+06/30/2019 03:16:12 PM - RootCustomer - INFO: Successfully navigated to :: ACTIVE CUSTOMERS
+06/30/2019 03:16:12 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] and  locatorType: xpath
+06/30/2019 03:16:12 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] locatorType: xpath
+06/30/2019 03:16:12 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:16:12 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Successfully navigated to :: DRAFT CUSTOMERS
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:16:15 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] and  locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] locatorType: xpath
+06/30/2019 03:16:18 PM - RootCustomer - INFO: Successfully navigated to :: CLOSED CUSTOMERS
+06/30/2019 03:17:11 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:17:11 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:17:11 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:17:11 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/30/2019 03:17:11 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:17:11 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/30/2019 03:17:11 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/30/2019 03:17:11 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/30/2019 03:17:14 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back banksup')] and  locatorType: xpath
+06/30/2019 03:17:14 PM - HomePage - ERROR: Failed to get text on element 
+06/30/2019 03:17:19 PM - HomePage - ERROR: Exception occurred while verifying Welcome message ::
+06/30/2019 03:17:19 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:17:20 PM - HomePage - INFO: Element appeared on the web page
+06/30/2019 03:17:20 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/30/2019 03:17:20 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/30/2019 03:17:20 PM - HomePage - INFO: Successfully navigated to Root customers
+06/30/2019 03:17:20 PM - RootCustomer - INFO: Element not appeared on the web page
+06/30/2019 03:17:20 PM - RootCustomer - INFO: Clicked on element with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/30/2019 03:17:20 PM - Company - INFO: Element found with locator: //span[contains(text(),'')] and  locatorType: xpath
+06/30/2019 03:17:20 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'')] locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Element not found with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Cannot click on the element with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:17:23 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:17:24 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:17:25 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:17:26 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:17:27 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:17:28 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:17:28 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:17:28 PM - Company - INFO: The text is :: 'Customer successfully added'
+06/30/2019 03:17:28 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:17:33 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:17:33 PM - Util - INFO: Actual Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:17:33 PM - Util - INFO: Expected Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:17:33 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:17:33 PM - Company - INFO: Waiting for maximum :: 4 :: seconds for element to be clickable
+06/30/2019 03:17:33 PM - Company - INFO: Element appeared on the web page
+06/30/2019 03:17:33 PM - Company - INFO: Element found with locator: //button[@class='btn btn-primary'] and  locatorType: xpath
+06/30/2019 03:17:33 PM - Company - INFO: Clicked on element with locator: //button[@class='btn btn-primary'] locatorType: xpath
+06/30/2019 03:17:33 PM - Company - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:17:37 PM - Company - INFO: Element not appeared on the web page
+06/30/2019 03:17:37 PM - Company - INFO: Element found with locator: //label/div/strong[text()='TestAutoRC6665992950'] and  locatorType: xpath
+06/30/2019 03:17:37 PM - Company - INFO: Clicked on element with locator: //label/div/strong[text()='TestAutoRC6665992950'] locatorType: xpath
+06/30/2019 03:17:37 PM - Company - INFO: Element found with locator: //button[@class='btn btn-lg btn-success'] and  locatorType: xpath
+06/30/2019 03:17:37 PM - Company - INFO: Clicked on element with locator: //button[@class='btn btn-lg btn-success'] locatorType: xpath
+06/30/2019 03:17:38 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customers Activated successfully')] and  locatorType: xpath
+06/30/2019 03:17:38 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:17:38 PM - Company - INFO: The text is :: 'Customers Activated successfully'
+06/30/2019 03:17:38 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:17:43 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:17:43 PM - Util - INFO: Actual Text From Application Web UI --> :: Customers Activated successfully
+06/30/2019 03:17:43 PM - Util - INFO: Expected Text From Application Web UI --> :: Customers Activated successfully
+06/30/2019 03:17:43 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:18:30 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:18:30 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:18:30 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:18:30 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/30/2019 03:18:30 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:18:30 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/30/2019 03:18:30 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/30/2019 03:18:30 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/30/2019 03:18:30 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:18:32 PM - HomePage - INFO: Element appeared on the web page
+06/30/2019 03:18:32 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/30/2019 03:18:33 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/30/2019 03:18:33 PM - HomePage - INFO: Successfully navigated to Root customers
+06/30/2019 03:18:33 PM - RootCustomer - INFO: Element not appeared on the web page
+06/30/2019 03:18:33 PM - RootCustomer - INFO: Clicked on element with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/30/2019 03:18:33 PM - Company - INFO: Element found with locator: //span[contains(text(),'')] and  locatorType: xpath
+06/30/2019 03:18:33 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'')] locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Element not found with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Cannot click on the element with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:18:36 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:18:37 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:18:37 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:18:37 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:18:37 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:18:37 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:18:37 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:18:40 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:18:40 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:18:46 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:18:46 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:18:47 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:18:47 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:18:50 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:18:51 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:18:52 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:18:53 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:18:53 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:18:53 PM - Company - INFO: The text is :: 'Customer successfully added'
+06/30/2019 03:18:53 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:18:58 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:18:58 PM - Util - INFO: Actual Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:18:58 PM - Util - INFO: Expected Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:18:58 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:18:58 PM - Company - INFO: Element found with locator: //span[contains(text(),'TataSons')] and  locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Clicked on element with locator: //span[contains(text(),'TataSons')] locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Element found with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Clicked on element with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:18:58 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:18:59 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:19:00 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:19:01 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:19:04 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:19:04 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:19:04 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:19:07 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:19:07 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:19:10 PM - Company - INFO: Element not found with locator: //span[contains(text(),'TataSteel')] and  locatorType: xpath
+06/30/2019 03:19:10 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'TataSteel')] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element not found with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Cannot click on the element with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:19:13 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:19:14 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:19:17 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:19:17 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:19:17 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:19:20 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:19:20 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:19:24 PM - Company - INFO: Element not found with locator: //span[contains(text(),'TataSteel')] and  locatorType: xpath
+06/30/2019 03:19:24 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'TataSteel')] locatorType: xpath
+06/30/2019 03:19:27 PM - Company - INFO: Element not found with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:19:27 PM - Company - INFO: Cannot click on the element with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:19:31 PM - Company - INFO: Element not found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:19:31 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:19:35 PM - Company - INFO: Element not found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:19:35 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:19:39 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:19:39 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:19:43 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:19:43 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:19:47 PM - Company - INFO: Element not found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:19:47 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:19:51 PM - Company - INFO: Element not found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:19:51 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:19:55 PM - Company - INFO: Element not found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:19:55 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:19:59 PM - Company - INFO: Element not found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:19:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:20:03 PM - Company - INFO: Element not found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:20:03 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:20:07 PM - Company - INFO: Element not found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:20:07 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:20:11 PM - Company - INFO: Element not found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:20:11 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:20:15 PM - Company - INFO: Element not found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:20:15 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:20:19 PM - Company - INFO: Element not found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:20:19 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:20:23 PM - Company - INFO: Element not found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:20:23 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:20:27 PM - Company - INFO: Element not found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:20:27 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:20:31 PM - Company - INFO: Element not found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:20:31 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:20:35 PM - Company - INFO: Element not found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:20:35 PM - Company - INFO: Cannot select value from the element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:20:39 PM - Company - INFO: Element not found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:20:39 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:20:43 PM - Company - INFO: Element not found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:20:43 PM - Company - INFO: Cannot click on the element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:20:47 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:20:47 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:20:47 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:20:51 PM - Company - INFO: Element not appeared on the web page
+06/30/2019 03:20:51 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:20:55 PM - Company - INFO: Element not found with locator: //span[contains(text(),'TataSons')] and  locatorType: xpath
+06/30/2019 03:20:55 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'TataSons')] locatorType: xpath
+06/30/2019 03:20:59 PM - Company - INFO: Element not found with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:20:59 PM - Company - INFO: Cannot click on the element with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:21:03 PM - Company - INFO: Element not found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:21:03 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:21:07 PM - Company - INFO: Element not found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:21:07 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:21:11 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:21:11 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:21:15 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:21:15 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:21:20 PM - Company - INFO: Element not found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:21:20 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:21:24 PM - Company - INFO: Element not found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:21:24 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:21:28 PM - Company - INFO: Element not found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:21:28 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:21:32 PM - Company - INFO: Element not found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:21:32 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:21:36 PM - Company - INFO: Element not found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:21:36 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:21:40 PM - Company - INFO: Element not found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:21:40 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:21:44 PM - Company - INFO: Element not found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:21:44 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:21:48 PM - Company - INFO: Element not found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:21:48 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:21:52 PM - Company - INFO: Element not found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:21:52 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:21:56 PM - Company - INFO: Element not found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:21:56 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:22:00 PM - Company - INFO: Element not found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:22:00 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:22:04 PM - Company - INFO: Element not found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:22:04 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:22:08 PM - Company - INFO: Element not found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:22:08 PM - Company - INFO: Cannot select value from the element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:22:12 PM - Company - INFO: Element not found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:22:12 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:22:16 PM - Company - INFO: Element not found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:22:16 PM - Company - INFO: Cannot click on the element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:22:20 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:22:20 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:22:20 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:22:24 PM - Company - INFO: Element not appeared on the web page
+06/30/2019 03:22:24 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:22:28 PM - Company - INFO: Element not found with locator: //span[contains(text(),'Tatachemical')] and  locatorType: xpath
+06/30/2019 03:22:28 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'Tatachemical')] locatorType: xpath
+06/30/2019 03:22:32 PM - Company - INFO: Element not found with locator: //span[text()='Tatachemical']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:22:32 PM - Company - INFO: Cannot click on the element with locator: //span[text()='Tatachemical']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:22:36 PM - Company - INFO: Element not found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:22:36 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:22:40 PM - Company - INFO: Element not found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:22:40 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:22:44 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:22:44 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:22:48 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:22:48 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:22:52 PM - Company - INFO: Element not found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:22:52 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:22:56 PM - Company - INFO: Element not found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:22:56 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:23:00 PM - Company - INFO: Element not found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:23:00 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:23:04 PM - Company - INFO: Element not found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:23:04 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:23:08 PM - Company - INFO: Element not found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:23:08 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:23:12 PM - Company - INFO: Element not found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:23:12 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:23:16 PM - Company - INFO: Element not found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:23:16 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:23:20 PM - Company - INFO: Element not found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:23:20 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:23:24 PM - Company - INFO: Element not found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:23:24 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:23:28 PM - Company - INFO: Element not found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:23:28 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:23:32 PM - Company - INFO: Element not found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:23:32 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:23:34 PM - Company - INFO: Element not found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:23:34 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:25:47 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:25:47 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:25:47 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:25:47 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/30/2019 03:25:47 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:25:48 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/30/2019 03:25:48 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/30/2019 03:25:48 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/30/2019 03:25:51 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back banksup')] and  locatorType: xpath
+06/30/2019 03:25:51 PM - HomePage - ERROR: Failed to get text on element 
+06/30/2019 03:25:56 PM - HomePage - ERROR: Exception occurred while verifying Welcome message ::
+06/30/2019 03:25:56 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:25:56 PM - HomePage - INFO: Element appeared on the web page
+06/30/2019 03:25:56 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/30/2019 03:25:56 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/30/2019 03:25:56 PM - HomePage - INFO: Successfully navigated to Root customers
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element found with locator: //h3[contains(.,'Root customers')] and  locatorType: xpath
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Getting text on element :: 
+06/30/2019 03:25:56 PM - RootCustomer - INFO: The text is :: 'Root customers'
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element found with locator: // button[@class ='btn btn-primary ng-star-inserted'] and  locatorType: xpath
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element present with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element is present :: Add root customer
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] and  locatorType: xpath
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] locatorType: xpath
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:25:56 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='All Customers')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Successfully navigated to :: ALL CUSTOMERS
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:25:59 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:26:02 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:26:02 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Active Customers')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Successfully navigated to :: ACTIVE CUSTOMERS
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:26:03 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Draft Customers')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Successfully navigated to :: DRAFT CUSTOMERS
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element present with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Name')] and  locatorType: xpath
+06/30/2019 03:26:06 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Name')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element not found with locator: //span[contains(text(),'Customerid')] and  locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element not present with locator: //span[contains(text(),'Customerid')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Bank Id')] and  locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Bank Id')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Status')] and  locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Status')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Sector')] and  locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Sector')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element found with locator: //span[contains(text(),'Market Segment')] and  locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element present with locator: //span[contains(text(),'Market Segment')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Element found with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] and  locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Clicked on element with locator: //ul[@class='nav nav-pills ng-star-inserted']/li/a/span[(text()='Closed Customers')] locatorType: xpath
+06/30/2019 03:26:09 PM - RootCustomer - INFO: Successfully navigated to :: CLOSED CUSTOMERS
+06/30/2019 03:26:45 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:26:45 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:26:45 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:26:45 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/30/2019 03:26:45 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:26:45 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/30/2019 03:26:45 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/30/2019 03:26:45 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/30/2019 03:26:48 PM - HomePage - INFO: Element not found with locator: //div[contains(text(),'Welcome back banksup')] and  locatorType: xpath
+06/30/2019 03:26:48 PM - HomePage - ERROR: Failed to get text on element 
+06/30/2019 03:26:53 PM - HomePage - ERROR: Exception occurred while verifying Welcome message ::
+06/30/2019 03:26:53 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:26:53 PM - HomePage - INFO: Element appeared on the web page
+06/30/2019 03:26:53 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/30/2019 03:26:54 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/30/2019 03:26:54 PM - HomePage - INFO: Successfully navigated to Root customers
+06/30/2019 03:26:54 PM - RootCustomer - INFO: Element not appeared on the web page
+06/30/2019 03:26:54 PM - RootCustomer - INFO: Clicked on element with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/30/2019 03:26:54 PM - Company - INFO: Element found with locator: //span[contains(text(),'')] and  locatorType: xpath
+06/30/2019 03:26:54 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'')] locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Element not found with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Cannot click on the element with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:26:57 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:26:58 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:26:59 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:27:00 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:27:01 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:27:01 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:27:01 PM - Company - INFO: The text is :: 'Customer successfully added'
+06/30/2019 03:27:01 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:27:06 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:27:06 PM - Util - INFO: Actual Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:27:06 PM - Util - INFO: Expected Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:27:06 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:27:06 PM - Company - INFO: Waiting for maximum :: 4 :: seconds for element to be clickable
+06/30/2019 03:27:06 PM - Company - INFO: Element appeared on the web page
+06/30/2019 03:27:06 PM - Company - INFO: Element found with locator: //button[@class='btn btn-primary'] and  locatorType: xpath
+06/30/2019 03:27:06 PM - Company - INFO: Clicked on element with locator: //button[@class='btn btn-primary'] locatorType: xpath
+06/30/2019 03:27:06 PM - Company - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:27:10 PM - Company - INFO: Element not appeared on the web page
+06/30/2019 03:27:10 PM - Company - INFO: Element found with locator: //label/div/strong[text()='TestAutoRC5628837852'] and  locatorType: xpath
+06/30/2019 03:27:10 PM - Company - INFO: Clicked on element with locator: //label/div/strong[text()='TestAutoRC5628837852'] locatorType: xpath
+06/30/2019 03:27:10 PM - Company - INFO: Element found with locator: //button[@class='btn btn-lg btn-success'] and  locatorType: xpath
+06/30/2019 03:27:10 PM - Company - INFO: Clicked on element with locator: //button[@class='btn btn-lg btn-success'] locatorType: xpath
+06/30/2019 03:27:11 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customers Activated successfully')] and  locatorType: xpath
+06/30/2019 03:27:11 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:27:11 PM - Company - INFO: The text is :: 'Customers Activated successfully'
+06/30/2019 03:27:11 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:27:16 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:27:16 PM - Util - INFO: Actual Text From Application Web UI --> :: Customers Activated successfully
+06/30/2019 03:27:16 PM - Util - INFO: Expected Text From Application Web UI --> :: Customers Activated successfully
+06/30/2019 03:27:16 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:27:47 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:27:47 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:27:48 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+06/30/2019 03:27:48 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+06/30/2019 03:27:48 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+06/30/2019 03:27:48 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+06/30/2019 03:27:48 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+06/30/2019 03:27:48 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+06/30/2019 03:27:48 PM - HomePage - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+06/30/2019 03:27:51 PM - HomePage - INFO: Element appeared on the web page
+06/30/2019 03:27:51 PM - HomePage - INFO: Element found with locator: //span[contains(text(),'Root customers')] and  locatorType: xpath
+06/30/2019 03:27:51 PM - HomePage - INFO: Clicked on element with locator: //span[contains(text(),'Root customers')] locatorType: xpath
+06/30/2019 03:27:51 PM - HomePage - INFO: Successfully navigated to Root customers
+06/30/2019 03:27:51 PM - RootCustomer - INFO: Element not appeared on the web page
+06/30/2019 03:27:51 PM - RootCustomer - INFO: Clicked on element with locator: // button[@class ='btn btn-primary ng-star-inserted'] locatorType: xpath
+06/30/2019 03:27:51 PM - Company - INFO: Element found with locator: //span[contains(text(),'')] and  locatorType: xpath
+06/30/2019 03:27:52 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'')] locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Element not found with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Cannot click on the element with locator: //span[text()='']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:27:55 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:27:56 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:27:56 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:27:56 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:27:56 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:27:59 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:27:59 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:28:06 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:28:07 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:28:08 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:28:08 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:28:08 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:28:09 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:28:09 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:28:09 PM - Company - INFO: The text is :: 'Customer successfully added'
+06/30/2019 03:28:09 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:28:14 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:28:14 PM - Util - INFO: Actual Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:28:14 PM - Util - INFO: Expected Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:28:14 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:28:14 PM - Company - INFO: Element found with locator: //span[contains(text(),'TataSons')] and  locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Clicked on element with locator: //span[contains(text(),'TataSons')] locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Element found with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Clicked on element with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:28:14 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:28:15 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:28:16 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:28:20 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:28:20 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:28:20 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:28:23 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:28:23 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:28:26 PM - Company - INFO: Element not found with locator: //span[contains(text(),'TataSteel')] and  locatorType: xpath
+06/30/2019 03:28:26 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'TataSteel')] locatorType: xpath
+06/30/2019 03:28:27 PM - Company - INFO: Element found with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:28:28 PM - Company - INFO: Cannot click on the element with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:28:34 PM - Company - INFO: Element not found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:28:34 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:28:37 PM - Company - INFO: Element not found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:28:37 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:28:40 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:28:40 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:28:43 PM - Company - INFO: Element not found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:28:43 PM - Company - INFO: Cannot send data on the element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:28:46 PM - Company - INFO: Element not found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:28:46 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:28:49 PM - Company - INFO: Element not found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:28:49 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:28:52 PM - Company - INFO: Element not found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:28:52 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:28:55 PM - Company - INFO: Element not found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:28:55 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:28:58 PM - Company - INFO: Element not found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:28:58 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:29:01 PM - Company - INFO: Element not found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:29:01 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:29:04 PM - Company - INFO: Element not found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:29:04 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:29:07 PM - Company - INFO: Element not found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:29:07 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:29:10 PM - Company - INFO: Element not found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:29:10 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:29:13 PM - Company - INFO: Element not found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:29:13 PM - Company - INFO: Cannot select value from the element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:29:16 PM - Company - INFO: Element not found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:29:16 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:29:19 PM - Company - INFO: Element not found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:29:19 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:29:22 PM - Company - INFO: Element not found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:29:22 PM - Company - INFO: Cannot select value from the element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:29:25 PM - Company - INFO: Element not found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:29:25 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:29:28 PM - Company - INFO: Element not found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:29:28 PM - Company - INFO: Cannot click on the element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:29:28 PM - Company - INFO: Element found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:29:28 PM - Company - INFO: Getting text on element :: 
+06/30/2019 03:29:28 PM - Company - INFO: The text is :: 'Customer successfully added'
+06/30/2019 03:29:28 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:29:28 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:29:28 PM - Util - INFO: Actual Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:29:28 PM - Util - INFO: Expected Text From Application Web UI --> :: Customer successfully added
+06/30/2019 03:29:28 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+06/30/2019 03:29:28 PM - Company - INFO: Element found with locator: //span[contains(text(),'TataSteel')] and  locatorType: xpath
+06/30/2019 03:29:28 PM - Company - INFO: Clicked on element with locator: //span[contains(text(),'TataSteel')] locatorType: xpath
+06/30/2019 03:29:28 PM - Company - INFO: Element found with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Clicked on element with locator: //span[text()='TataSteel']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:29:29 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:29:30 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:29:31 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:29:34 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:29:34 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:29:34 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:29:37 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:29:37 PM - Company - ERROR: Failed to verify message on progress bar
+06/30/2019 03:29:37 PM - Company - INFO: Element found with locator: //span[contains(text(),'TataSons')] and  locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Cannot click on the element with locator: //span[contains(text(),'TataSons')] locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Element found with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] and  locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Cannot click on the element with locator: //span[text()='TataSons']/following-sibling::div[@class='level-item-actions ng-star-inserted']//app-icon[@iconclass='icon-sm'] locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Element found with locator: //input[@id='subEntityRadio'] and  locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Cannot click on the element with locator: //input[@id='subEntityRadio'] locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Element found with locator: //input[@id='individualRadio'] and  locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Cannot click on the element with locator: //input[@id='individualRadio'] locatorType: xpath
+06/30/2019 03:29:37 PM - Company - INFO: Element found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='customerIdentity'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@id='customerIdentity'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //select[@id='institutionalSectorCode'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Select value from element with locator: //select[@id='institutionalSectorCode'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //select[@id='marketSegmentCode'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Select value from element with locator: //select[@id='marketSegmentCode'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine1'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine2'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine3'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Sent data on element with locator: //input[@id='addressLine4'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='postalCode'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Cannot send data on the element with locator: //input[@id='postalCode'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //select[@id='country'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Select value from element with locator: //select[@id='country'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //select[@id='contactType'] and  locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Select value from element with locator: //select[@id='contactType'] locatorType: xpath
+06/30/2019 03:29:38 PM - Company - INFO: Element found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Sent data on element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Element found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Sent data on element with locator: //input[@id='contactDescription'] locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Element found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Select value from element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Element found with locator: //input[@id='customerReference'] and  locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Sent data on element with locator: //input[@id='customerReference'] locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Element found with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] and  locatorType: xpath
+06/30/2019 03:29:39 PM - Company - INFO: Clicked on element with locator: //app-icon[@iconname='plus']/ancestor::button[@class='btn btn-lg btn-success'][contains(.,'Add customer')] locatorType: xpath
+06/30/2019 03:29:42 PM - Company - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Customer successfully added')] and  locatorType: xpath
+06/30/2019 03:29:42 PM - Company - ERROR: Failed to get text on element 
+06/30/2019 03:29:42 PM - Company - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+06/30/2019 03:29:45 PM - Company - INFO: Element is visible appeared on the web page
+06/30/2019 03:29:45 PM - Company - ERROR: Failed to verify message on progress bar

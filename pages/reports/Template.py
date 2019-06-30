@@ -2,7 +2,6 @@ from base.BasePage import BasePage
 import Utilities.custom_logger as cl
 import logging
 from base.TestParams import TestParams
-from inputTestData import inputAccountCashManagementTest
 from Utilities.util import Util
 from datetime import date
 from Utilities.teststatus import TestStatus
