@@ -31,17 +31,33 @@ class ReportsTest(unittest.TestCase):
         self.status = TestStatus(self.driver)
 
     @pytest.mark.smoke
-    def test_CreateReportTemplate(self):
+    def test_create_transaction_template_and_report(self):
         result = False
         self.login.loginToApplication(ApplicationConfig.get('UserId'), ApplicationConfig.get('Password'))
         # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         # self.status.mark(result, "Incorrect match")
         self.home.navigateToReports()
         self.template.navigateToTemplate()
-        result = self.reports.create_search_verifyTemplate(inputCustomerTest.df_Template)
+        result = self.reports.create_search_verifyTemplate(inputCustomerTest.df_TransactionTemplate)
         self.status.mark(result, "Incorrect match")
         self.template.navigateToSchedule()
-        result = self.reports.create_search_verifySchedule(inputCustomerTest.df_Template)
+        result = self.reports.create_search_verifySchedule(inputCustomerTest.df_TransactionTemplate)
+        self.status.markFinal("test_CreateReportTemplate", result, "Verification is Successful")
+        self.home.userLogout()
+        print('TTTTTTTT')
+
+    @pytest.mark.smoke
+    def test_create_balance_template_and_report(self):
+        result = False
+        self.login.loginToApplication(ApplicationConfig.get('UserId'), ApplicationConfig.get('Password'))
+        # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # self.status.mark(result, "Incorrect match")
+        self.home.navigateToReports()
+        self.template.navigateToTemplate()
+        result = self.reports.create_search_verifyTemplate(inputCustomerTest.df_BalanceTemplate)
+        self.status.mark(result, "Incorrect match")
+        self.template.navigateToSchedule()
+        result = self.reports.create_search_verifySchedule(inputCustomerTest.df_BalanceTemplate)
         self.status.markFinal("test_CreateReportTemplate", result, "Verification is Successful")
         self.home.userLogout()
         print('TTTTTTTT')

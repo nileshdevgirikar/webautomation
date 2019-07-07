@@ -2,11 +2,7 @@ from Utilities.util import Util
 import Utilities.custom_logger as cl
 import logging
 from pages.customer.RootCustomer import RootCustomer
-import time
-from inputTestData import inputCustomerTest
-import pandas as pd
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
+
 
 class Customer( RootCustomer ):
     log = cl.customLogger( logging.DEBUG )
@@ -72,7 +68,7 @@ class Customer( RootCustomer ):
 
     # btnCancel = "//a[@class='btn btn-lg btn-secondary']"
     btnCancel = "//button[@class='btn btn-lg btn-secondary']"
-    btnSave = "//button[contains(.,'%s')]"
+    btnSave = "//button[contains(.,'{0}')]"
     btnAddRef = "//span[contains(.,'{0}')]"
     btnSaveChanges = "//button[@class='btn btn-lg btn-success']"
 
@@ -120,7 +116,7 @@ class Customer( RootCustomer ):
         try:
             self.select_customer_category(root['Customer catergory'])
             self.select_customer_type(root['Customer type'])
-            self.setName(root['Name'], root['PreferredName'])
+            self.setName(root['Name'], root['Preferred name'])
             self.set_customer_id(root['Customer Id'])
             self.select_sector_classification(root['Sector classification'])
             self.select_Market_Segment(root['Market Segment'])
@@ -240,7 +236,7 @@ class Customer( RootCustomer ):
         except Exception as e:
             self.log.error("Error occurred while setting the Market Segment :: ")
 
-    def clickOnAddCustomerButton(self, ):
+    def clickOnAddCustomerButton(self):
         try:
             self.elementClick(self.btnAddCustomer.format(self.labelsOnUI['btn_Add_Customer']),
                               locatorType="xpath")
@@ -257,3 +253,18 @@ class Customer( RootCustomer ):
             self.elementClick( self.btnSend, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )
+
+    def fillEditCustomerInformation(self, customerdetails):
+        try:
+            self.setName(customerdetails['Name'], customerdetails['Preferred name'])
+            self.fill_address_details(customerdetails)
+        except Exception as e:
+            self.log.error("Error occurred while filling address details. :: ")
+
+    def clickOnSaveChangesButton(self):
+        try:
+            self.elementClick(self.btnSave.format(self.labelsOnUI['btn_Save_Changes']),
+                              locatorType="xpath")
+            self.isElementDisplayed(self.lnkMsg.format(self.labelsOnUI['MessageTemplateAddedSuccessfully']))
+        except Exception as e:
+            self.log.error("Error occurred while filling address details. :: ")

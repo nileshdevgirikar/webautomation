@@ -37,14 +37,10 @@ class GlobalSearchTest(unittest.TestCase):
         # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
         # self.status.mark(result, "Incorrect match")
         self.home.navigateToRootCustomers()
-        # self.rootCustomer.clickOnAddRootCustomerButton()
         companyList = inputCustomerTest.df_Singlecustomer
-        # self.company.createCustomerHierarchy(companyList)
-        # self.home.navigateToRootCustomers()
         customerName = companyList['Subentity'][0]
         customerName = '01PKTESTCUST'
         self.globalSearch.searchAccountOrCustomerAndClick(self.home.labelsOnUI['GlobalSearchType_Company'],
                                                           customerName)
         self.home.verifyRootCustomerLabelOnCompanyPage(customerName)
         self.overview.verifyCustomerDetails(companyList)
-        print('TTTTTTTT')

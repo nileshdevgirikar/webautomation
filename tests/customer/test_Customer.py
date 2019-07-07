@@ -8,6 +8,7 @@ from pages.accounts.Accounts import Accounts
 from pages.customer.Company import Company
 from inputTestData import inputCustomerTest
 from pages.globalSearch.GlobalSearch import GlobalSearch
+from pages.customer.CustomerOverview import CustomerOverview
 from resources.config import ApplicationConfig
 import time
 import xlrd
@@ -24,10 +25,11 @@ class TestCustomer(unittest.TestCase):
         self.login = LoginPage( self.driver )
         self.rootCustomer = RootCustomer( self.driver )
         self.home = HomePage( self.driver )
-        self.ct = Customer( self.driver )
+        self.customer = Customer(self.driver)
         self.account = Accounts( self.driver )
         self.company = Company( self.driver )
         self.globalSearch = GlobalSearch(self.driver)
+        self.overview = CustomerOverview(self.driver)
 
     @pytest.mark.Smoke
     @pytest.mark.run(order=1)
@@ -63,3 +65,19 @@ class TestCustomer(unittest.TestCase):
         companyList = inputCustomerTest.df_customer
         self.company.createCustomerHierarchy(companyList)
         self.company.activateCustomer(companyList.loc[0]['Subentity'])
+
+    def test_editCorporateCustomerHappyFlow(self):
+        self.login.loginToApplication(ApplicationConfig['UserId'], ApplicationConfig['Password'])
+        # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # self.globalSearch.searchAccountOrCustomerAndClick(inputCustomerTest.nameofCustomer,
+        #                                                   self.home.labelsOnUI['GlobalSearchType_Company'])
+        self.globalSearch.searchAccountOrCustomerAndClick("RC2932065044",
+                                                          self.home.labelsOnUI['GlobalSearchType_Company'])
+        inputCustomerTest.set_details_for_customer_edit(inputCustomerTest.df_Editcustomer)
+        self.overview.clickOnEditCustomerLink()
+        self.customer.fillEditCustomerInformation(inputCustomerTest.df_Singlecustomer)
+        self.customer.clickOnSaveChangesButton()
+        # self.verifyMessageOnProgressBar()
+        # inputCustomerTest.df_Singlecustomer.loc[:, 'Status'] = self.labelsOnUI['CustomerStatusValueToVarify']
+        result = self.overview.verifyCustomerDetails(inputCustomerTest.df_Singlecustomer)
+        print("successfull")

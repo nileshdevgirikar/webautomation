@@ -41,7 +41,7 @@ class TestStatus(SeleniumDriver):
             self.resultList.append("FAIL")
             self.log.error("### Exception Occurred !!!")
             self.screenShot(resultMessage)
-            print_stack()
+
 
     def mark(self, result, resultMessage):
         """
@@ -55,7 +55,7 @@ class TestStatus(SeleniumDriver):
         This needs to be called at least once in a test case
         This should be final test status of the test case
         """
-        self.setResult(result, resultMessage)
+        # self.setResult(result, resultMessage)
 
         if "FAIL" in self.resultList:
             self.log.error(testName +  " ### TEST FAILED")
@@ -65,3 +65,4 @@ class TestStatus(SeleniumDriver):
             self.log.info(testName + " ### TEST SUCCESSFUL")
             self.resultList.clear()
             assert True == True
+            return True

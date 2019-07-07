@@ -70,3 +70,13 @@ class BasePage(SeleniumDriver):
 
     def is_text_present(self, text):
         return str(text) in self.driver.page_source
+
+    def verify(self, lbltargetDetails, expectedResult):
+        result = False
+        try:
+            actualText = self.getText(lbltargetDetails, locatorType="xpath")
+            result = self.util.verifyTextMatch(actualText, expectedResult)
+            self.log.info("Successfully verify detail of::" + expectedResult)
+        except:
+            self.log.info("Error in verifying detail of::" + expectedResult)
+        return result
