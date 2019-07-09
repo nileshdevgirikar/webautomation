@@ -4,6 +4,7 @@ import logging
 from pages.customer.Company import Company
 from pages.customer.RootCustomer import RootCustomer
 from Utilities.teststatus import TestStatus
+from inputTestData import inputCustomerTest
 
 
 class CustomerOverview(Company):
@@ -12,12 +13,11 @@ class CustomerOverview(Company):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
-        self.status = TestStatus(self.driver)
 
     LblcustDetails = "//dt[contains(text(),'{0}')]/following-sibling::dd"
     LblAds = "//div[contains(text(),'{0}')]/../following-sibling::div/div/div", "LblAds"
-    # LblAddress = "//div[contains(text(),'Address')]/../following-sibling::div/div/div"
-    LblAddress = "//div[contains(text(),'{0}')]"
+    LblAddress = "//div[contains(text(),'{0}')]/../following-sibling::div/div/div"
+    # LblAddress = "//div[contains(text(),'{0}')]"
     LblAddCountry = "//div[contains(text(),'{0}')]/../following-sibling::div/div/strong"
     LblContacts = "//div[contains(text(),'{0}')]/../following-sibling::div/div/dl/dd"
     # LblActiveUsers = "//div[contains(text(),'{0}')]/../following-sibling::div/h2/a/strong"
@@ -68,23 +68,24 @@ class CustomerOverview(Company):
     def verifyCustomerDetails(self, customerDetails):
         result = False
         try:
+            self.aggregateAssert = TestStatus(self.driver)
             self.wait_for_page_load(3)
             result = self.verifyBasicCustomerDetails(customerDetails)
-            self.status.mark(result, "Incorrect match")
-            result = self.verifyReferenceValues(customerDetails)
-            self.status.mark(result, "Incorrect match")
-            # result = self.verifyAddressDetails(customerDetails)
-            # self.status.mark(result, "Incorrect match")
-            # result = self.verifyContactDetails(customerDetails)
-            # self.status.mark(result, "Incorrect match")
-            self.log.info("Successfully filled Optional fields details::")
+            self.aggregateAssert.mark(result, "Incorrect match")
+            result = self.verifyReferenceAndContactValues(customerDetails)
+            self.aggregateAssert.mark(result, "Incorrect match")
+            result = self.verifyAddressDetails(customerDetails)
+            self.aggregateAssert.mark(result, "Incorrect match")
+            result = self.aggregateAssert.aggregateResult("verifyCustomerDetails", result, "Verification is Successful")
+            self.log.info("Successfully verify Customer details::")
         except:
-            self.log.info("Error while filling Optional fields details::")
+            self.log.info("Error while verifying Customer details::")
         return result
 
     def verifyBasicCustomerDetails(self, customerDetails):
         result = False
         try:
+            self.status = TestStatus(self.driver)
             self.status.mark(self.verify(self.LblcustDetails.format(self.labelsOnUI['Lbl_Category']),
                                          customerDetails[self.labelsOnUI['lbl_Customer_category']][0]),
                              "Incorrect match")
@@ -111,51 +112,47 @@ class CustomerOverview(Company):
                                          customerDetails[self.labelsOnUI['Lbl_SectorClassification']][0]),
                              "Incorrect match")
 
-            result = self.status.markFinal("verifyBasicCustomerDetails", result, "Verification is Successful")
-
-            self.log.info("Successfully filled Optional fields details::")
+            result = self.status.aggregateResult("verifyBasicCustomerDetails", result, "Verification is Successful")
+            self.log.info("Successfully verify Customer basic details::")
         except:
-            self.log.info("Error while filling Optional fields details::")
+            self.log.info("Error while verifying Customer basic details::")
         return result
 
-    def verifyReferenceValues(self, customerDetails):
+    def verifyReferenceAndContactValues(self, customerDetails):
         result = False
         try:
+            self.status = TestStatus(self.driver)
             self.status.mark(self.verify(self.LblcustDetails.format(self.labelsOnUI['Lbl_ReferenceNumbers']),
                                          customerDetails[self.labelsOnUI['lbl_Reference_Number']][0]),
                              "Incorrect match")
-            self.log.info("Successfully filled Optional fields details::")
+            self.status.mark(self.verify(self.LblcustDetails.format(self.labelsOnUI['Email']),
+                                         customerDetails['Value'][0]),
+                             "Incorrect match")
+            result = self.status.aggregateResult("verifyReferenceAndContactValues", result,
+                                                 "Verification is Successful")
+            self.log.info("Successfully verify Reference and Contact details::")
         except:
-            self.log.info("Error while filling Optional fields details::")
+            self.log.info("Error while verifying Reference and Contact details::")
         return result
 
     def verifyAddressDetails(self, customerDetails):
         result = False
         try:
-            self.status.mark(self.verify(self.LblAddress.format(self.labelsOnUI['lbl_Line1']),
-                                         customerDetails[self.labelsOnUI['lbl_Line1']][0]), "Incorrect match")
-            self.status.mark(self.verify(self.LblAddress.format(self.labelsOnUI['lbl_Line2']),
-                                         customerDetails[self.labelsOnUI['lbl_Line2']][0]), "Incorrect match")
-            self.status.mark(self.verify(self.LblAddress.format(self.labelsOnUI['lbl_Line3']),
-                                         customerDetails[self.labelsOnUI['lbl_Line3']][0]), "Incorrect match")
-            self.status.mark(self.verify(self.LblAddress.format(self.labelsOnUI['lbl_Line4']),
-                                         customerDetails[self.labelsOnUI['lbl_Line4']][0]), "Incorrect match")
-            self.status.mark(self.verify(self.LblAddress.format(self.labelsOnUI['lbl_PostalCode']),
-                                         customerDetails[self.labelsOnUI['lbl_PostalCode']][0]), "Incorrect match")
-            self.status.mark(self.verify(self.LblAddress.format(self.labelsOnUI['lbl_Country']),
-                                         customerDetails[self.labelsOnUI['lbl_Country']][0]), "Incorrect match")
-            self.log.info("Successfully filled Optional fields details::")
+            self.status = TestStatus(self.driver)
+            addlist = self.getElementList(self.LblAddress.format(self.labelsOnUI['Lbl_Add']), locatorType="xpath")
+            element = self.getElement(self.LblAddCountry.format(self.labelsOnUI['Lbl_Add']), locatorType="xpath")
+            addlist.append(element)
+            expectedlist = inputCustomerTest.addressdetails(customerDetails)
+
+            if len(expectedlist) == len(addlist):
+                for i in range(len(addlist)):
+                    value = addlist[i].text
+                    self.status.mark(self.util.verifyTextMatch(value, expectedlist[i]), "Incorrect match")
+                result = self.status.aggregateResult("verifyAddressDetails", result, "Verification is Successful")
+                self.log.info("Successfully verify Address details::")
+            else:
+                self.log.info("List of address details is not equals::")
         except:
-            self.log.info("Error while filling Optional fields details::")
+            self.log.info("Error while verifying Address details::")
         return result
 
-    def verifyContactDetails(self, customerDetails):
-        result = False
-        try:
-            self.status.mark(self.verify(self.LblcustDetails.format(self.labelsOnUI['Lbl_Category']),
-                                         customerDetails[self.labelsOnUI['lbl_Customer_category']][0]),
-                             "Incorrect match")
-            self.log.info("Successfully filled Optional fields details::")
-        except:
-            self.log.info("Error while filling Optional fields details::")
-        return result

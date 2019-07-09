@@ -53,6 +53,7 @@ class Company( Customer ):
                                locatorType="xpath" )
             self.elementClick( self.btnSend, locatorType="xpath" )
             self.verifyMessageOnProgressBar(self.labelsOnUI['msg_CustomerActivateMessage'])
-            inputCustomerTest.df_Singlecustomer.loc[:, 'Status'] = self.labelsOnUI['CustomerStatusValueToVarify']
+            inputCustomerTest.set_status_of_customer(inputCustomerTest.df_Singlecustomer,
+                                                     self.labelsOnUI['CustomerStatusValueToVarify'])
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )

@@ -12,16 +12,21 @@ import logging
 from base.SeleniumDriver import SeleniumDriver
 from traceback import print_stack
 
-class TestStatus(SeleniumDriver):
+
+# class TestStatus(SeleniumDriver):
+class TestStatus():
 
     log = cl.customLogger(logging.INFO)
 
+    # def __init__(self, driver):
     def __init__(self, driver):
         """
         Inits CheckPoint class
         """
-        super(TestStatus, self).__init__(driver)
+        super(TestStatus, self).__init__()
         self.resultList = []
+        self.sd = SeleniumDriver(driver)
+
 
     def setResult(self, result, resultMessage):
         try:
@@ -32,15 +37,15 @@ class TestStatus(SeleniumDriver):
                 else:
                     self.resultList.append("FAIL")
                     self.log.error("### VERIFICATION FAILED :: + " + resultMessage)
-                    self.screenShot(resultMessage)
+                    self.sd.screenShot(resultMessage)
             else:
                 self.resultList.append("FAIL")
                 self.log.error("### VERIFICATION FAILED :: + " + resultMessage)
-                self.screenShot(resultMessage)
+                self.sd.screenShot(resultMessage)
         except:
             self.resultList.append("FAIL")
             self.log.error("### Exception Occurred !!!")
-            self.screenShot(resultMessage)
+            self.sd.screenShot(resultMessage)
 
 
     def mark(self, result, resultMessage):
@@ -49,20 +54,38 @@ class TestStatus(SeleniumDriver):
         """
         self.setResult(result, resultMessage)
 
+    def aggregateResult(self, testName, result, resultMessage):
+        """
+        Mark the final result of the verification point in a test case
+        This needs to be called at least once in a test case
+        This should be final test status of the test case
+        """
+        #self.setResult(result, resultMessage)
+
+        if "FAIL" in self.resultList:
+            self.log.error(testName + " ### TEST FAILED")
+            self.resultList.clear()
+            # assert True == False
+            return False
+        else:
+            self.log.info(testName + " ### TEST SUCCESSFUL")
+            self.resultList.clear()
+            #assert True == True
+            return True
+
     def markFinal(self, testName, result, resultMessage):
         """
         Mark the final result of the verification point in a test case
         This needs to be called at least once in a test case
         This should be final test status of the test case
         """
-        # self.setResult(result, resultMessage)
+        self.setResult(result, resultMessage)
 
         if "FAIL" in self.resultList:
-            self.log.error(testName +  " ### TEST FAILED")
+            self.log.error(testName + " ### TEST FAILED")
             self.resultList.clear()
             assert True == False
         else:
             self.log.info(testName + " ### TEST SUCCESSFUL")
             self.resultList.clear()
             assert True == True
-            return True

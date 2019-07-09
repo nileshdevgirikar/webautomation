@@ -44,6 +44,7 @@ def singlecustomerDetails(df):
     df['Customer Id'] = newName
     df['Name'] = df['Name'] + newName
     df['Preferred name'] = df['Preferred name'] + newName
+    df['Reference number'] = df['Reference number'] + Util.get_unique_number(6)
     return df
 
 
@@ -56,6 +57,7 @@ def customerDetails(df):
     for i in range(len(df['Customer Id'])):
         newName = df['Customer Id'][i] + Util.get_unique_number(10)
         df_customer['Customer Id'][i] = newName
+        df_customer['Reference number'] = df['Reference number'][i] + Util.get_unique_number(6)
     return df
 
 customerDetails(df_customer)
@@ -88,20 +90,24 @@ ShadowAccountNumber = list(df_accounts[df_accounts['Account type'] == 'External 
 def set_details_for_customer_edit(df_duplicate):
     df_Singlecustomer['Name'] = df_duplicate['Name']
     df_Singlecustomer['Preferred name'] = df_duplicate['Preferred name']
-    df_Singlecustomer['Customer Id'] = 'RC2932065044'
     df_Singlecustomer['Line 1'] = df_duplicate['Line 1']
     df_Singlecustomer['Line 2'] = df_duplicate['Line 2']
     df_Singlecustomer['Line 3'] = df_duplicate['Line 3']
     df_Singlecustomer['Line 4'] = df_duplicate['Line 4']
     df_Singlecustomer['Value'] = df_duplicate['Value']
-    df_Singlecustomer['Reference number'] = 'RN324693'
+    df_Singlecustomer['Reference number'] = df_duplicate['Reference number'] + Util.get_unique_number(6)
     df_Singlecustomer['Description'] = df_duplicate['Description']
     return df_Singlecustomer
 
 
+def addressdetails(df_Singlecustomer):
+    address = df_Singlecustomer['Line 1'][0] + '|' + df_Singlecustomer['Line 2'][0] + '|' + df_Singlecustomer['Line 3'][
+        0] + '|' + df_Singlecustomer['Line 4'][0] + '|' + df_Singlecustomer['Country'][0]
+    expectedAddress = address.split("|")
+    return expectedAddress
+
 def set_status_of_customer(df_Singlecustomer, status):
     df_Singlecustomer.loc[:, 'Status'] = status
-    print(df_Singlecustomer)
 
 camtinput = {
     'txsSummry': 'No',

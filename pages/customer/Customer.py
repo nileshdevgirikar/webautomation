@@ -112,53 +112,53 @@ class Customer( RootCustomer ):
         except Exception as e:
             self.log.error("Error occurred while click on AddChild button. :: ")
 
-    def enter_customer_information(self, root):
+    def enter_customer_information(self, rootCustomer):
         try:
-            self.select_customer_category(root['Customer catergory'])
-            self.select_customer_type(root['Customer type'])
-            self.setName(root['Name'], root['Preferred name'])
-            self.set_customer_id(root['Customer Id'])
-            self.select_sector_classification(root['Sector classification'])
-            self.select_Market_Segment(root['Market Segment'])
+            self.select_customer_category(rootCustomer[self.labelsOnUI['lbl_CustCategory_SubEntity']])
+            self.select_customer_type(rootCustomer[self.labelsOnUI['Lbl_CustomerType']])
+            self.setName(rootCustomer[self.labelsOnUI['Lbl_Name']], rootCustomer[self.labelsOnUI['Lbl_PreferredName']])
+            self.set_customer_id(rootCustomer[self.labelsOnUI['Lbl_CustomerID']])
+            self.select_sector_classification(rootCustomer[self.labelsOnUI['Lbl_SectorClassification']])
+            self.select_Market_Segment(rootCustomer[self.labelsOnUI['Lbl_MarketSegment']])
             # if str( root['Customer category'] ) == str( self.labelsOnUI['lbl_CustCategory_SubEntity'] ):
             #     self.decide_Whether_Clients_Allowed( root['Clients allowed'] )
-            self.fill_address_details(root)
-            self.fill_contact_details(root)
-            self.fill_customer_references(root)
+            self.fill_address_details(rootCustomer)
+            self.fill_contact_details(rootCustomer)
+            self.fill_customer_references(rootCustomer['Reference type'],
+                                          rootCustomer['Reference number'])
         except Exception as e:
             self.log.error("Error occurred while filling customer information. ::")
 
     def fill_address_details(self, address):
         try:
-            self.sendKeys(address['Line 1'], self.txtAddressLine1, locatorType="xpath")
-            self.sendKeys(address['Line 2'], self.txtAddressLine2, locatorType="xpath")
-            self.sendKeys(address['Line 3'], self.txtAddressLine3, locatorType="xpath")
-            self.sendKeys(address['Line 4'], self.txtAddressLine4, locatorType="xpath")
-            self.sendKeys(address['Postal code'], self.txtPostalCode, locatorType="xpath")
-            self.selectvaluefromDropdown(address['Country'], self.ddlCountry, locatorType="xpath")
+            self.sendKeys(address[self.labelsOnUI['lbl_Line1']], self.txtAddressLine1, locatorType="xpath")
+            self.sendKeys(address[self.labelsOnUI['lbl_Line2']], self.txtAddressLine2, locatorType="xpath")
+            self.sendKeys(address[self.labelsOnUI['lbl_Line3']], self.txtAddressLine3, locatorType="xpath")
+            self.sendKeys(address[self.labelsOnUI['lbl_Line4']], self.txtAddressLine4, locatorType="xpath")
+            # self.sendKeys(address[self.labelsOnUI['lbl_PostalCode']], self.txtPostalCode, locatorType="xpath")
+            self.selectvaluefromDropdown(address[self.labelsOnUI['lbl_Country']], self.ddlCountry, locatorType="xpath")
         except Exception as e:
             self.log.error("Error occurred while filling address details. :: ")
 
     def fill_contact_details(self, contactDetails):
         try:
-            self.selectvaluefromDropdown(contactDetails['Type'], self.ddlContactType, locatorType="xpath")
+            self.selectvaluefromDropdown(contactDetails['Type'],
+                                         self.ddlContactType, locatorType="xpath")
             self.sendKeys( contactDetails['Value'], self.txtContactValue, locatorType="xpath" )
             self.sendKeys( contactDetails['Description'], self.txtContactDescription, locatorType="xpath" )
         except Exception as e:
             self.log.error( "Error occurred while filling contact details. :: " )
 
-    def fill_customer_references(self, customerReferences):
+    def fill_customer_references(self, customerReferences, ReferencesNumber):
         try:
-            self.add_Mandatory_References( customerReferences )
+            self.add_Mandatory_References(customerReferences, ReferencesNumber)
             # self.add_Optional_References( customerReferences )
         except Exception as e:
             self.log.error( "Problem occurred while adding customer references. :: " )
 
-    def add_Mandatory_References(self, customerReferences):
+    def add_Mandatory_References(self, customerReferences, ReferencesNumber):
         try:
-            References = customerReferences['Reference type']
-            self.selectvaluefromDropdown(References, self.ddlOptionalRefType, locatorType="xpath")
-            ReferencesNumber = customerReferences['Reference number'] + Util.get_unique_number(5)
+            self.selectvaluefromDropdown(customerReferences, self.ddlOptionalRefType, locatorType="xpath")
             self.sendKeys(ReferencesNumber, self.txtcustomerReference, locatorType="xpath")
         except Exception as e:
             self.log.error( "Problem occurred while adding Mandatory references. :: " )
@@ -256,8 +256,11 @@ class Customer( RootCustomer ):
 
     def fillEditCustomerInformation(self, customerdetails):
         try:
-            self.setName(customerdetails['Name'], customerdetails['Preferred name'])
+            self.setName(customerdetails[self.labelsOnUI['Lbl_Name']],
+                         customerdetails[self.labelsOnUI['Lbl_PreferredName']])
             self.fill_address_details(customerdetails)
+            self.fill_contact_details(customerdetails)
+            self.fill_customer_references(customerdetails['Reference type'], customerdetails['Reference number'])
         except Exception as e:
             self.log.error("Error occurred while filling address details. :: ")
 
