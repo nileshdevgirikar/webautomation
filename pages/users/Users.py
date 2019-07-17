@@ -1,5 +1,6 @@
 from Utilities.util import Util
 from base.BasePage import BasePage
+from pages.common.HomePage import HomePage
 import Utilities.custom_logger as cl
 import logging
 from Utilities.teststatus import TestStatus
@@ -42,7 +43,8 @@ class Users( BasePage ):
     rdoUserStatus = "//label[contains(@class,'custom-control-label')][(text()='%s')]", "User Status Radio Button"
 
     # links
-    Lnksetup = "//span[contains(.,'Setup')]", "Setup Link"
+    Lnksetup = "//span[contains(.,'Setup')]"
+    LnkView = "//*[text()[normalize-space() = '{0}']]//following-sibling::td//a[text()[normalize-space() = 'View']]"
     LnkViewEditDelete = "//td/following-sibling::td/span/a[contains(.,'{0}')]"
     LnkHiddenDelete = "//td[contains(.,' 970D')]/following-sibling::td/span[@style='visibility: hidden;']/a[contains(.,'Delete')]", "Delete Hidden Link"
     lnkResetPassWord = "//h5[contains(.,'%s')]/..", "Reset Password Link"
@@ -62,6 +64,8 @@ class Users( BasePage ):
     lblOptional = "#label[contains(.,'%s')]", "Optional Label"
     lblUserDetails = "//label[contains(.,'{0}')]/following-sibling::p"
     lblAccessRights = "//tbody/tr[@class='ng-star-inserted']/td[{0}]"
+    # lblAccessRights = "//tbody/tr[@class='ng-star-inserted']//p[contains(text(),'{0}')]"
+
     lblStatus = "//label[contains(.,'{0}')]/../p/strong"
     strGenericTableXpath = "#td[contains(.,'%s')]#ancestor::tr#td[count(#*[normalize-space(text())='%s']#ancestor-or-self::th/preceding-sibling::th)+1]"
     # strUserName="#div#strong[contains(.,'%s')]"
@@ -91,16 +95,15 @@ class Users( BasePage ):
     lblUserId = "#tbody[contains(@class,'ng-tns-c')]/tr/td[contains(.,'%s')]", "Users id"
 
     def createUsers(self, usersABO):
-        newusersABO = ''
         try:
-            self.clickOnAddUserButton();
-            newusersABO = self.fillUsersDetails( usersABO )
+            self.wait_until_angular(3)
+            self.clickOnAddUserButton()
+            self.fillUsersDetails(usersABO)
             self.clickOnAddOrSaveButton()
             # self.verifyMessage("UserSuccessCreateMessage", "User is successfully Created",
             #                " Not able to Create user. Success message not displayed.")
         except Exception as e:
             self.log.error( "Error occurred while creating user ::" )
-        return newusersABO
 
     def clickOnAddUserButton(self):
         try:
@@ -114,21 +117,18 @@ class Users( BasePage ):
 
     def fillUsersDetails(self, usersABO):
         try:
-            usersABO['User ID'] = usersABO['User ID'] + Util.get_unique_number(7)
-            #UserID = usersABO['User ID'] + Util.get_unique_number(7)
             self.wait_for_page_load(2)
-            self.sendKeys( usersABO['User ID'], self.txtUserId, locatorType="xpath" )
-            self.sendKeys( usersABO['First name'], self.txtFirstName, locatorType="xpath" )
-            self.sendKeys( usersABO['Last name' ], self.txtLastName, locatorType="xpath" )
-            self.sendKeys( usersABO['Email'], self.txtEmailId, locatorType="xpath" )
-            self.sendKeys( int(usersABO.get('Phone')) , self.txtPhone, locatorType="xpath" )
-            #profile = usersABO.get('PROFILE')
-            self.selectvaluefromDropdown( usersABO.get('PROFILE'), self.ddlProfile, locatorType="xpath" )
-            self.sendKeys( usersABO['Password'], self.txtPassword, locatorType="xpath" )
-            self.sendKeys( usersABO['Repeat password' ], self.txtRepeatPassword, locatorType="xpath" )
+            self.sendKeys(usersABO[self.labelsOnUI['UserID']][0], self.txtUserId, locatorType="xpath")
+            self.sendKeys(usersABO[self.labelsOnUI['FirstName']][0], self.txtFirstName, locatorType="xpath")
+            self.sendKeys(usersABO[self.labelsOnUI['LastName']][0], self.txtLastName, locatorType="xpath")
+            self.sendKeys(usersABO[self.labelsOnUI['Email']][0], self.txtEmailId, locatorType="xpath")
+            self.sendKeys(str(usersABO[self.labelsOnUI['Phone']][0]), self.txtPhone, locatorType="xpath")
+            self.selectvaluefromDropdown(usersABO[self.labelsOnUI['lbl_Profile']][0], self.ddlProfile,
+                                         locatorType="xpath")
+            self.sendKeys(usersABO[self.labelsOnUI['Password']][0], self.txtPassword, locatorType="xpath")
+            self.sendKeys(usersABO[self.labelsOnUI['RepeatPassword']][0], self.txtRepeatPassword, locatorType="xpath")
         except Exception as e:
             self.log.error( "Exception occurred while entering User's Details::" )
-        return usersABO
 
     def clickOnAddOrSaveButton(self):
         try:
@@ -141,14 +141,13 @@ class Users( BasePage ):
     def searchUser(self, usersABO):
         try:
             self.wait_for_page_load( 7 )
-            self.sendKeysAndEnter( usersABO.get( 'User ID' ), self.txtSearchUser, locatorType="xpath" )
+            self.sendKeysAndEnter(usersABO, self.txtSearchUser, locatorType="xpath")
         except Exception as e:
             self.log.error( "Exception occurred while doing search users ::" )
 
-    def verifyAdminUserDetails(self, usersABO):
+    def verifyDetails(self, usersABO):
         result = False
         try:
-            self.clickOnViewUser()
             result = self.verifyUserDetails( usersABO )
             self.closeUserDetailPage()
         except Exception as e:
@@ -156,60 +155,45 @@ class Users( BasePage ):
             self.log.error( "Exception occurred while doing search users ::" )
         return result
 
-    def clickOnViewUser(self):
+    def clickOnViewUserlink(self, user):
         try:
             self.wait_for_page_load( 4 )
             # self.waitForElement(self.LnkViewEditDelete.format( self.labelsOnUI.get( 'View' )),4,2)
-            self.elementClick(self.LnkViewEditDelete.format(self.labelsOnUI.get('View')),
-                               locatorType="xpath" )
+            self.elementClick(self.LnkView.format(user.upper()), locatorType="xpath")
         except Exception as e:
             self.log.error( "Exception occurred in clickOnViewUser ::" )
 
-    def verifyUserDetails(self, usersABO):
+    def verifyUserDetails(self, usersDetails):
         result = False
         try:
             self.wait_for_page_load( 5 )
-            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('UserID')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'User ID'))
-            self.status.mark( result, "Incorrect match" )
-            # assert result == True
-            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('FirstName')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'First name' ) )
-            self.status.mark( result, "Incorrect match" )
-            # assert result == True
-            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('LastName')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'Last name' ) )
-            self.status.mark( result, "Incorrect match" )
-            # assert result == True
-            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('Email')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'Email' ) )
-            self.status.mark( result, "Incorrect match" )
-            # assert result == True
-            actualText = self.getText(self.lblUserDetails.format(self.labelsOnUI.get('Phone')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, str(usersABO.get( 'Phone' )))
-            self.status.mark(result, "Incorrect match")
-            # assert result == True
-            actualText = self.getText(self.lblStatus.format(self.labelsOnUI.get('UserStatus')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'User status' ) )
-            self.status.mark(result, "Incorrect match")
-            # assert result == True
-            actualText = self.getText(self.lblAccessRights.format(self.labelsOnUI.get('BankId')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'BANKID' ) )
-            self.status.mark(result, "Incorrect match")
-            # assert result == True
-            actualText = self.getText(self.lblAccessRights.format(self.labelsOnUI.get('Profile')),
-                                      locatorType="xpath")
-            result = self.util.verifyTextMatch( actualText, usersABO.get( 'PROFILE' ) )
-            self.status.mark(result, "Incorrect match")
-            # assert result == False
-            self.status.markFinal( "verifyUserDetails", result, "Verification is Successful" )
+            self.status = TestStatus(self.driver)
+            self.status.mark(self.verify(self.lblUserDetails.format(self.labelsOnUI['UserID']),
+                                         usersDetails[self.labelsOnUI['UserID']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblUserDetails.format(self.labelsOnUI['Lbl_FName']),
+                                         usersDetails[self.labelsOnUI['Lbl_FName']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblUserDetails.format(self.labelsOnUI['Lbl_LName']),
+                                         usersDetails[self.labelsOnUI['Lbl_LName']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblUserDetails.format(self.labelsOnUI['Email']),
+                                         usersDetails[self.labelsOnUI['Email']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblUserDetails.format(self.labelsOnUI['Phone']),
+                                         usersDetails[self.labelsOnUI['Phone']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblStatus.format(self.labelsOnUI['UserStatus']),
+                                         usersDetails[self.labelsOnUI['UserStatus']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblAccessRights.format(self.labelsOnUI['BankId']),
+                                         usersDetails[self.labelsOnUI['Lbl_BankID']][0]), "Incorrect match")
+
+            self.status.mark(self.verify(self.lblAccessRights.format(self.labelsOnUI['Profile']),
+                                         usersDetails[self.labelsOnUI['lbl_profile_User']][0]), "Incorrect match")
+
+            result = self.status.aggregateResult("verifyUserDetails", result, "Verification is Successful")
+            self.log.info("Successfully verify Customer basic details::")
         except Exception as e:
             result = False
             self.log.error( "Exception occurred while verifying user details ::" )
@@ -222,3 +206,14 @@ class Users( BasePage ):
                               locatorType="xpath")
         except Exception as e:
             self.log.error( "Exception occurred while doing search users ::" )
+
+    def verifyAddUserButtonNotDisplayed(self):
+        result = False
+        try:
+            value = (self.isElementDisplayed(self.btnAddUser.format(self.labelsOnUI['AddUser']), locatorType="xpath"))
+            if not value:
+                result = True
+            self.log.info("Successfully verify AddUser Button is Not Displayed::")
+        except Exception as e:
+            self.log.error("Failed to verify AddUser Button::")
+        return result

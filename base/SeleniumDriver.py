@@ -166,6 +166,7 @@ class SeleniumDriver():
         try:
             if locator:  # This means if locator is not empty
                 element = self.getElement( locator, locatorType )
+            element.clear()
             element.send_keys( data )
             element.send_keys( Keys.ENTER )
             self.log.info( "Sent data on element with locator: " + locator +

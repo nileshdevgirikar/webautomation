@@ -23,6 +23,7 @@ class Company( Customer ):
     btnSendForActivation = "//button[@class='btn btn-primary']"
     chkboxChooseBranchForApproval = "//label/div/strong[text()='{0}']"
     btnSend = "//button[@class='btn btn-lg btn-success']"
+    lnkUsers = "//span[text()[normalize-space() = '{0}']]"
 
     def clickOnParentCustomerToAddChild(self, parent):
         try:
@@ -57,3 +58,10 @@ class Company( Customer ):
                                                      self.labelsOnUI['CustomerStatusValueToVarify'])
         except Exception as e:
             self.log.error( "Error occurred while filling address details. :: " )
+
+    def navigateToUser(self):
+        try:
+            self.elementClick(self.lnkUsers.format('users'), locatorType="xpath")
+            self.log.info("Successfully navigated to USERS:: ")
+        except:
+            self.log.info("Error while navigating to USERS:: ")

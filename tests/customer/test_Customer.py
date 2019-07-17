@@ -89,3 +89,17 @@ class TestCustomer(unittest.TestCase):
         result = self.overview.verifyCustomerDetails(inputCustomerTest.df_Singlecustomer)
         self.status.mark(result, "Incorrect match")
         self.status.markFinal("test_editCorporateCustomerHappyFlow", result, "Verification is Successful")
+
+    def test_verifyUnableToAddCustomerClientAllowCheckOn(self):
+        self.status = TestStatus(self.driver)
+        self.login.loginToApplication(ApplicationConfig['UserId'], ApplicationConfig['Password'])
+        # self.home.verifyWelcomeMessage( ApplicationConfig.get( 'UserId' ) )
+        # self.globalSearch.searchAccountOrCustomerAndClick(inputCustomerTest.nameofCustomer,
+        #                                                       self.home.labelsOnUI['GlobalSearchType_Company'])
+        self.globalSearch.searchAccountOrCustomerAndClick("TAutoCustomer953995",
+                                                          self.home.labelsOnUI['GlobalSearchType_Company'])
+        self.overview.clickOnEditCustomerLink()
+        self.customer.disabledClientsallowed()
+        self.customer.clickOnSaveChangesButton()
+        self.customer.clickOnParentCustomerToAddChild("TAutoCustomer953995")
+        self.customer.verifyElementIsEnabledOrDisabled()

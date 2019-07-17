@@ -268,6 +268,24 @@ class Customer( RootCustomer ):
         try:
             self.elementClick(self.btnSave.format(self.labelsOnUI['btn_Save_Changes']),
                               locatorType="xpath")
+            self.isElementDisplayed(self.progressBarlocator.format(self.labelsOnUI['MessageTemplateAddedSuccessfully']))
+            self.waitForElementInVisible(self.progressBarlocator.format(self.labelsOnUI['msg_CustomerUpdateMessage']),
+                                         locatorType="xpath")
+        except Exception as e:
+            self.log.error("Error occurred while filling address details. :: ")
+
+    def disabledClientsallowed(self):
+        try:
+            self.wait_for_page_load(2)
+            self.elementClick(self.chkClientsAllowedLabel, locatorType="xpath")
+            # self.isElementDisplayed(self.lnkMsg.format(self.labelsOnUI['MessageTemplateAddedSuccessfully']))
+        except Exception as e:
+            self.log.error("Error occurred while filling address details. :: ")
+
+    def verifyElementIsEnabledOrDisabled(self):
+        try:
+            self.elementClick(self.btnSave.format(self.labelsOnUI['btn_Save_Changes']),
+                              locatorType="xpath")
             self.isElementDisplayed(self.lnkMsg.format(self.labelsOnUI['MessageTemplateAddedSuccessfully']))
         except Exception as e:
             self.log.error("Error occurred while filling address details. :: ")

@@ -6041,3 +6041,63 @@ The credit transactions on the account are not allowed.'
 07/01/2019 03:48:41 PM - Util - INFO: Actual Text From Application Web UI --> :: You have been successfully logged out.
 07/01/2019 03:48:41 PM - Util - INFO: Expected Text From Application Web UI --> :: You have been successfully logged out.
 07/01/2019 03:48:41 PM - Util - INFO: ### VERIFICATION MATCHED !!!
+07/17/2019 04:25:48 PM - LoginPage - INFO: Element not found with locator: userid and  locatorType: id
+07/17/2019 04:26:06 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+07/17/2019 04:26:06 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+07/17/2019 04:26:06 PM - LoginPage - INFO: Element found with locator: userid and  locatorType: id
+07/17/2019 04:26:07 PM - LoginPage - INFO: Sent data on element with locator: userid locatorType: id
+07/17/2019 04:26:07 PM - LoginPage - INFO: Element found with locator: password and  locatorType: id
+07/17/2019 04:26:07 PM - LoginPage - INFO: Sent data on element with locator: password locatorType: id
+07/17/2019 04:26:07 PM - LoginPage - INFO: Element found with locator: //button[@type='submit'] and  locatorType: xpath
+07/17/2019 04:26:07 PM - LoginPage - INFO: Clicked on element with locator: //button[@type='submit'] locatorType: xpath
+07/17/2019 04:26:10 PM - GlobalSearch - INFO: Element found with locator: //div[@class='dropdown ng-star-inserted'] and  locatorType: xpath
+07/17/2019 04:26:10 PM - GlobalSearch - INFO: Clicked on element with locator: //div[@class='dropdown ng-star-inserted'] locatorType: xpath
+07/17/2019 04:26:10 PM - GlobalSearch - INFO: Clicked on element with locator: //div[@class='dropdown-menu show']/div/a[contains(.,'Companies')] locatorType: xpath
+07/17/2019 04:26:10 PM - GlobalSearch - INFO: Successfully able to search ::Companies
+07/17/2019 04:26:10 PM - GlobalSearch - INFO: Element found with locator: //div[@class='input-group']/input and  locatorType: xpath
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Sent data on element with locator: //div[@class='input-group']/input locatorType: xpath
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Successfully able to set text in search box ::
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Waiting for maximum :: 2 :: seconds for element to be clickable
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Element appeared on the web page
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Clicked on element with locator: //button[@class='btn btn-link px-3'] locatorType: xpath
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Successfully click on  search button::
+07/17/2019 04:26:11 PM - GlobalSearch - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+07/17/2019 04:26:19 PM - GlobalSearch - INFO: Element not appeared on the web page
+07/17/2019 04:26:22 PM - GlobalSearch - INFO: Element not found with locator: .//div[@class='row']/div[@class='col'] and  locatorType: xpath
+07/17/2019 04:26:22 PM - GlobalSearch - INFO: Cannot click on the element with locator: .//div[@class='row']/div[@class='col'] locatorType: xpath
+07/17/2019 04:26:22 PM - GlobalSearch - INFO: Successfully able to search ::
+07/17/2019 04:26:22 PM - GlobalSearch - INFO: Successfully able to search string::
+07/17/2019 04:26:25 PM - CustomerOverview - INFO: Element not found with locator: //span[contains(text(),'Edit details')] and  locatorType: xpath
+07/17/2019 04:26:25 PM - CustomerOverview - INFO: Cannot click on the element with locator: //span[contains(text(),'Edit details')] locatorType: xpath
+07/17/2019 04:26:25 PM - CustomerOverview - ERROR: Successfully clicked on :: Edit details
+07/17/2019 04:26:28 PM - Customer - INFO: Element not found with locator: //input[@formcontrolname='firstName'] and  locatorType: xpath
+07/17/2019 04:26:28 PM - Customer - INFO: Cannot send data on the element with locator: //input[@formcontrolname='firstName'] locatorType: xpath
+07/17/2019 04:26:31 PM - Customer - INFO: Element not found with locator: //input[@formcontrolname='companyName'] and  locatorType: xpath
+07/17/2019 04:26:31 PM - Customer - INFO: Cannot send data on the element with locator: //input[@formcontrolname='companyName'] locatorType: xpath
+07/17/2019 04:26:34 PM - Customer - INFO: Element not found with locator: //input[@id='addressLine1'] and  locatorType: xpath
+07/17/2019 04:26:34 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='addressLine1'] locatorType: xpath
+07/17/2019 04:26:38 PM - Customer - INFO: Element not found with locator: //input[@id='addressLine2'] and  locatorType: xpath
+07/17/2019 04:26:38 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='addressLine2'] locatorType: xpath
+07/17/2019 04:26:41 PM - Customer - INFO: Element not found with locator: //input[@id='addressLine3'] and  locatorType: xpath
+07/17/2019 04:26:41 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='addressLine3'] locatorType: xpath
+07/17/2019 04:26:44 PM - Customer - INFO: Element not found with locator: //input[@id='addressLine4'] and  locatorType: xpath
+07/17/2019 04:26:44 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='addressLine4'] locatorType: xpath
+07/17/2019 04:26:47 PM - Customer - INFO: Element not found with locator: //select[@id='country'] and  locatorType: xpath
+07/17/2019 04:26:47 PM - Customer - INFO: Cannot select value from the element with locator: //select[@id='country'] locatorType: xpath
+07/17/2019 04:26:50 PM - Customer - INFO: Element not found with locator: //select[@id='contactType'] and  locatorType: xpath
+07/17/2019 04:26:50 PM - Customer - INFO: Cannot select value from the element with locator: //select[@id='contactType'] locatorType: xpath
+07/17/2019 04:26:53 PM - Customer - INFO: Element not found with locator: //input[@id='contactPhoneNumber'] and  locatorType: xpath
+07/17/2019 04:26:53 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='contactPhoneNumber'] locatorType: xpath
+07/17/2019 04:26:56 PM - Customer - INFO: Element not found with locator: //input[@id='contactDescription'] and  locatorType: xpath
+07/17/2019 04:26:56 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='contactDescription'] locatorType: xpath
+07/17/2019 04:26:59 PM - Customer - INFO: Element not found with locator: //select[@formcontrolname='customerRefType'] and  locatorType: xpath
+07/17/2019 04:26:59 PM - Customer - INFO: Cannot select value from the element with locator: //select[@formcontrolname='customerRefType'] locatorType: xpath
+07/17/2019 04:27:02 PM - Customer - INFO: Element not found with locator: //input[@id='customerReference'] and  locatorType: xpath
+07/17/2019 04:27:02 PM - Customer - INFO: Cannot send data on the element with locator: //input[@id='customerReference'] locatorType: xpath
+07/17/2019 04:27:05 PM - Customer - INFO: Element not found with locator: //button[contains(.,'Save Changes')] and  locatorType: xpath
+07/17/2019 04:27:05 PM - Customer - INFO: Cannot click on the element with locator: //button[contains(.,'Save Changes')] locatorType: xpath
+07/17/2019 04:27:08 PM - Customer - INFO: Element not found with locator: //div[@class='simple-notification success ng-trigger ng-trigger-enterLeave']//div[contains(text(),'Template added successfully')] and  locatorType: id
+07/17/2019 04:27:08 PM - Customer - INFO: Element not displayed
+07/17/2019 04:27:08 PM - Customer - INFO: Waiting for maximum :: 5 :: seconds for element to be clickable
+07/17/2019 04:27:11 PM - Customer - INFO: Element is visible appeared on the web page
+07/17/2019 06:00:04 PM - LoginPage - INFO: Element not found with locator: userid and  locatorType: id
